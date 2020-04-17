@@ -2,7 +2,6 @@ let gulp = require("gulp");
 
 const font = require("./gulp/tasks/fonts");
 const img_webp = require("./gulp/tasks/img/img_webp");
-//const dev_pug2html = require("./gulp/tasks/dev_pug2html.js");
 const pug2html = require("./gulp/tasks/pug2html");
 const clean = require("./gulp/tasks/clean/clean");
 const style = require("./gulp/tasks/style");
@@ -10,7 +9,49 @@ const webp = require("./gulp/tasks/img/img_webp");
 const svg = require("./gulp/tasks/img/img_svg");
 const minPng = require("./gulp/tasks/img/min_png");
 const minJpg = require("./gulp/tasks/img/min_jpg");
-const serve =  require("./gulp/tasks/serve");
+const serve = require("./gulp/tasks/serve");
+const script = require("./gulp/tasks/script");
+
+gulp.task("img", gulp.parallel(webp, svg, minPng));
+gulp.task("page", pug2html);
+gulp.task("style", style);
+gulp.task("font", font);
+
+//const dev = gulp.parallel();
+
+const build = gulp.series(
+   clean,
+   gulp.parallel(pug2html, style, script, font, webp, svg, minPng)
+); 
+
+gulp.task("build", build);
+gulp.task("dev", gulp.series(build, serve));
+
+let Libs = ["node_modules/@fancyapps/**/*.*", "node_modules/jquery/**/*.*"];
+gulp.task("getLib", gulp.parallel(fancyBox, jquery, slickCarousel));
+
+//let cssLibs = ["node_modules/@fancyapps/**/*.{css,sass,scss,less}","node_modules/jquery/**/*.{css,sass,scss,less}"]
+//function libDist(){
+//	return gulp.src()
+//}
+
+function fancyBox() {
+   return gulp
+      .src("node_modules/@fancyapps/**/*.*")
+      .pipe(gulp.dest("src/libs/fancy-box"));
+}
+
+function jquery() {
+   return gulp
+      .src("node_modules/jquery/**/*.*")
+      .pipe(gulp.dest("src/libs/jquery"));
+}
+
+function slickCarousel() {
+   return gulp
+      .src("node_modules/slick-carousel/**/*.*")
+      .pipe(gulp.dest("src/libs/slick-carousel"));
+}
 
 //const dev = gulp.series(clean,gulp.parallel(build_pug2html,fonts,styles,webp,svg,minPng));
 
@@ -25,44 +66,8 @@ const serve =  require("./gulp/tasks/serve");
 //gulp.task("style", gulp.series(cleanStyle, style));
 //gulp.task("font", gulp.series(cleanFont, font));
 
-
-gulp.task("img", gulp.parallel(webp, svg, minPng));
-gulp.task("page", pug2html);
-gulp.task("style", style);
-gulp.task("font", font);
-
-//const dev = gulp.parallel();
-
-const build = gulp.series(
-   clean,
-   gulp.parallel(pug2html, font, style, webp, svg, minPng)
-);
-
-//gulp.task("dev", dev);
-gulp.task("build", build);
-gulp.task("serve", serve);
 //module.exports.dev = dev;
 //module.exports.build = build;
-
-//gulp.task('dev', gulp.series('fonts'));
-
-//gulp.task('clean', async function(){
-//	del.sync('dist')
-//});
-
-//gulp.task("less", function () {
-//   return gulp
-//      .src("src/less/**/*.less")
-//      //.pipe(rename({ suffix: ".min" }))
-//      .pipe(
-//         less({})
-//		)
-//		.pipe(autoprefixer({
-//			browsers: ['last 3 versions']
-//		 }))
-//      .pipe(gulp.dest("src/css"))
-//      .pipe(browserSync.reload({ stream: true }));
-//});
 
 //gulp.task("css", function () {
 //   return gulp
@@ -73,32 +78,6 @@ gulp.task("serve", serve);
 //      ])
 //      .pipe(concat("libs.css"))
 //      .pipe(gulp.dest("src/css"));
-//});
-
-//gulp.task("export", function () {
-//   let buildHtml = gulp.src("src/**/*.html").pipe(gulp.dest("dist"));
-//	let buildCss = gulp.src("src/css/**/*.css").pipe(gulp.dest("dist/css"));
-//	let buildJs = gulp.src("src/js/**/*.js").pipe(gulp.dest("dist/js"));
-//	let buildFonts = gulp.src("src/fonts/**/*.*").pipe(gulp.dest("dist/fonts"));
-//	let buildImg = gulp.src("src/img/**/*.*").pipe(gulp.dest("dist/img"));
-//});
-
-//gulp.task('build', gulp.series('clean', 'export'))
-
-//gulp.task("serve", function () {
-//   browserSync.init({
-//      server: {
-//         baseDir: "src",
-//      },
-//   });
-//});
-
-//gulp.task("html", function () {
-//   return gulp.src("src/**/*.html").pipe(browserSync.reload({ stream: true }));
-//});
-
-//gulp.task("script", function () {
-//   return gulp.src("src/js/**/*.js").pipe(browserSync.reload({ stream: true }));
 //});
 
 //gulp.task("js", function () {
@@ -112,11 +91,3 @@ gulp.task("serve", serve);
 //      .pipe(gulp.dest("src/js"))
 //      .pipe(browserSync.reload({ stream: true }));
 //});
-
-//gulp.task("watch", function () {
-//   gulp.watch("src/less/**/*.less", gulp.parallel("less"));
-//   gulp.watch("src/**/*.html", gulp.parallel("html"));
-//   gulp.watch("src/**/*.js", gulp.parallel("script"));
-//});
-
-//gulp.task("default", gulp.parallel("less", "js", "serve", "watch"));
