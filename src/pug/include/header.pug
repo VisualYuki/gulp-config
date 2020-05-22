@@ -1,21 +1,19 @@
 mixin header(colorClass)
-   header(class = `header ${colorClass}`)
-      .header-__inner
-         .header__logo-block
-            img.header__logo-menu( src = "../img/01_header/menu-icon.svg", alt="Меню" )
-            .header__logo-img( src = "../img/01_header/white-logo.webp", alt="ROOVER" )
-            .header__logo-city
-         nav.header__nav
-            ul.header__nav-items
-               each title in ["Диваны", "Где купить","Контакты","О нас"]
-                  li.header__nav-item 
-                     a(href="#") 
-                        = title         
-         .header__right-wrapper
-            .header__sofa-wrapper
-               img.header__sofa-img( src = "../img/01_header/white-logo.webp" )
-               .header__sofa-text
-            .header__phone-wrapper
-               .header__phone-img( src = "../img/01_header/white-logo.webp")
-               .header__phone-text
-          
+   -var itemImages = ['/img/header/house.svg','/img/header/man.svg','/img/header/employee.svg', "/img/header/briefcase.svg","/img/header/success.svg"]
+   header.header
+      .container
+         .header__wrapper
+            a.header__logo-wrapper(href='#')
+               img.header__logo-img(alt='логотип' src='/img/header/logo.svg')
+            nav.header__menu-wrapper
+               .header__mobile-menu-wrapper(contents)
+                  input#header-input.header__mobile-checkbox(type='checkbox' none)
+                  label.header__mobile-label(for='header-input')
+                  .header__mobile-menu-item(none)
+                     img.header__mobile-menu-item-img(src='/img/header/menu.svg' alt='Меню' none)
+                  ul.header__menu
+                     each menuText,index in ['В начало', 'Обо мне', 'Навыки', 'Портфолио','Опыт работы']
+                        li.header__menu-item
+                           a.header__menu-item-link(href='#')
+                              img.header__menu-item-img(src=itemImages[index] alt=menuText)
+                              span=menuText

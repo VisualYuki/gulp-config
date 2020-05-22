@@ -13,7 +13,7 @@ module.exports = function script() {
    return gulp
       .src("src/js/main.js")
       .pipe(gulpif(isProd, eslint()))
-      .pipe(gulpif(isProd, eslint.format()))
+      //.pipe(gulpif(isProd, eslint.format()))
       .pipe(gulpif(isProd, sourcemaps.init()))
       .pipe(
          gulpif(

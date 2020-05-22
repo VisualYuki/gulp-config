@@ -1,6 +1,29 @@
 .header {
-}
+   &-top__wrapper {
+      display: flex;
+      justify-content: flex-end;
+   }
 
-.my-test {
-  color: red;
+   &-top {
+      &__items {
+         display: flex;
+         justify-content: left;
+      }
+
+      &__item {
+      }
+
+      &__item-link {
+         transition-duration: 0.3s;
+         &:hover {
+            background-color: @yellow;
+         }
+
+         padding: 12px 10px;
+
+         color: @black;
+         font-size: 16px;
+         letter-spacing: 40;
+      }
+   }
 }

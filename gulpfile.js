@@ -1,31 +1,63 @@
 let gulp = require("gulp");
 
 const font = require("./gulp/tasks/fonts");
-const img_webp = require("./gulp/tasks/img/img_webp");
 const pug2html = require("./gulp/tasks/pug2html");
 const clean = require("./gulp/tasks/clean/clean");
 const style = require("./gulp/tasks/style");
 const webp = require("./gulp/tasks/img/img_webp");
 const svg = require("./gulp/tasks/img/img_svg");
 const minPng = require("./gulp/tasks/img/min_png");
-const minJpg = require("./gulp/tasks/img/min_jpg");
+var minJpg = require("./gulp/tasks/img/min_jpg");
 const serve = require("./gulp/tasks/serve");
 const script = require("./gulp/tasks/script");
+const cache = require("./gulp/tasks/clearCache");
+
+
+const svgSprite = require("./gulp/tasks/svgSprite");
+
+const newer = require("gulp-newer");
+var imagemin = require("gulp-imagemin");
+function min_jpg() {
+   let src = "src/img/**/*.{jpeg,jpg}";
+   let dist = "dist/min-img";
+
+   return gulp
+      .src(src, { since: gulp.lastRun(min_jpg) })
+      .pipe(newer(dist))
+      .pipe(imagemin())
+      .pipe(gulp.dest(dist));
+}
 
 gulp.task("img", gulp.parallel(webp, svg, minPng));
+gulp.task("min-img", gulp.series(svg,minPng,minJpg));
 gulp.task("page", pug2html);
 gulp.task("style", style);
 gulp.task("font", font);
 
 //const dev = gulp.parallel();
+//export const isDev = true;
+//export const isDev = false;
 
-const build = gulp.series(
-   clean,
-   gulp.parallel(pug2html, style, script, font, webp, svg, minPng)
-); 
+const build = gulp.parallel(
+   pug2html,
+   style,
+   script,
+   font,
+   webp,
+   svg,
+   minPng,
+   svgSprite
+);
 
-gulp.task("build", build);
+gulp.task("build", gulp.series(clean, cache, build));
+
+// watch sprite, browser sync, readme.
+
 gulp.task("dev", gulp.series(build, serve));
+
+gulp.task("default", gulp.parallel(style));
+
+//gulp.task('default', "dev");
 
 let Libs = ["node_modules/@fancyapps/**/*.*", "node_modules/jquery/**/*.*"];
 gulp.task("getLib", gulp.parallel(fancyBox, jquery, slickCarousel));
@@ -34,6 +66,9 @@ gulp.task("getLib", gulp.parallel(fancyBox, jquery, slickCarousel));
 //function libDist(){
 //	return gulp.src()
 //}
+
+// Gulp
+
 
 function fancyBox() {
    return gulp
@@ -52,6 +87,33 @@ function slickCarousel() {
       .src("node_modules/slick-carousel/**/*.*")
       .pipe(gulp.dest("src/libs/slick-carousel"));
 }
+
+//const paths = {
+//   src: {
+//      html: "src/views/pages/*.html",
+//      stylus: "src/stylus/common.styl",
+//      img: "src/img/**/*.*",
+//      video: "src/video/**/*.*",
+//      js: "src/js/*.js",
+//      libs: "src/js/libs/**/*.js",
+//      fonts: "src/fonts/**/*.*",
+//   },
+//   out: {
+//      html: baseDir,
+//      css: baseDir + "/css",
+//      fonts: baseDir + "/fonts",
+//      img: baseDir + "/img",
+//      video: baseDir + "/video",
+//      js: baseDir + "/js",
+//      libs: baseDir + "/js/libs",
+//   },
+//   watch: {
+//      html: "src/views/**/*.html",
+//      stylus: "src/stylus/**/*.{styl, css}",
+//      js: "src/js/**/*.js",
+//   },
+//};
+
 
 //const dev = gulp.series(clean,gulp.parallel(build_pug2html,fonts,styles,webp,svg,minPng));
 
