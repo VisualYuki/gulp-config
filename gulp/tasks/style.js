@@ -10,7 +10,7 @@ const gulpif = require("gulp-if");
 const newer = require("gulp-newer");
 const notify = require("gulp-notify");
 const gulpStylelint = require("gulp-stylelint");
-
+var gcmq = require('gulp-group-css-media-queries');
 //import {isProd} from '../../gulpfile.js';
 
 module.exports = function style() {
@@ -56,6 +56,7 @@ module.exports = function style() {
             )
          )
          .pipe(gulpif(isProd, sourcemaps.write()))
+         .pipe(gulpif(isProd,gcmq()))
          .pipe(rename({ suffix: ".min" }))
          .pipe(gulp.dest(dist))
    );
