@@ -30,6 +30,5 @@ $ gulp build
 ## Особенности
 
 1. За less(css) & pug (html) отвечает gulp
-2. За js отвечает webpack
- 
+
 
