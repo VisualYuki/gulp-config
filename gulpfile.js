@@ -49,11 +49,12 @@ const build = gulp.parallel(
    svgSprite
 );
 
-gulp.task("build", gulp.series(clean, cache, build));
+gulp.task("build", gulp.series(clean, cache, favicons, build));
 
 // watch sprite, browser sync, readme.
 
-gulp.task("dev", gulp.series(build, serve));
+gulp.task("dev", gulp.series(build,favicons,cache,serve));
+
 
 gulp.task("default", gulp.parallel(style));
 
