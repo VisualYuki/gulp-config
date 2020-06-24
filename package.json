@@ -45,8 +45,7 @@
 		"gulp-webp": "^4.0.1",
 		"husky": "^4.2.5",
 		"imagemin-gifsicle": "^7.0.0",
-      "imagemin-pngquant": "^8.0.0",
-      "gulp-group-css-media-queries": "^1.2.2",
+		"imagemin-pngquant": "^8.0.0",
 		"imagemin-webp": "^5.1.0",
 		"less-plugin-autoprefix": "^2.0.0",
 		"magnific-popup": "^1.1.0",
@@ -54,7 +53,6 @@
 		"stylelint": "^13.3.3",
 		"stylelint-config-recess-order": "^2.0.4",
 		"stylelint-config-standard": "^20.0.0",
-		"webpack-stream": "^5.2.1"
 	},
 	"dependencies": {
 		"@fancyapps/fancybox": "^3.5.7",
@@ -69,3 +67,4 @@
 		}
 	}
 }
+

@@ -5,14 +5,17 @@ const terser = require("gulp-terser");
 const rename = require("gulp-rename");
 const sourcemaps = require("gulp-sourcemaps");
 const gulpif = require("gulp-if");
+const concat = require("gulp-concat");
 
 let isDev = true;
 let isProd = !isDev;
 
 module.exports = function script() {
+   let src=["src/js/00_libs/*.js", "src/js/01_scripts/*.js"]
    return gulp
-      .src("src/js/main.js")
-      .pipe(gulpif(isProd, eslint()))
+      .src(src)
+      .pipe(concat("main.js"))
+      //.pipe(gulpif(isProd, eslint()))
       //.pipe(gulpif(isProd, eslint.format()))
       .pipe(gulpif(isProd, sourcemaps.init()))
       .pipe(

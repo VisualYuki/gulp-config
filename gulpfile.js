@@ -1,4 +1,5 @@
 let gulp = require("gulp");
+let rename = require("gulp-rename");
 
 const font = require("./gulp/tasks/fonts");
 const pug2html = require("./gulp/tasks/pug2html");
@@ -7,11 +8,11 @@ const style = require("./gulp/tasks/style");
 const webp = require("./gulp/tasks/img/img_webp");
 const svg = require("./gulp/tasks/img/img_svg");
 const minPng = require("./gulp/tasks/img/min_png");
-var minJpg = require("./gulp/tasks/img/min_jpg");
+const minJpg = require("./gulp/tasks/img/min_jpg");
 const serve = require("./gulp/tasks/serve");
 const script = require("./gulp/tasks/script");
 const cache = require("./gulp/tasks/clearCache");
-
+const favicons = require("./gulp/tasks/favicons");
 
 const svgSprite = require("./gulp/tasks/svgSprite");
 
@@ -28,129 +29,39 @@ function min_jpg() {
       .pipe(gulp.dest(dist));
 }
 
-gulp.task("img", gulp.parallel(webp, svg, minPng));
-gulp.task("min-img", gulp.series(svg,minPng,minJpg));
-gulp.task("page", pug2html);
-gulp.task("style", style);
-gulp.task("font", font);
-
-//const dev = gulp.parallel();
-//export const isDev = true;
-//export const isDev = false;
-
-const build = gulp.parallel(
-   pug2html,
-   style,
-   script,
-   font,
-   webp,
-   svg,
-   minPng,
-   svgSprite
-);
+const build = gulp.parallel(pug2html, style, script, font, webp, svg, minPng, minJpg);
 
 gulp.task("build", gulp.series(clean, cache, favicons, build));
 
-// watch sprite, browser sync, readme.
+gulp.task("dev", gulp.series(build, favicons, cache, serve));
 
-gulp.task("dev", gulp.series(build,favicons,cache,serve));
+gulp.task("getLib", gulp.parallel(fancyBox, jquery, slickCarousel,simplebar,noUiSlider));
 
-
-gulp.task("default", gulp.parallel(style));
-
-//gulp.task('default', "dev");
-
-let Libs = ["node_modules/@fancyapps/**/*.*", "node_modules/jquery/**/*.*"];
-gulp.task("getLib", gulp.parallel(fancyBox, jquery, slickCarousel));
-
-//let cssLibs = ["node_modules/@fancyapps/**/*.{css,sass,scss,less}","node_modules/jquery/**/*.{css,sass,scss,less}"]
-//function libDist(){
-//	return gulp.src()
-//}
-
-// Gulp
-
+function simplebar() {
+   return gulp.src("node_modules/simplebar/dist/simplebar.min.js").pipe(rename("03_simplebar.min.js")).pipe(gulp.dest("src/js/00_libs/"));
+}
 
 function fancyBox() {
-   return gulp
-      .src("node_modules/@fancyapps/**/*.*")
-      .pipe(gulp.dest("src/libs/fancy-box"));
+   return gulp.src("node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js").pipe(rename("01_jquery.fancybox.min.js")).pipe(gulp.dest("src/js/00_libs/"));
 }
 
 function jquery() {
-   return gulp
-      .src("node_modules/jquery/**/*.*")
-      .pipe(gulp.dest("src/libs/jquery"));
+   return gulp.src("node_modules/jquery/dist/jquery.min.js").pipe(rename("00_jquery.min.js")).pipe(gulp.dest("src/js/00_libs/"));
 }
 
 function slickCarousel() {
-   return gulp
-      .src("node_modules/slick-carousel/**/*.*")
-      .pipe(gulp.dest("src/libs/slick-carousel"));
+   return gulp.src("node_modules/slick-carousel/slick/slick.min.js").pipe(rename("02_slick.min.js")).pipe(gulp.dest("src/js/00_libs/"));
 }
 
-//const paths = {
-//   src: {
-//      html: "src/views/pages/*.html",
-//      stylus: "src/stylus/common.styl",
-//      img: "src/img/**/*.*",
-//      video: "src/video/**/*.*",
-//      js: "src/js/*.js",
-//      libs: "src/js/libs/**/*.js",
-//      fonts: "src/fonts/**/*.*",
-//   },
-//   out: {
-//      html: baseDir,
-//      css: baseDir + "/css",
-//      fonts: baseDir + "/fonts",
-//      img: baseDir + "/img",
-//      video: baseDir + "/video",
-//      js: baseDir + "/js",
-//      libs: baseDir + "/js/libs",
-//   },
-//   watch: {
-//      html: "src/views/**/*.html",
-//      stylus: "src/stylus/**/*.{styl, css}",
-//      js: "src/js/**/*.js",
-//   },
-//};
+function noUiSlider() {
+   return gulp.src("node_modules/nouislider/distribute/nouislider.min.js").pipe(rename("04_nouislider.min.js")).pipe(gulp.dest("src/js/00_libs/"));
+}
 
+//gulp.task('default', slickCarousel);
 
-//const dev = gulp.series(clean,gulp.parallel(build_pug2html,fonts,styles,webp,svg,minPng));
-
-//const cleanImg = require("./gulp/tasks/clean/cleanImg");
-//const cleanFont = require("./gulp/tasks/clean/cleanFont");
-//const cleanPage = require("./gulp/tasks/clean/cleanPage");
-//const cleanStyle = require("./gulp/tasks/clean/cleanStyle");
-
-//gulp.task("cleanImg", cleanImg);
-//gulp.task("img", gulp.series(cleanImg, gulp.parallel(webp, svg, minPng)));
-//gulp.task("page", gulp.series(cleanPage, pug2html));
-//gulp.task("style", gulp.series(cleanStyle, style));
-//gulp.task("font", gulp.series(cleanFont, font));
-
-//module.exports.dev = dev;
-//module.exports.build = build;
-
-//gulp.task("css", function () {
-//   return gulp
-//      .src([
-//         "node_modules/normalize.css/normalize.css",
-//         "node_modules/slick-carousel/slick/slick.css",
-//         //"node_modules/magnific-popup/dist/magnific-popup.css",
-//      ])
-//      .pipe(concat("libs.css"))
-//      .pipe(gulp.dest("src/css"));
-//});
-
-//gulp.task("js", function () {
-//   return gulp
-//      .src([
-//         "node_modules/slick-carousel/slick/slick.js",
-//         "node_modules/magnific-popup/dist/jquery.magnific-popup.js",
-//      ])
-//      .pipe(concat("libs.min.js"))
-//      .pipe(uglify())
-//      .pipe(gulp.dest("src/js"))
-//      .pipe(browserSync.reload({ stream: true }));
-//});
+//gulp.task("img", gulp.parallel(webp, svg, minPng));
+//gulp.task("min-img", gulp.series(svg,minPng,minJpg));
+//gulp.task("page", pug2html);
+//gulp.task("style", style);
+//gulp.task("font", font);
+//gulp.task("script", script);

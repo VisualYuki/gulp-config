@@ -23,7 +23,11 @@
       "at-rule-name-space-after": "always",
       "at-rule-semicolon-newline-after": "always",
       "at-rule-semicolon-space-before": "never",
-      "selector-max-class": 2,
-      "unit-whitelist": ["em", "rem", "%", "px", "vh", "vm", "vmax", "vmin","s"]
+      "selector-max-class": null,
+      "unit-whitelist": null,
+      "selector-pseudo-element-colon-notation": "single",
+      "no-missing-end-of-source-newline": null,
+      "color-hex-case": null,
+      "color-hex-length": null
    }
 }
