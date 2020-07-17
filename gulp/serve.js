@@ -9,6 +9,8 @@ const script = require("./script");
 //const include_pug2html =  require("./include_pug2html");
 const server = require("browser-sync").create();
 
+let path = require("./path.js");
+
 module.exports = function serve(cb) {
    server.init({
       server: {

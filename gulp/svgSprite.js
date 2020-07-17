@@ -3,6 +3,8 @@ const rename = require("gulp-rename");
 const svgSprite = require("gulp-svg-sprite");
 const gulpif = require("gulp-if");
 
+let path = require("./path.js");
+
 module.exports = function svgsprite() {
    let src = "src/img/**/*.svg";
    let dist = "dist/img/sprite";

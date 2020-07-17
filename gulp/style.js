@@ -14,6 +14,8 @@ var gcmq = require('gulp-group-css-media-queries');
 
 //import {isProd} from '../../gulpfile.js';
 
+let path = require("./path.js");
+
 module.exports = function style() {
    let src = "src/less/main.less";
    let dist = "dist/css";

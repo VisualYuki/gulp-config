@@ -10,6 +10,8 @@ const concat = require("gulp-concat");
 let isDev = true;
 let isProd = !isDev;
 
+let path = require("./path.js");
+
 module.exports = function script() {
    let src=["src/js/00_libs/*.js", "src/js/01_scripts/*.js"]
    return gulp

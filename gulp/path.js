@@ -1,11 +1,10 @@
+//const baseDir = "./frontend/web/dist";
+const baseDir = "./dist/";
 
-
-const baseDir = "./frontend/web/dist";
-
-export const paths = {
+module.exports =  {
    src: {
-      html: "src/views/pages/*.html",
-      stylus: "src/stylus/common.styl",
+      html: "src/pug/pages/*.pug",
+      less: "src/less/main.less",
       img: "src/img/**/*.*",
       video: "src/video/**/*.*",
       js: "src/js/*.js",
@@ -21,11 +20,11 @@ export const paths = {
       js: baseDir + "/js",
       libs: baseDir + "/js/libs",
    },
-   watch: {
-      html: "src/views/**/*.html",
-      stylus: "src/stylus/**/*.{styl, css}",
-      js: "src/js/**/*.js",
-   },
+   //watch: {
+   //   html: "src/views/**/*.html",
+   //   stylus: "src/stylus/**/*.{styl, css}",
+   //   js: "src/js/**/*.js",
+   //},
 };
 
 //module.exports = function paths() {

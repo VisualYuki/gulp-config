@@ -5,6 +5,8 @@ const pugLinter = require("gulp-pug-linter");
 
 //посмотреть pug linter
 
+let path = require("./path.js");
+
 module.exports = function dev_pug2html() {
    return gulp.src("src/pug/pages/**/*.pug")
       .pipe(pugLinter({ reporter: "default" }))

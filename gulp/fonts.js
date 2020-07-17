@@ -1,6 +1,8 @@
 const gulp = require("gulp");
 const newer = require("gulp-newer");
 
+let path = require("./path.js");
+
 module.exports = function font() {
    let src = "src/fonts/*";
    let dist = "dist/fonts";

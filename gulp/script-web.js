@@ -12,6 +12,8 @@ let isProd = !isDev;
 
 const webpack = require("webpack-stream");
 
+let path = require("./path.js");
+
 module.exports = function script() {
    let webConfig = {
       output: {

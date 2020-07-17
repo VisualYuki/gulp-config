@@ -8,6 +8,8 @@ const notify = require("gulp-notify");
 
 //посмотреть pug linter
 
+let path = require("./path.js");
+
 module.exports = function include_pug2html() {
 	let src = "src/pug/pages/**/*.pug";
 	let dist = "dist/pages";
