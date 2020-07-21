@@ -1,20 +1,20 @@
 let gulp = require("gulp");
 let rename = require("gulp-rename");
 
-const font = require("./gulp/tasks/fonts");
-const pug2html = require("./gulp/tasks/pug2html");
-const clean = require("./gulp/tasks/clean/clean");
-const style = require("./gulp/tasks/style");
-const webp = require("./gulp/tasks/img/img_webp");
-const svg = require("./gulp/tasks/img/img_svg");
-const minPng = require("./gulp/tasks/img/min_png");
-const minJpg = require("./gulp/tasks/img/min_jpg");
-const serve = require("./gulp/tasks/serve");
-const script = require("./gulp/tasks/script");
-const cache = require("./gulp/tasks/clearCache");
-const favicons = require("./gulp/tasks/favicons");
+const font = require("./gulp/fonts");
+const pug2html = require("./gulp/pug2html");
+const clean = require("./gulp/clean/clean");
+const style = require("./gulp/style");
+const webp = require("./gulp/img/img_webp");
+const svg = require("./gulp/img/img_svg");
+const minPng = require("./gulp/img/min_png");
+const minJpg = require("./gulp/img/min_jpg");
+const serve = require("./gulp/serve");
+const script = require("./gulp/script");
+const cache = require("./gulp/clearCache");
+const favicons = require("./gulp/favicons");
 
-const svgSprite = require("./gulp/tasks/svgSprite");
+const svgSprite = require("./gulp/svgSprite");
 
 const newer = require("gulp-newer");
 var imagemin = require("gulp-imagemin");

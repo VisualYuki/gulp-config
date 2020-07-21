@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 html(lang="en")
    head
@@ -15,17 +14,10 @@ html(lang="en")
       link(rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5")
       meta(name="msapplication-TileColor" content="#da532c")
       meta(name="theme-color" content="#ffffff")
-      
+      //-meta(name="viewport" content="width=900")
    body
       .body__inner
          .main-wrapper
-            include ../include/main-header.pug
-            include ../include/bread-crumbs.pug
-            
             block content
             
-            include ../include/prefooter.pug
-            include ../include/footer.pug
-         include ../include/header__mobile-menu.pug
-         include ../include/offer-window.pug
       script(src="/js/main.min.js")
