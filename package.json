@@ -52,7 +52,7 @@
 		"puglint-stylish": "^1.1.0",
 		"stylelint": "^13.3.3",
 		"stylelint-config-recess-order": "^2.0.4",
-		"stylelint-config-standard": "^20.0.0",
+		"stylelint-config-standard": "^20.0.0"
 	},
 	"dependencies": {
 		"@fancyapps/fancybox": "^3.5.7",
