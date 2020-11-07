@@ -7,7 +7,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const gulpif = require("gulp-if");
 const concat = require("gulp-concat");
 
-let isDev = true;
+let isDev = false;
 let isProd = !isDev;
 
 let path = require("./path.js");
@@ -20,14 +20,14 @@ module.exports = function script() {
       //.pipe(gulpif(isProd, eslint()))
       //.pipe(gulpif(isProd, eslint.format()))
       .pipe(gulpif(isProd, sourcemaps.init()))
-      .pipe(
-         gulpif(
-            isProd,
-            babel({
-               presets: ["@babel/env"],
-            })
-         )
-      )
+      //.pipe(
+      //   gulpif(
+      //      isProd,
+      //      babel({
+      //         presets: ["@babel/env"],
+      //      })
+      //   )
+      //)
       .pipe(gulpif(isProd, terser()))
       .pipe(gulpif(isProd, sourcemaps.write()))
       .pipe(rename({ suffix: ".min" }))
