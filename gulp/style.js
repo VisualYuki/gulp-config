@@ -10,7 +10,8 @@ const gulpif = require("gulp-if");
 const newer = require("gulp-newer");
 const notify = require("gulp-notify");
 const gulpStylelint = require("gulp-stylelint");
-var gcmq = require('gulp-group-css-media-queries');
+const gcmq = require('gulp-group-css-media-queries');
+const lessGlob = require('gulp-less-glob');
 
 //import {isProd} from '../../gulpfile.js';
 
@@ -41,6 +42,7 @@ module.exports = function style() {
             })
          )
          .pipe(gulpif(isProd, sourcemaps.init()))
+         .pipe(lessGlob())
          .pipe(less())
 
          .pipe(gulpif(isProd, autoprefixer()))

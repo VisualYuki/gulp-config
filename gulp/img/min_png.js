@@ -6,7 +6,7 @@ module.exports = function min_png() {
    let src = "src/img/**/*.png";
    let dist = "dist/min-img";
    return gulp
-      .src(src,{since: gulp.lastRun(min_png)})
+      .src(src)
       .pipe(newer(dist))
       .pipe(
          gulpPngquant({
