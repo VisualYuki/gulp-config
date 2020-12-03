@@ -6,11 +6,9 @@ const gulp = require("gulp");
 const gulpWebp = require("gulp-webp");
 const newer = require("gulp-newer");
 
-let src = "src/img/**/*.{png,jpg,jpeg}";
-let dest = "dist/img";
+let config = require("../config.js");
 
 module.exports = function imgWebp() {
-   let src = "src/img/**/*.{png,jpg,jpeg}";
-   let dist = "dist/img";
-   return gulp.src(src,{since: gulp.lastRun(imgWebp)}).pipe(newer(dist)).pipe(gulpWebp()).pipe(gulp.dest(dist));
+
+   return gulp.src(config.src.webp,{since: gulp.lastRun(imgWebp)}).pipe(newer(config.out.img)).pipe(gulpWebp()).pipe(gulp.dest(config.out.img));
 };

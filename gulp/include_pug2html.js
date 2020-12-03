@@ -8,14 +8,11 @@ const notify = require("gulp-notify");
 
 //посмотреть pug linter
 
-let path = require("./path.js");
+let config = require("./config.js");
 
 module.exports = function include_pug2html() {
-	let src = "src/pug/pages/**/*.pug";
-	let dist = "dist/pages";
-	
    return gulp
-		.src(src)
+		.src(config.src.pug)
       .pipe(plumber())
       .pipe(pugLinter({ reporter: "default" }))
       .pipe(
@@ -29,5 +26,5 @@ module.exports = function include_pug2html() {
 			this.end();
 		})
       .pipe(htmlValidator())
-      .pipe(gulp.dest(dist));
+      .pipe(gulp.dest(config.out.html));
 };

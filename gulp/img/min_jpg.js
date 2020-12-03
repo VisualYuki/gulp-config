@@ -2,9 +2,11 @@ const gulp = require("gulp");
 var imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
 
+let config = require("../config.js");
+
 module.exports = function min_jpg() {
    let src = "src/img/**/*.{jpeg,jpg}";
-   let dist = "dist/min-img";
+   let dist = config.out.baseDir + "/min-img";
    return (
       gulp
          .src(src)

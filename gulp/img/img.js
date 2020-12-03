@@ -5,6 +5,8 @@ const webp = require("imagemin-webp");
 const gulpPngquant = require("gulp-pngquant");
 const svgmin = require("gulp-svgmin");
 
+//let config = require("./config.js");
+
 module.exports = function img() {
 		
    gulp.task("webp", function () {

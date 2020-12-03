@@ -6,13 +6,12 @@ const plumber = require("gulp-plumber");
 const newer = require("gulp-newer");
 const pugLintStylish = require("puglint-stylish");
 
-module.exports = function pug2html() {
-   let src = "src/pug/pages/**/*.pug";
-   let dist = "dist/pages";
+let config = require("./config.js");
 
+module.exports = function pug2html() {
    return gulp
-      .src(src, { since: gulp.lastRun(pug2html) })
-      .pipe(newer(dist))
+      .src(config.src.pug, { since: gulp.lastRun(pug2html) })
+      .pipe(newer(config.out.html))
       .pipe(plumber())
       .pipe(pugLinter({ reporter: pugLintStylish }))
       .pipe(
@@ -20,6 +19,6 @@ module.exports = function pug2html() {
             pretty: true,
          })
       )
-		.pipe(htmlValidator())
-      .pipe(gulp.dest(dist));
+      .pipe(htmlValidator())
+      .pipe(gulp.dest(config.out.html));
 };

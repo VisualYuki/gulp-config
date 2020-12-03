@@ -10,25 +10,18 @@ const gulpif = require("gulp-if");
 const newer = require("gulp-newer");
 const notify = require("gulp-notify");
 const gulpStylelint = require("gulp-stylelint");
-const gcmq = require('gulp-group-css-media-queries');
-const lessGlob = require('gulp-less-glob');
+const gcmq = require("gulp-group-css-media-queries");
+const lessGlob = require("gulp-less-glob");
+const ccso = require("gulp-csso");
 
-//import {isProd} from '../../gulpfile.js';
-
-let path = require("./path.js");
+let config = require("./config.js");
 
 module.exports = function style() {
-   let src = "src/less/main.less";
-   let dist = "dist/css";
-
-   let isDev = true;
-   let isProd = !isDev;
-
    return (
       gulp
-         //.src(src, {since: gulp.lastRun(style)})
-         .src(src)
-         //.pipe(newer(dist))
+         //.src(config.src.less, { since: gulp.lastRun(style) })
+         .src(config.src.less)
+         .pipe(newer(config.out.css))
          .pipe(plumber())
          .pipe(
             gulpStylelint({
@@ -41,15 +34,14 @@ module.exports = function style() {
                ],
             })
          )
-         .pipe(gulpif(isProd, sourcemaps.init()))
+         //.pipe(gulpif(config.isDev, sourcemaps.init()))
          .pipe(lessGlob())
          .pipe(less())
-
-         .pipe(gulpif(isProd, autoprefixer()))
-         .pipe(gulpif(isProd, shorthand()))
+         .pipe(gulpif(config.isProd, autoprefixer()))
+         .pipe(gulpif(config.isProd, shorthand()))
          .pipe(
             gulpif(
-               isProd,
+               config.isProd,
                cleanCSS(
                   {
                      level: 2,
@@ -60,9 +52,9 @@ module.exports = function style() {
                )
             )
          )
-         .pipe(gulpif(isProd,gcmq()))
-         .pipe(gulpif(isProd, sourcemaps.write()))
-         .pipe(rename({ suffix: ".min" }))
-         .pipe(gulp.dest(dist))
+         .pipe(gulpif(config.isProd, gcmq()))
+         //.pipe(gulpif(config.isDev, sourcemaps.write()))
+         .pipe(gulpif(config.isProd, ccso()))
+         .pipe(gulp.dest(config.out.css))
    );
 };
