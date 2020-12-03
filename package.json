@@ -24,7 +24,8 @@
       "svgSprite": "gulp svgSprite",
       "font": "gulp font",
       "clean": "gulp clean",
-      "svg": "gulp svg"
+      "svg": "gulp svg",
+      "getLibs": "gulp getLibs"
    },
    "devDependencies": {
       "@babel/core": "^7.12.9",
