@@ -1,6 +1,6 @@
 
-const outDir = "test";
-const isDev = false;
+const outDir = "dist";
+const isDev = true;
 
 module.exports =  {
    src: {

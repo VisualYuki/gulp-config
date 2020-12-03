@@ -33,4 +33,16 @@ gulp.task("font", font);
 gulp.task("clean", clean);
 gulp.task("svg", svg);
 
-gulp.task("webp", webp);
+gulp.task("getLibs", gulp.parallel(getJsLibs, getCssLibs));
+
+function getJsLibs() {
+   //node_modules/nouislider/distribute/nouislider.min.js
+   //node_modules/simplebar/dist/simplebar.min.js
+   let jsPath = ["node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js", "node_modules/jquery/dist/jquery.min.js", "node_modules/slick-carousel/slick/slick.min.js"];
+   return gulp.src(jsPath).pipe(gulp.dest("src/js/00_libs"));
+}
+
+function getCssLibs() {
+   let cssPath = ["node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css", "node_modules/slick-carousel/slick/slick.less", "node_modules/slick-carousel/slick/slick-theme.less"];
+   return gulp.src(cssPath).pipe(gulp.dest("src/less/libs/"));
+}
