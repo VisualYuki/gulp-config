@@ -12,12 +12,16 @@
 * {
    position: relative;
 
-   font-family: "";
-   font-size: 16px;
-   letter-spacing: 0.03em;
+ 
 
 
 }
+
+.page-wrap {
+   width: 100vw;
+   overflow-x: hidden;
+}
+
 
 picture {
    height: 100%;
@@ -32,6 +36,11 @@ picture img {
 body {
    width: 100vw;
    overflow-x: hidden;
+
+   font-family: "";
+   font-size: 16px;
+   letter-spacing: 0.03em;
+   line-height: 105%;
 }
 
 a {
@@ -44,3 +53,18 @@ a {
 p, a, span {
    .tran-fast;
 }
+
+.hover-link-trigger{
+   &:hover {
+      .hover-link-target{
+         color: red;
+      }
+   }
+}
+
+.hover-link-target{
+   &:hover {
+      color: red;
+   }
+}
+

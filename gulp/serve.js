@@ -14,7 +14,7 @@ let config = require("./config.js");
 
 module.exports = function serve() {
    server.init({
-      server: { 
+      server: {
          baseDir: config.out.baseDir,
          directory: true,
       },
@@ -28,7 +28,7 @@ module.exports = function serve() {
    });
 
    gulp.watch("src/img/**/*.{png,jpg,webp}", gulp.series(webp));
-   gulp.watch("src/img/**/*.svg", gulp.series(svg));
+   gulp.watch("src/svg/**/*.svg", gulp.series(svg));
    gulp.watch("src/img/**/*.png", gulp.series(minPng)).on("change", server.reload);
    gulp.watch("src/img/**/*.jpg", gulp.series(minJpg)).on("change", server.reload);
    gulp.watch("src/less/**/*.less", style);
@@ -46,13 +46,12 @@ module.exports = function serve() {
       server.reload();
       //}
    });
-   gulp.watch(config.out.baseDir + "/img/**/*.{png,jpg,webp,svg}").on("change", server.reload);
+   gulp.watch(config.out.baseDir + "/img/**/*.{png,jpg,webp}").on("change", server.reload);
+   gulp.watch(config.out.baseDir + "/svg/*.svg").on("change", server.reload);
    server.watch([config.out.baseDir + "/img/**/*.{png,jpg,webp,svg}"], function (event, file) {
       if (event === "change" || event === "add") {
          server.reload();
       }
    });
    gulp.watch(config.out.baseDir + "/js/**/*.js").on("change", server.reload);
-
-
 };
