@@ -3,10 +3,17 @@
 
    padding: 0 10px;
    margin: 0 auto;
+   overflow: hidden;
 
    ._500({
       padding: 0 5px;
    });
+
+   &_full-width {
+      max-width: 1980px;
+      margin: 0 auto;
+      overflow: hidden;
+   }
 }
 
 * {
@@ -51,6 +58,8 @@ span {
    .tran-fast;
 }
 
+/* ---------- HOVER EFFECTS --------- */
+
 .hover-link-trigger {
    &:hover {
       .hover-link-target {
@@ -65,6 +74,44 @@ span {
    }
 }
 
+/* -------- FANCYBOX-SETTINGS ------- */
+
+//отцентровать модалку по центру экрана
 .fancybox-slide{
    .flex(center;center);
+}
+
+//если нужно, чтобы все слайды были одинаковые по высоте
+.slick-track {
+   display: flex;
+}
+
+.slick-slide {
+   height: auto;
+   flex: 0 0 auto;
+}
+
+// сделать отступы у элементов слайдера между собой
+.slick-list  {
+   margin: 0 -10px;
+}
+
+.slick-slide {
+   margin: 0 10px;
+}
+
+// показать справа часть слайда на мобилках
+.slick-list {
+   ._900({
+      padding-right: 100px !important;
+   });
+
+   ._375({
+      padding-right: 50px !important;
+   });
+
+   ._375({
+      padding-right: 35px !important;
+   });
+   
 }
