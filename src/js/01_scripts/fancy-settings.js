@@ -351,7 +351,7 @@ var defaults = {
          PLAY_START: "Запустить слайдшоу",
          PLAY_STOP: "Приостановить слайдшоу",
          FULL_SCREEN: "На весь экран",
-         THUMBS: "Thumbnails",
+         THUMBS: "Миниатюра",
          DOWNLOAD: "Загрузки",
          SHARE: "Поделиться",
          ZOOM: "Увеличение",
