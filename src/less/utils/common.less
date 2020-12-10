@@ -77,7 +77,7 @@ span {
 /* -------- FANCYBOX-SETTINGS ------- */
 
 //отцентровать модалку по центру экрана
-.fancybox-slide{
+.fancybox-slide {
    .flex(center;center);
 }
 
@@ -92,7 +92,7 @@ span {
 }
 
 // сделать отступы у элементов слайдера между собой
-.slick-list  {
+.slick-list {
    margin: 0 -10px;
 }
 
@@ -113,5 +113,62 @@ span {
    ._375({
       padding-right: 35px !important;
    });
-   
 }
+
+/* ---------- CUSTOM SELECT --------- */
+
+.custom-select {
+   cursor: pointer;
+   user-select: none;
+
+   &__selected-option {
+      .flex(space-between, center);
+
+      &-icon {
+         transition-duration: 0.5s;
+      }
+
+      &.active &-icon {
+         transform: rotate(180deg);
+      }
+   }
+
+   &__option {
+      &-items {
+         display: none;
+
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+      }
+
+      &-item {
+         width: 100%;
+         text-align: center;
+
+         &:hover {
+            color: red;
+         }
+      }
+   }
+}
+
+//https://codepen.io/wallaceerick/pen/ctsCz
+
+/* ------- CUSTOM TOGGLE-MENU ------- */
+
+.js-toggle{
+   &-trigger {
+      &.active {
+         .js-toggle-target {
+            display: block;
+         }
+      }
+   }
+
+   &-target {
+      display: none;
+   }
+}
+

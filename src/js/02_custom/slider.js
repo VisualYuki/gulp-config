@@ -1,4 +1,4 @@
-$(".dgdfgdfg").slick({
+$(".test").slick({
    autoplay: true,
    autoplaySpeed: 10000,
    infinite: true,
