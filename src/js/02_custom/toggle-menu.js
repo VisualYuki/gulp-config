@@ -7,5 +7,9 @@ $(document).ready(function () {
 
          lastToggleItem = this;
       }
+      else if(this == lastToggleItem) {
+         lastToggleItem = undefined;
+         $(this).removeClass("active");
+      }
    });
 });

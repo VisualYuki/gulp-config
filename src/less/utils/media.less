@@ -1,3 +1,16 @@
+
+.mobile(@rules) {
+   @media (max-width: 800px) {
+      @rules();
+   }
+}
+
+.desktop(@rules) {
+   @media (min-width: 800px) {
+      @rules();
+   }
+}
+
 ._2200(@rules) {
    @media (max-width: 2200px) {
       @rules();

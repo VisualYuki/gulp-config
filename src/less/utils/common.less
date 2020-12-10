@@ -158,10 +158,10 @@ span {
 
 /* ------- CUSTOM TOGGLE-MENU ------- */
 
-.js-toggle{
+.js-toggle {
    &-trigger {
       &.active {
-         .js-toggle-target {
+         & ~ .js-toggle-target {
             display: block;
          }
       }
@@ -171,4 +171,3 @@ span {
       display: none;
    }
 }
-
