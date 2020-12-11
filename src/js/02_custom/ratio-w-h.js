@@ -1,6 +1,6 @@
 $(document).ready(function () {
    
-   setRatio();hj
+   setRatio();
    $(window).on("resize", function(){
       setRatio();
    });
