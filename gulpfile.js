@@ -14,7 +14,7 @@ const favicons = require("./gulp/favicons");
 const svgSprite = require("./gulp/svgSprite");
 
 //MAIN TASK
-const build = gulp.parallel(pug2html, style, script, font, svg, minPng, minJpg, favicons);
+const build = gulp.parallel(pug2html, style, script, font, svg, minPng, minJpg, favicons,svgSprite);
 gulp.task("build", gulp.series(clean, cache, build));
 gulp.task("dev", gulp.series(build, cache, serve));
 
@@ -32,6 +32,7 @@ gulp.task("svgSprite", svgSprite);
 gulp.task("font", font);
 gulp.task("clean", clean);
 gulp.task("svg", svg);
+
 
 gulp.task("getLibs", gulp.parallel(getJsLibs, getCssLibs));
 
