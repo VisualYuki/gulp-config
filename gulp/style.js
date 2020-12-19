@@ -37,7 +37,8 @@ module.exports = function style() {
          //.pipe(gulpif(config.isDev, sourcemaps.init()))
          .pipe(lessGlob())
          .pipe(less())
-         .pipe(gulpif(config.isProd, autoprefixer()))
+         //.pipe(gulpif(config.isProd, autoprefixer()))
+         .pipe(autoprefixer())
          .pipe(gulpif(config.isProd, shorthand()))
          .pipe(
             gulpif(

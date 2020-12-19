@@ -25,7 +25,8 @@
       "font": "gulp font",
       "clean": "gulp clean",
       "svg": "gulp svg",
-      "getLibs": "gulp getLibs"
+      "getLibs": "gulp getLibs",
+      "img": "gulp svg && gulp minJpg && gulp minPng && gulp webp"
    },
    "devDependencies": {
       "@babel/core": "^7.12.9",

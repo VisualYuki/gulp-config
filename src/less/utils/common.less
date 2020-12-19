@@ -3,6 +3,7 @@
 
    padding: 0 10px;
    margin: 0 auto;
+   overflow: hidden;
 
    .desk_top({
       max-width: 1140px;
@@ -26,16 +27,20 @@
    });
 
 
+   &_full-width {
+      max-width: 1980px;
+      margin: 0 auto;
+      overflow: hidden;
+   }
 }
 
 * {
    position: relative;
+}
 
-   font-family: "";
-   font-size: 16px;
-   letter-spacing: 0.03em;
-
-
+.page-wrap {
+   width: 100vw;
+   overflow-x: hidden;
 }
 
 picture {
@@ -51,6 +56,11 @@ picture img {
 body {
    width: 100vw;
    overflow-x: hidden;
+
+   font-family: "";
+   font-size: 16px;
+   letter-spacing: 0.03em;
+   line-height: 105%;
 }
 
 a {
@@ -60,6 +70,122 @@ a {
    }
 }
 
-p, a, span {
+p,
+a,
+span {
    .tran-fast;
+}
+
+/* ---------- HOVER EFFECTS --------- */
+
+.hover-link-trigger {
+   &:hover {
+      .hover-link-target {
+         color: red;
+      }
+   }
+}
+
+.hover-link-target {
+   &:hover {
+      color: red;
+   }
+}
+
+/* -------- FANCYBOX-SETTINGS ------- */
+
+//отцентровать модалку по центру экрана
+.fancybox-slide {
+   .flex(center;center);
+}
+
+//если нужно, чтобы все слайды были одинаковые по высоте
+.slick-track {
+   display: flex;
+}
+
+.slick-slide {
+   height: auto;
+   flex: 0 0 auto;
+}
+
+// сделать отступы у элементов слайдера между собой
+.slick-list {
+   margin: 0 -10px;
+}
+
+.slick-slide {
+   margin: 0 10px;
+}
+
+// показать справа часть слайда на мобилках
+.slick-list {
+   ._900({
+      padding-right: 100px !important;
+   });
+
+   ._375({
+      padding-right: 50px !important;
+   });
+
+   ._375({
+      padding-right: 35px !important;
+   });
+}
+
+/* ---------- CUSTOM SELECT --------- */
+
+.custom-select {
+   cursor: pointer;
+   user-select: none;
+
+   &__selected-option {
+      .flex(space-between, center);
+
+      &-icon {
+         transition-duration: 0.5s;
+      }
+
+      &.active &-icon {
+         transform: rotate(180deg);
+      }
+   }
+
+   &__option {
+      &-items {
+         display: none;
+
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+      }
+
+      &-item {
+         width: 100%;
+         text-align: center;
+
+         &:hover {
+            color: red;
+         }
+      }
+   }
+}
+
+//https://codepen.io/wallaceerick/pen/ctsCz
+
+/* ------- CUSTOM TOGGLE-MENU ------- */
+
+.js-toggle {
+   &-trigger {
+      &.active {
+         & ~ .js-toggle-target {
+            display: block;
+         }
+      }
+   }
+
+   &-target {
+      display: none;
+   }
 }
