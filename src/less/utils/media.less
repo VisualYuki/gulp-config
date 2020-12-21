@@ -1,15 +1,35 @@
 
-.mobile(@rules) {
-   @media (max-width: 800px) {
+.desk_top(@rules) {
+   @media (max-width: 1500px) {
       @rules();
    }
 }
 
-.desktop(@rules) {
-   @media (min-width: 800px) {
+.desk_bottom(@rules) {
+   @media (max-width: 1199px) {
       @rules();
    }
 }
+
+.tablet_top(@rules) {
+   @media (max-width: 991px) {
+      @rules();
+   }
+}
+
+.tablet_bottom(@rules) {
+   @media (max-width: 767px) {
+      @rules();
+   }
+}
+
+.mobile(@rules) {
+   @media (max-width: 575px) {
+      @rules();
+   }
+}
+
+
 
 ._2200(@rules) {
    @media (max-width: 2200px) {
