@@ -2,8 +2,8 @@
 
 ## Начальная настройка
 1. `` $ npm install `` - установить node_modules P.S должна быть установлена node.js глобально
-2. `` $ npm run getLibs или gulp getLibs `` - скачать .js и .css файлы из библиотек из node_modules P.S все файлы .css нужно переименовать .less
-2. `` $ npm update --save`` - обновить пакеты до актуальной версии
+2. `` $ npm update --save`` - обновить пакеты до актуальной версии 
+3. `` $ npm run getLibs или gulp getLibs `` - скачать .js и .css файлы из библиотек из node_modules P.S все файлы .css нужно переименовать .less
 
 ## Gulp задачи
 1. `` $ gulp dev  или npm run dev`` - запуск сервера для разработки и отслеживания файлов (development mode) 
@@ -14,9 +14,7 @@
 
 ## Особенности
 
-1. svg-спрайты генерируеться gulp-ом 
-   1-1. стили находяться в /src/less/utils/sprite.less
-   1-2. svg картинки находяться в /dist/svg-sprite/sprite.svg
+1. 
 2. 
  
 
