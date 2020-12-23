@@ -9,6 +9,12 @@
 1. `` $ gulp dev  или npm run dev`` - запуск сервера для разработки и отслеживания файлов (development mode) 
 2. `` $ gulp build или npm run build`` - очистка папки dist и полная компиляцией всех файлов из папки src в dist (production mode)
 
+## Библиотеки
+1. fancybox - модальные окна (http://fancyapps.com/fancybox/3/docs)
+2. slick-slider - слайдер (https://kenwheeler.github.io/slick/)
+3. 
+
+
 ## Помощь
 Если совсем что-то непонятно, то можно мне написать vk - https://vk.com/moshkin_denis, или telegram - @denis_moshkin
 

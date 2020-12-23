@@ -14,6 +14,7 @@
       "dev": "gulp dev",
       "build": "gulp build",
       "script": "gulp script",
+      "pug2html": "gulp pug2html",
       "style": "gulp style",
       "minJpg": "gulp minJpg",
       "minPng": "gulp minPng",

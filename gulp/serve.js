@@ -20,7 +20,7 @@ module.exports = function serve() {
          directory: true,
       },
       open: false,
-      port: 3000,
+   
       ghostMode: {
          clicks: false,
          forms: false,
