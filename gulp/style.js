@@ -39,10 +39,10 @@ module.exports = function style() {
          .pipe(less())
          //.pipe(gulpif(config.isProd, autoprefixer()))
          .pipe(autoprefixer())
-         .pipe(gulpif(config.isProd, shorthand()))
+         .pipe(gulpif(process.env.NODE_ENV == "production", shorthand()))
          .pipe(
             gulpif(
-               config.isProd,
+               process.env.NODE_ENV == "production",
                cleanCSS(
                   {
                      level: 2,
@@ -53,9 +53,9 @@ module.exports = function style() {
                )
             )
          )
-         .pipe(gulpif(config.isProd, gcmq()))
+         .pipe(gulpif(process.env.NODE_ENV == "production", gcmq()))
          //.pipe(gulpif(config.isDev, sourcemaps.write()))
-         .pipe(gulpif(config.isProd, ccso()))
+         .pipe(gulpif(process.env.NODE_ENV == "production", ccso()))
          .pipe(gulp.dest(config.out.css))
    );
 };

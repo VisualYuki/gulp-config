@@ -17,7 +17,7 @@ module.exports = function script() {
          .pipe(concat("main.js"))
          //.pipe(gulpif(isProd, eslint()))
          //.pipe(gulpif(isProd, eslint.format()))
-         .pipe(gulpif(config.isProd, sourcemaps.init()))
+         .pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.init()))
          //.pipe(
          //   gulpif(
          //      isProd,
@@ -26,8 +26,8 @@ module.exports = function script() {
          //      })
          //   )
          //)
-         .pipe(gulpif(config.isProd, terser()))
-         .pipe(gulpif(config.isProd, sourcemaps.write()))
+         .pipe(gulpif(process.env.NODE_ENV == "production", terser()))
+         .pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.write()))
          //.pipe(rename({ suffix: ".min" }))
          .pipe(gulp.dest(config.out.js))
    );
