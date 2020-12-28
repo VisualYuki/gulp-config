@@ -1,4 +1,5 @@
 $(document).ready(function () {
+   //кастомный выпадающий список
    let selectedOption = $(".custom-select__selected-option");
    let optionItemsWrap = $(".custom-select__option-items");
    let optionItems = $(optionItemsWrap).children(".custom-select__option-item");
