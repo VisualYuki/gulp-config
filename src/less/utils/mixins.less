@@ -10,6 +10,11 @@
       font-size: @Fmax * 1px;
    }
 
+   @media (max-width: @Vmin * 1px) {
+      font-size: @Fmin * 1px;
+   }
+
+
    @media (min-width: @Vmin * 1px) and (max-width: @Vmax * 1px) {
       @k: (@Fmax - @Fmin)/ (@Vmax - @Vmin);
       @b: @Fmin - (@k * @Vmin);
