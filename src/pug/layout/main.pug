@@ -4,14 +4,27 @@ html(lang="ru")
    head
       meta(charset="UTF-8")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      meta(http-equiv="X-UA-Compatible" content="IE=edge")
       link(rel="stylesheet", href="../css/main.css")
       title Описание сайта
+
+      // Мета тэги SEO
+      meta(name="description" content ="Инструмент - интернет-магазин электроинструментов, бензоинструмента, расходных и комплектующих материалов от ведущих производителей с доставкой по всей России")
+      meta(name="keywords" content="Электроинструмент бензоинструмент запчасти интернет-магазин Инструмент")
+
+      // Open graph - социальные мета теги
+      meta(name="og:type" content="website")
+      meta(name="og:url" content="https://instrument.ms")
+      meta(name="og:image" content="ссылка на лого")
+      meta(name="og:title" content="Инструмент")
+      meta(name="og:description" content="Интернет-магазин Инструмент - instrument.ms - электроинструмент, бензоинструмент  и оборудование: климатическое, садовое, клининговое, автогаражное – купить с доставкой")
+
+
       //-meta(name="viewport" content="width=900")
    body
-      .svg-sprite
-         include ../include/sprite.svg
+
       include ./header.pug
       main.page-content
          block content
       include ./footer.pug
-      script(src="../js/main.js")
+      script(async src="../js/main.js")

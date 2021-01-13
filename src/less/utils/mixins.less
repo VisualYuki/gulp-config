@@ -14,7 +14,6 @@
       font-size: @Fmin * 1px;
    }
 
-
    @media (min-width: @Vmin * 1px) and (max-width: @Vmax * 1px) {
       @k: (@Fmax - @Fmin)/ (@Vmax - @Vmin);
       @b: @Fmin - (@k * @Vmin);
@@ -22,6 +21,12 @@
 
       font-size: calc(@k*100vw + @b1);
    }
+}
+
+.grid(@columnCount,@gap: 0) {
+   display: grid;
+   grid-template-columns: repeat(@columnCount, minmax(0, auto));
+   grid-gap: @gap * 1px;
 }
 
 .padding(@Direction; @Pmax; @Pmin; @Vmax: 1300; @Vmin: 320) {
@@ -71,6 +76,10 @@
 .margin(@Direction; @Mmax; @Mmin; @Vmax: 1300; @Vmin: 320) {
    @media (min-width: @Vmax * 1px) {
       margin-@{Direction}: @Mmax * 1px;
+   }
+
+   @media (max-width: @Vmin * 1px) {
+      margin-@{Direction}: @Mmin * 1px;
    }
 
    @media (min-width: @Vmin * 1px) and (max-width: @Vmax * 1px) {

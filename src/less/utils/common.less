@@ -3,7 +3,7 @@
 
    padding: 0 10px;
    margin: 0 auto;
-   overflow: hidden;
+   //overflow: hidden;
 
    .desk_top({
       max-width: 1140px;
@@ -25,7 +25,6 @@
       width: 100%;
       padding: 0 10px;
    });
-
 
    &_full-width {
       max-width: 1980px;
@@ -55,24 +54,46 @@ picture img {
 
 body {
    width: 100vw;
+   min-height: 200vh;
    overflow-x: hidden;
 
-   font-family: "";
+   font-family: "PT Root UI";
    font-size: 16px;
    letter-spacing: 0.03em;
-   line-height: 105%;
+
+   &::-webkit-scrollbar {
+      width: 10px;
+   }
+
+   &::-webkit-scrollbar-track {
+      background: rgb(192, 192, 192);
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background: @primary-main;
+   }
 }
 
 a {
    .tran-fast;
+   white-space: nowrap;
    &.inline {
       display: inline;
    }
 }
 
+span {
+   white-space: nowrap;
+}
+
+p {
+   line-height: 115%;
+}
 p,
 a,
-span {
+span,
+svg,
+svg * {
    .tran-fast;
 }
 
@@ -100,38 +121,38 @@ span {
 }
 
 //если нужно, чтобы все слайды были одинаковые по высоте
-.slick-track {
-   display: flex;
-}
+//.slick-track {
+//   display: flex;
+//}
 
-.slick-slide {
-   height: auto;
-   flex: 0 0 auto;
-}
+//.slick-slide {
+//   height: auto;
+//   flex: 0 0 auto;
+//}
 
 // сделать отступы у элементов слайдера между собой
-.slick-list {
-   margin: 0 -10px;
-}
+//.slick-list {
+//   margin: 0 -10px;
+//}
 
-.slick-slide {
-   margin: 0 10px;
-}
+//.slick-slide {
+//   margin: 0 10px;
+//}
 
 // показать справа часть слайда на мобилках
-.slick-list {
-   ._900({
-      padding-right: 100px !important;
-   });
+//.slick-list {
+//   ._900({
+//      padding-right: 100px !important;
+//   });
 
-   ._375({
-      padding-right: 50px !important;
-   });
+//   ._375({
+//      padding-right: 50px !important;
+//   });
 
-   ._375({
-      padding-right: 35px !important;
-   });
-}
+//   ._375({
+//      padding-right: 35px !important;
+//   });
+//}
 
 /* ---------- CUSTOM SELECT --------- */
 
@@ -172,6 +193,15 @@ span {
    }
 }
 
+//.custom-select.collection__custom-select
+//   .custom-select__selected-option.collection__selected-option
+//      .custom-select__selected-option-text Дате
+//      img.custom-select__selected-option-icon(src="../min-img/icons/trangle.png" alt="")
+//   ul.custom-select__option-items
+//      li.custom-select__option-item.collection__option-item Дате
+//      li.custom-select__option-item.collection__option-item Убыванию цены
+//      li.custom-select__option-item.collection__option-item Возрастанию цены
+
 //https://codepen.io/wallaceerick/pen/ctsCz
 
 /* ------- CUSTOM TOGGLE-MENU ------- */
@@ -188,4 +218,77 @@ span {
    &-target {
       display: none;
    }
+}
+
+/* ------- DROPDOWN ------- */
+
+.dropdown-trigger {
+   position: relative;
+   .flex(flex-start,center);
+   cursor: pointer;
+
+   &:hover .dropdown-trigger__trangle {
+      transform: rotate(180deg);
+   }
+
+   .dropdown-trigger__trangle {
+      width: 0;
+      height: 0;
+      margin-left: 8px;
+      margin-top: 2px;
+
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 6px solid red;
+
+      .tran-fast;
+   }
+
+   &:hover .dropdown-target {
+      opacity: 1;
+   }
+}
+
+.dropdown-target {
+   position: absolute;
+   top: 100%;
+   right: 50%;
+   transform: translateX(50%);
+
+   opacity: 0;
+   .tran-fast;
+}
+
+// z-index
+
+.z-index--2 {
+   z-index: -10;
+}
+
+.z-index--1 {
+   z-index: -1;
+}
+
+.z-index-0 {
+   z-index: 0;
+}
+
+.z-index-1 {
+   z-index: 5;
+}
+
+.z-index-2 {
+   z-index: 10;
+}
+
+.z-index-3 {
+   z-index: 20;
+}
+
+.z-index-4 {
+   z-index: 50;
+}
+
+.z-index-5 {
+   z-index: 100;
 }

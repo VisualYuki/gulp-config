@@ -5,6 +5,7 @@ const pugLinter = require("gulp-pug-linter");
 const plumber = require("gulp-plumber");
 const newer = require("gulp-newer");
 const notify = require("gulp-notify");
+const prettier = require("gulp-prettier");
 
 //посмотреть pug linter
 
@@ -24,7 +25,8 @@ module.exports = function include_pug2html() {
 		.on("error", function(err){
 			console.log(err.message);
 			this.end();
-		})
+      })
+      .pipe(prettier({}))
       .pipe(htmlValidator())
       .pipe(gulp.dest(config.out.html));
 };

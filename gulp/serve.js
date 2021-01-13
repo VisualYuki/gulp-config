@@ -10,6 +10,7 @@ const script = require("./script");
 const include_pug2html = require("./include_pug2html");
 const server = require("browser-sync").create();
 const favicons = require("./favicons");
+const fonts = require("./fonts");
 
 let config = require("./config.js");
 
@@ -59,4 +60,5 @@ module.exports = function serve() {
    gulp.watch(config.out.baseDir + "/js/**/*.js").on("change", server.reload);
 
    gulp.watch("src/favicons/*.*", favicons);
+   gulp.watch("src/fonts/**/*.*", gulp.series(fonts));
 };
