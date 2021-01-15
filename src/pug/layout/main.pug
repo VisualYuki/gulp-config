@@ -21,7 +21,10 @@ html(lang="ru")
 
 
       //-meta(name="viewport" content="width=900")
-   body
+   body.unreg-user
+      // добавляем класс unreg-user, если пользователь не зарегестрирован
+      // добавляем класс reg-user, если пользователь зарегестрирован
+      // далее блоки reg-block и unreg-block скрываются или показываются взависимости от класса на тэге body.
 
       include ./header.pug
       main.page-content

@@ -115,11 +115,6 @@ svg * {
 
 /* -------- FANCYBOX-SETTINGS ------- */
 
-//отцентровать модалку по центру экрана
-.fancybox-slide {
-   .flex(center;center);
-}
-
 //если нужно, чтобы все слайды были одинаковые по высоте
 //.slick-track {
 //   display: flex;
@@ -220,7 +215,7 @@ svg * {
    }
 }
 
-/* ------- DROPDOWN ------- */
+/* ------- CUSTOM DROPDOWN ------- */
 
 .dropdown-trigger {
    position: relative;
@@ -259,36 +254,168 @@ svg * {
    .tran-fast;
 }
 
-// z-index
-
-.z-index--2 {
-   z-index: -10;
+// задать троеточие в конце строки, если не хватает места
+.one-line-dots {
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
 }
 
-.z-index--1 {
-   z-index: -1;
+/* ------- CUSTOM READMORE ------- */
+.custom-readmore {
+   &.active {
+      .custom-readmore {
+         &__content {
+            max-height: max-content;
+         }
+
+         &__btn {
+            .opened-text {
+               display: none;
+            }
+
+            .closed-text {
+               display: flex;
+            }
+         }
+      }
+   }
+
+   &__btn {
+      cursor: pointer;
+
+      .closed-text {
+         .flex(flex-start,center);
+         display: none;
+      }
+
+      .icon {
+         margin-top: 4px;
+      }
+   }
+
+   &__content {
+      margin-bottom: 5px;
+      transition-duration: 1s;
+
+      &:before {
+         content: "";
+         .z-index-1;
+
+         position: absolute;
+         bottom: 0;
+         left: 0;
+
+         width: 100%;
+         height: 20px;
+
+         background: linear-gradient(0deg, rgba(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+      }
+   }
 }
 
-.z-index-0 {
-   z-index: 0;
+// менять отображение содержимого страницы в зависимости от авторизованности пользователя на странице
+body.reg-user {
+   .reg-block {
+      display: block;
+   }
+
+   .unreg-block {
+      display: none;
+   }
 }
 
-.z-index-1 {
-   z-index: 5;
+body.unreg-user {
+   .reg-block {
+      display: none;
+   }
+
+   .unreg-block {
+      display: block;
+   }
 }
 
-.z-index-2 {
-   z-index: 10;
+// настройки для динамического текста, создаваемового через админку.
+.admin-text {
+   p {
+      .margin(bottom,24,16);
+   }
+
+   ol {
+      list-style-type: decimal;
+
+      li {
+         list-style: decimal;
+      }
+   }
+
+   ul {
+      li {
+         list-style: disc;
+      }
+   }
+
+   ul,
+   ol {
+      padding-left: 40px;
+   }
+
+   li {
+      margin-bottom: 10px;
+   }
 }
 
-.z-index-3 {
-   z-index: 20;
+.modals-wrap {
+   display: none;
 }
 
-.z-index-4 {
-   z-index: 50;
+.hover-underline-link {
+   border-bottom: 1px solid transparent;
+
+   &:hover {
+      border-bottom-color: yellow;
+   }
 }
 
-.z-index-5 {
-   z-index: 100;
+// default-breadcrumbs
+
+.default-breadcrumbs {
+   padding: 15px 0 15px 0;
+
+   .site-mobile({
+      padding: 10px 0 5px 0;
+   });
+
+   .items {
+      .flex(flex-start, center);
+      flex-wrap: wrap;
+
+      ._425({
+         padding: 10px 0;
+      });
+   }
+
+   .item {
+      margin-bottom: 10px;
+
+      white-space: nowrap;
+
+      &:not(:last-child) {
+         margin-right: 23px;
+
+         &:after {
+            content: ">";
+
+            position: absolute;
+            top: 50%;
+            right: -17px;
+            transform: translateY(-50%);
+            color: @black;
+         }
+      }
+
+      &:last-child {
+         pointer-events: none;
+      }
+   }
 }
