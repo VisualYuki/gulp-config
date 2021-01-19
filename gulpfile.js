@@ -12,10 +12,11 @@ const script = require("./gulp/script");
 const cache = require("./gulp/clearCache");
 const favicons = require("./gulp/favicons");
 const svgSprite = require("./gulp/svgSprite");
+const includeLibs = require("./gulp/include-libs");
 
 //MAIN TASK
 
-const build = gulp.parallel(pug2html, style, script, font, svg, minPng, minJpg, favicons,svgSprite, webp);
+const build = gulp.parallel(pug2html, style, script, font, svg, minPng, minJpg, favicons,svgSprite, webp, includeLibs);
 gulp.task("build", gulp.series(clean, cache, build));
 gulp.task("dev", gulp.series(build, cache, serve));
 
@@ -33,7 +34,7 @@ gulp.task("svgSprite", svgSprite);
 gulp.task("font", font);
 gulp.task("clean", clean);
 gulp.task("svg", svg);
-
+gulp.task("includeLibs", includeLibs);
 
 gulp.task("getLibs", gulp.parallel(getJsLibs, getCssLibs));
 

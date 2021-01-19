@@ -11,6 +11,7 @@ const include_pug2html = require("./include_pug2html");
 const server = require("browser-sync").create();
 const favicons = require("./favicons");
 const fonts = require("./fonts");
+const includeLibs = require("./include-libs");
 
 let config = require("./config.js");
 
@@ -44,7 +45,7 @@ module.exports = function serve() {
    gulp.watch("src/less/**/*.less", style);
    gulp.watch(config.out.baseDir + "/css/**/*.css").on("change", function (event, file) {
       //if (event === "change" || event === "add") {
-      server.reload();
+      server.reload();p
       //}
    });
 
@@ -61,4 +62,6 @@ module.exports = function serve() {
 
    gulp.watch("src/favicons/*.*", favicons);
    gulp.watch("src/fonts/**/*.*", gulp.series(fonts));
+
+   gulp.watch(["src/less/include-libs/*.*", "src/js/include-libs/*.*"], gulp.series(includeLibs));
 };

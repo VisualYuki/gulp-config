@@ -30,7 +30,8 @@
       "clean": "gulp clean",
       "svg": "gulp svg",
       "getLibs": "gulp getLibs",
-      "img": "gulp svg && gulp minJpg && gulp minPng && gulp webp"
+      "img": "gulp svg && gulp minJpg && gulp minPng && gulp webp",
+      "includeLibs": "gulp includeLibs"
    },
    "devDependencies": {
       "@babel/core": "^7.12.10",

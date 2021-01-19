@@ -34,7 +34,7 @@ $(document).ready(function () {
       //this.value = this.value.substr(0, 5);
 
       //if(this.value.length >= 2) {
-         
+
       //   if(!addedPlaceholder) {
       //      this.value += ":";
       //      addedPlaceholder = true;
@@ -42,7 +42,6 @@ $(document).ready(function () {
       //   else {
       //      this.value = this.value[0];
       //   }
-         
 
       //   //if(this.value.indexof(":") === -1) {
       //   //   this.value += ":";
@@ -50,7 +49,7 @@ $(document).ready(function () {
       //   //else {
       //   //   this.value += ":";
       // //  }
-         
+
       //}
    });
    $(`input[name='time']`).on("focusout", function (e) {
@@ -63,6 +62,19 @@ $(document).ready(function () {
       }
    });
 
+   // Проверка ввода числа
+   $(`input.js-number`).on("input", function (e) {
+      saveOnlyDigits(this);
+   });
+
+   // Проверка ввода только строки
+   $(`input.js-string`).on("input", function (e) {
+      removeDigits(this);
+   });
+
+   function removeDigits(input) {
+      input.value = input.value.replace(/\d/g, "");
+   }
 
    function saveOnlyDigits(input) {
       input.value = input.value.replace(/\D/g, "");
@@ -83,11 +95,11 @@ $(document).ready(function () {
    // Вывести ошибку, если поле пустое, после потери фокуса, если поле не требует проверки ввода
    $(`input[name!='email'][name!='phone'][name!='time']`).on("focusout", function () {
       //if (!$(this).hasClass("not-must-input")) {
-         if (this.value.length == 0) {
-            $(this).closest(".default-input").addClass("has-error").removeClass("has-success");
-         } else {
-            $(this).closest(".default-input").removeClass("has-error").addClass("has-success");
-         }
+      if (this.value.length == 0) {
+         $(this).closest(".default-input").addClass("has-error").removeClass("has-success");
+      } else {
+         $(this).closest(".default-input").removeClass("has-error").addClass("has-success");
+      }
       //}
    });
 
