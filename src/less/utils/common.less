@@ -205,7 +205,7 @@ svg * {
    &-trigger {
       &.active {
          & ~ .js-toggle-target {
-            display: block;
+            display: block !important;
          }
       }
    }
@@ -416,6 +416,19 @@ body.unreg-user {
 
       &:last-child {
          pointer-events: none;
+      }
+   }
+}
+
+// CUSTOM-TABS
+.js-tabs-content {
+   .items {
+      .item {
+         display: none;
+      }
+      
+      .item.active {
+         display: block;
       }
    }
 }
