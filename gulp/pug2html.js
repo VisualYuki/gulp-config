@@ -14,7 +14,7 @@ module.exports = function pug2html() {
       .src(config.src.pug, { since: gulp.lastRun(pug2html) })
       .pipe(newer(config.out.html))
       .pipe(plumber())
-      .pipe(pugLinter({ reporter: pugLintStylish }))
+      //.pipe(pugLinter({ reporter: pugLintStylish }))
       .pipe(
          pug({
             pretty: true,

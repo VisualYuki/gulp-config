@@ -1,7 +1,7 @@
 # Front end
 
 ## Начальная настройка
-   0. `` $ npm run start `` -- скачать node_modules, обновить версии пакетов, получить js плагины
+   0. `` $ npm run start `` -- скачать node_modules, обновить версии пакетов, запустить задачу npm run dev
 
 ## Gulp задачи
    ### Development mode

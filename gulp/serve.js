@@ -45,7 +45,7 @@ module.exports = function serve() {
    gulp.watch("src/less/**/*.less", style);
    gulp.watch(config.out.baseDir + "/css/**/*.css").on("change", function (event, file) {
       //if (event === "change" || event === "add") {
-      server.reload();p
+      server.reload();
       //}
    });
 

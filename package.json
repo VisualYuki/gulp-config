@@ -72,13 +72,11 @@
       "gulp-uglify": "^3.0.2",
       "gulp-w3c-html-validator": "^2.0.1",
       "gulp-webp": "^4.0.1",
-      "husky": "^4.3.6",
       "imagemin": "^7.0.1",
       "imagemin-gifsicle": "^7.0.0",
       "imagemin-pngquant": "^8.0.0",
       "imagemin-webp": "^5.1.0",
       "less-plugin-autoprefix": "^2.0.0",
-      "magnific-popup": "^1.1.0",
       "puglint-stylish": "^1.1.0",
       "stylelint": "^13.8.0",
       "stylelint-config-recess-order": "^2.3.0",
@@ -87,7 +85,6 @@
    "dependencies": {
       "@fancyapps/fancybox": "^3.5.7",
       "jquery": "^3.5.1",
-      "normalize.css": "^8.0.1",
       "slick-carousel": "^1.8.1"
    },
    "extends": "pug-lint.json"

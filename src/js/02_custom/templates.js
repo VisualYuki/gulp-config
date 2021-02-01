@@ -1,3 +1,7 @@
+$(document).ready(function () {
+  
+});
+
 $(".test").slick({
    autoplay: true,
    autoplaySpeed: 10000,
@@ -31,3 +35,4 @@ $(".test").slick({
       },
    ],
 });
+

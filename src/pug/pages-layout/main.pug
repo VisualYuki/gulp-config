@@ -5,12 +5,12 @@ html(lang="ru")
       meta(charset="UTF-8")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
       meta(http-equiv="X-UA-Compatible" content="IE=edge")
-      link(rel="stylesheet", href="../css/main.css")
-      title Описание сайта
+      link(rel="stylesheet", href="/css/main.css")
+      title Водоканал
 
       // Мета тэги SEO
-      meta(name="description" content ="Инструмент - интернет-магазин электроинструментов, бензоинструмента, расходных и комплектующих материалов от ведущих производителей с доставкой по всей России")
-      meta(name="keywords" content="Электроинструмент бензоинструмент запчасти интернет-магазин Инструмент")
+      meta(name="description" content ="")
+      meta(name="keywords" content="")
 
       // Open graph - социальные мета теги
       meta(name="og:type" content="website")
@@ -19,15 +19,14 @@ html(lang="ru")
       meta(name="og:title" content="Инструмент")
       meta(name="og:description" content="Интернет-магазин Инструмент - instrument.ms - электроинструмент, бензоинструмент  и оборудование: климатическое, садовое, клининговое, автогаражное – купить с доставкой")
 
-
       //-meta(name="viewport" content="width=900")
    body.unreg-user
       // добавляем класс unreg-user, если пользователь не зарегестрирован
       // добавляем класс reg-user, если пользователь зарегестрирован
       // далее блоки reg-block и unreg-block скрываются или показываются взависимости от класса на тэге body.
-
-      include ./header.pug
-      main.page-content
-         block content
-      include ./footer.pug
-      script(async src="../js/main.js")
+      .body-inner
+         include ../page-layout/header.pug
+         main.page-content
+            block content
+         include ../page-layout/footer.pug
+         script(async src="/js/main.js")

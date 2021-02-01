@@ -15,8 +15,7 @@ const svgSprite = require("./gulp/svgSprite");
 const includeLibs = require("./gulp/include-libs");
 
 //MAIN TASK
-
-const build = gulp.parallel(pug2html, style, script, font, svg, minPng, minJpg, favicons,svgSprite, webp, includeLibs);
+const build = gulp.series(pug2html, style, script, font, svg, minPng, minJpg, favicons,svgSprite, webp, includeLibs);
 gulp.task("build", gulp.series(clean, cache, build));
 gulp.task("dev", gulp.series(build, cache, serve));
 
@@ -36,11 +35,9 @@ gulp.task("clean", clean);
 gulp.task("svg", svg);
 gulp.task("includeLibs", includeLibs);
 
-gulp.task("getLibs", gulp.parallel(getJsLibs, getCssLibs));
+gulp.task("getLibs", gulp.series(getJsLibs, getCssLibs));
 
 function getJsLibs() {
-   //node_modules/nouislider/distribute/nouislider.min.js
-   //node_modules/simplebar/dist/simplebar.min.js
    let jsPath = ["node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js", "node_modules/jquery/dist/jquery.min.js", "node_modules/slick-carousel/slick/slick.min.js"];
    return gulp.src(jsPath).pipe(gulp.dest("src/js/00_libs"));
 }

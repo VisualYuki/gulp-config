@@ -1,30 +1,33 @@
 $(document).ready(function () {
    //кастомный выпадающий список
-   let selectedOption = $(".custom-select__selected-option");
+   let selectedOption = document.getElementsByClassName("custom-select__selected-option");
    let lastSelectedOption;
-   //let selectedOption;
-   //let optionItemsWrap = $(".custom-select__option-items");
    let optionItemsWrap;
-   //let optionItems = $(optionItemsWrap).children(".custom-select__option-item");
    let optionItems;
 
-   $(selectedOption).on("click", function (e) {
-      //selectedOption = $()
+   //.addEventListener()
+   //debugger;
+   selectedOption[0].addEventListener('click', function(e){
       e.stopPropagation();
       $(this).toggleClass("active");
-      optionItemsWrap = $(this).siblings('.custom-select__option-items');
+      optionItemsWrap = $(this).siblings(".custom-select__option-items");
       $(optionItemsWrap).toggle();
       optionItems = $(optionItemsWrap).children(".custom-select__option-item");
       lastSelectedOption = $(optionItemsWrap).siblings(".custom-select__selected-option");
       $(optionItems).each(function (index, optionItem) {
          $(optionItem).on("click", function () {
+            $(optionItem).closest(".custom-select.must-input").addClass('has-success')
             let optionItemText = $(this).text();
             $(lastSelectedOption).find(".custom-select__selected-option-text").text(optionItemText);
          });
       });
    });
-
-  
+   
+   //$(selectedOption).on("click", function (e) {
+   //   debugger;
+   //   //selectedOption = $()
+     
+   //});
 
    $(document).on("click", function () {
       closeOptionItems();

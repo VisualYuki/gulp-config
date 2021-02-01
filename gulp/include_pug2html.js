@@ -13,9 +13,9 @@ let config = require("./config.js");
 
 module.exports = function include_pug2html() {
    return gulp
-		.src(config.src.pug)
+      .src("src/pug/pages/_index.pug")
       .pipe(plumber())
-      .pipe(pugLinter({ reporter: "default" }))
+      //.pipe(pugLinter({ reporter: "default" }))
       .pipe(
          pug({
             pretty: true,

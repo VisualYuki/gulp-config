@@ -52,26 +52,29 @@ picture img {
    height: 100%;
 }
 
-body {
-   width: 100vw;
+.body-inner {
+   width: 100%;
+   overflow: hidden;
    min-height: 200vh;
-   overflow-x: hidden;
+}
 
-   font-family: "PT Root UI";
+body {
+   //font-family: "";
    font-size: 16px;
    letter-spacing: 0.03em;
 
-   &::-webkit-scrollbar {
-      width: 10px;
-   }
+   // задать цвет скроллу монитора (только на хром подобных браузерах)
+   //&::-webkit-scrollbar {
+   //   width: 10px;
+   //}
 
-   &::-webkit-scrollbar-track {
-      background: rgb(192, 192, 192);
-   }
+   //&::-webkit-scrollbar-track {
+   //   background: rgb(192, 192, 192);
+   //}
 
-   &::-webkit-scrollbar-thumb {
-      background: @primary-main;
-   }
+   //&::-webkit-scrollbar-thumb {
+   //   background: red;
+   //}
 }
 
 a {
@@ -88,6 +91,7 @@ span {
 
 p {
    line-height: 115%;
+   white-space: normal;
 }
 p,
 a,
@@ -102,14 +106,14 @@ svg * {
 .hover-link-trigger {
    &:hover {
       .hover-link-target {
-         color: red;
+         color: red !important;
       }
    }
 }
 
 .hover-link-target {
    &:hover {
-      color: red;
+      color: red !important;
    }
 }
 
@@ -188,14 +192,14 @@ svg * {
    }
 }
 
-//.custom-select.collection__custom-select
-//   .custom-select__selected-option.collection__selected-option
+//.custom-select
+//   .custom-select__selected-option
 //      .custom-select__selected-option-text Дате
 //      img.custom-select__selected-option-icon(src="../min-img/icons/trangle.png" alt="")
 //   ul.custom-select__option-items
-//      li.custom-select__option-item.collection__option-item Дате
-//      li.custom-select__option-item.collection__option-item Убыванию цены
-//      li.custom-select__option-item.collection__option-item Возрастанию цены
+//      li.custom-select__option-item Дате
+//      li.custom-select__option-item Убыванию цены
+//      li.custom-select__option-item Возрастанию цены
 
 //https://codepen.io/wallaceerick/pen/ctsCz
 
@@ -426,9 +430,90 @@ body.unreg-user {
       .item {
          display: none;
       }
-      
+
       .item.active {
          display: block;
       }
    }
 }
+
+// custom toggle-chebox
+.toggle-checkbox {
+   @primary: @but-00;
+   @primary-light: #947ada;
+   @gray: #9a9999;
+
+   &__toggle {
+      position: relative;
+      display: block;
+      width: 40px;
+      height: 20px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transform: translate3d(0, 0, 0);
+
+      &:before {
+         content: "";
+         position: relative;
+         top: 3px;
+         left: 3px;
+         width: 34px;
+         height: 14px;
+         display: block;
+         background: @gray;
+         border-radius: 8px;
+         transition: background 0.2s ease;
+      }
+   }
+
+   &__btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      display: block;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(@gray, 0.5);
+      transition: all 0.2s ease;
+
+      &:before {
+         content: "";
+         position: absolute;
+         display: block;
+         margin: -18px;
+         width: 56px;
+         height: 56px;
+         background: rgba(@primary, 0.5);
+         border-radius: 50%;
+         transform: scale(0);
+         opacity: 1;
+         pointer-events: none;
+      }
+   }
+
+   &__input {
+      display: none;
+   }
+
+   &__input:checked ~ &__toggle {
+      &:before {
+         background: @primary-light;
+      }
+
+      span {
+         background: @primary;
+         transform: translateX(20px);
+         transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+         box-shadow: 0 3px 8px rgba(@primary, 0.2);
+
+         &:before {
+            transform: scale(1);
+            opacity: 0;
+            transition: all 0.4s ease;
+         }
+      }
+   }
+}
+
