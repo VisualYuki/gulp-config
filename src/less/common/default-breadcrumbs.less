@@ -1,0 +1,50 @@
+// default-breadcrumbs
+
+.default-breadcrumbs {
+   padding: 32px 0 24px;
+
+   .site-mobile({ 
+      padding: 12px 0;
+   });
+
+   .items {
+      .flex(flex-start, center);
+      flex-wrap: wrap;
+
+      ._425({
+         padding: 10px 0;
+      });
+   }
+
+   .item {
+      margin-bottom: 10px;
+
+      white-space: nowrap;
+      .nav;
+
+      &:not(:last-child) {
+         margin-right: 23px;
+         color: @back-98;
+
+         &:hover {
+            color: @but-65;
+         }
+
+         &:after {
+            content: ">";
+
+            position: absolute;
+            top: 50%;
+            right: -17px;
+
+            color: @back-98;
+            transform: translateY(-50%);
+         }
+      }
+
+      &:last-child {
+         pointer-events: none;
+         color: black;
+      }
+   }
+}

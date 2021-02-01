@@ -1,27 +1,123 @@
-
-
 //inputs
 .default-input {
    padding: 20px 30px;
 
    font-size: 18px;
-
    border-radius: 3px;
 
-   &.error {
-      border-color: red;
-   }
-
-   &.success {
-      border-color: green;
-   }
-
-   &::placeholder {
-      color: gray;
-   }
-
-   &.full-width {
+   .input {
       width: 100%;
+      padding: 12px;
+
+      .h4;
+      color: black;
+
+      border: 1px solid black;
+      border-radius: 2px;
+
+      &:focus {
+         border-color: black;
+      }
+
+      &::placeholder {
+         //.font-size(18,14);
+         color: gray;
+      }
+
+      &:focus ~ .placeholder,
+      &:valid ~ .placeholder {
+         top: 0;
+         left: 10px;
+         z-index: 0;
+
+         height: max-content;
+         padding: 3px;
+         
+
+         font-size: 11px;
+         text-indent: 0;
+         line-height: normal;
+         transform: none;
+      }
+   }
+
+   &__placeholder {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      //width: 100%;
+      //height: 100%;
+
+      font-size: 14px;
+      //line-height: 16px;
+      color: gray;
+      .tran-fast;
+      pointer-events: none;
+   }
+
+   &.textarea {
+      textarea {
+         height: 112px;
+      }
+
+      .placeholder {
+         top: 26px;
+      }
+   }
+
+   &.has-success {
+      .input {
+         border: 1px solid green;
+      }
+   }
+
+   &.must-input {
+   }
+
+   &__icon {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+   }
+
+   &__error-text {
+      display: none;
+
+      font-size: 12px;
+      color: red;
+      text-indent: 3px;
+   }
+
+   &.has-error {
+      .input {
+         border: 1px solid red;
+      }
+
+      .error-text {
+         display: block;
+      }
+   }
+
+   &.password {
+      .default-input {
+         &__icon {
+            cursor: pointer;
+            &:hover {
+               svg * {
+                  fill: red;
+               }
+            }
+         }
+
+         &__icon.active {
+            svg * {
+               fill: blue;
+            }
+         }
+      }
    }
 }
 

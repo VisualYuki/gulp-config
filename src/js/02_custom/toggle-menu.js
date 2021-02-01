@@ -1,6 +1,7 @@
 $(document).ready(function () {
-   let lastToggleItem;
+   let lastToggleItem = $('.js-toggle-trigger.active')[0];
    $(".js-toggle-trigger").on("click", function () {
+    
       if (this != lastToggleItem) {
          $(this).addClass("active");
          $(lastToggleItem).removeClass("active");
@@ -12,4 +13,5 @@ $(document).ready(function () {
          $(this).removeClass("active");
       }
    });
+
 });

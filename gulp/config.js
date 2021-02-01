@@ -12,7 +12,7 @@ module.exports =  {
       fonts: "src/fonts/**/*.*",
       favicons: "src/favicons/**/*.*",
       svg: "src/svg/**/*.svg",
-      webp: "src/img/**/*.{png,jpg,jpeg}",
+      webp: "src/img/**/*.{pngsad,jpg,jpeg}",
       jpg: "src/img/**/*.{jpeg,jpg}",
       png: "src/img/**/*.png",
       includeScripts: "src/js/include-scripts/**/*.js"

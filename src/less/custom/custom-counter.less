@@ -1,0 +1,45 @@
+// default-counter
+
+.default-counter {
+   width: 100px;
+
+   &__arrow {
+      user-select: none;
+   }
+
+   &.transparent {
+   }
+
+   &__left-arrow,
+   &__right-arrow {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+
+      .flex(center,center);
+      width: 30px;
+      height: 100%;
+
+      cursor: pointer;
+      text-align: center;
+   }
+
+   &__left-arrow {
+      left: 0;
+   }
+
+   &__right-arrow {
+      right: 0;
+   }
+
+   &__input {
+      width: 100%;
+      height: 100%;
+
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+
+      text-align: center;
+   }
+}

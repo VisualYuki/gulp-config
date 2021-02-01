@@ -1,0 +1,88 @@
+.custom-radio {
+   @default: @back-cc;
+   @primary: @but-65;
+   position: relative;
+
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: nowrap;
+
+   cursor: pointer;
+
+   &__input {
+      display: none;
+   }
+
+   &__design {
+      position: relative;
+
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+
+      border: 1px solid @default;
+      border-radius: 100%;
+
+      &:before,
+      &:after {
+         content: "";
+
+         position: absolute;
+         left: 50%;
+         top: 50%;
+
+         transform: translateX(-50%) translateY(-50%);
+         transition: all 0.5s;
+      }
+
+      &:before {
+         background-color: rgba(242, 242, 242, 0.9);
+         border-radius: 50%;
+         height: 5px;
+         width: 5px;
+         z-index: -1;
+      }
+
+      &:after {
+         background-color: @blue;
+         border-radius: 50%;
+
+         height: 0;
+         width: 0;
+      }
+   }
+
+   &__input:checked + &__design::after {
+      width: 8px;
+      height: 8px;
+   }
+
+   &__input:checked + &__design::before {
+      animation: pulse 1s cubic-bezier(0.15, 0.8, 0.5, 1);
+   }
+
+   &__input:checked + &__design {
+      border-color: @primary;
+   }
+
+   &__input:checked + &__design::before {
+      height: 13px;
+      opacity: 1;
+      width: 13px;
+   }
+
+   &__text {
+     .h4;
+   }
+
+
+   @keyframes pulse {
+      0% {
+         box-shadow: 0 0 0 0px rgba(#0883d1, 1);
+      }
+      100% {
+         box-shadow: 0 0 0 10px rgba(242, 242, 242, 0);
+      }
+   }
+}

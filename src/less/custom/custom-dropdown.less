@@ -1,0 +1,39 @@
+/* ------- CUSTOM DROPDOWN ------- */
+
+.dropdown-trigger {
+   position: relative;
+   .flex(flex-start,center);
+   cursor: pointer;
+
+   &:hover .dropdown-trigger__trangle {
+      transform: rotate(180deg);
+   }
+
+   .dropdown-trigger__trangle {
+      width: 0;
+      height: 0;
+      margin-left: 8px;
+      margin-top: 2px;
+
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 6px solid red;
+
+      .tran-fast;
+   }
+
+   &:hover .dropdown-target {
+      opacity: 1;
+   }
+}
+
+.dropdown-target {
+   position: absolute;
+   top: 100%;
+   right: 50%;
+   transform: translateX(50%);
+
+   opacity: 0;
+   .tran-fast;
+}
+
