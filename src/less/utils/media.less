@@ -29,7 +29,11 @@
    }
 }
 
-
+.site-mobile(@rules) {
+   @media (max-width: 767px) {
+      @rules();
+   }
+}
 
 ._2200(@rules) {
    @media (max-width: 2200px) {

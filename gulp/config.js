@@ -1,39 +1,38 @@
-
 const outDir = "dist";
-const isDev = true;
 
 module.exports =  {
    src: {
-      pug: "src/pug/pages/*.pug",
+      pug: "src/pug/pages/**/*.pug",
+      includePug: "src/pug/pages/_index.pug",
       less: "src/less/main.less",
-      img: "src/img/**/*.*",
-      video: "src/video/**/*.*",
-      js: "src/js/*.js",
+      //img: "src/img/**/*.*",
+      //video: "src/video/**/*.*",
+      js: "src/js/**/*.js",
       libs: "src/js/libs/**/*.js",
       fonts: "src/fonts/**/*.*",
-      favicons: "src/favicons/*",
-      svg: "src/svg/*.svg",
-      webp: "src/img/**/*.{png,jpg,jpeg}"
+      favicons: "src/favicons/**/*.*",
+      svg: "src/svg/**/*.svg",
+      webp: "src/img/**/*.{png,jpg,jpeg}",
+      jpg: "src/img/**/*.{jpeg,jpg}",
+      png: "src/img/**/*.png",
+      includeScripts: "src/js/include-scripts/**/*.js"
    },
    out: {
       html: outDir + "/pages",
       css: outDir + "/css",
       fonts: outDir + "/fonts",
-      img: outDir + "/img",
-      video: outDir + "/video",
+      webpImg: outDir + "/webp-img",
+      minImg: outDir + "/min-img",
+      //video: outDir + "/video",
       js: outDir + "/js",
       libs: outDir + "/js/libs",
       favicons: outDir + "/favicons",
       baseDir: outDir,
-      svg: outDir + "/svg/"
-     
+      svg: outDir + "/svg/",
+      includeScripts: outDir + "/include-scripts"
    },
-   //watch: {
-   //   html: "src/views/**/*.html",
-   //   stylus: "src/stylus/**/*.{styl, css}",
-   //   js: "src/js/**/*.js",
-   //},
-   isDev: isDev,
-   isProd: !isDev
-  
+   watch: {
+      includePug: ["src/pug/include/**/*.pug", "src/pug/page-layout/**/*.pug", "src/pug/pages-layout/**/*.pug"],
+      includeLibs: ["src/less/include-libs/**/*.*", "src/js/include-libs/**/*.*"]
+   },
 };

@@ -15,7 +15,7 @@ const svgSprite = require("./gulp/svgSprite");
 const includeLibs = require("./gulp/include-libs");
 
 //MAIN TASK
-const build = gulp.series(pug2html, style, script, font, svg, minPng, minJpg, favicons,svgSprite, webp, includeLibs);
+const build = gulp.series(pug2html, style, script, font, svg, minPng, minJpg, favicons, webp, includeLibs);
 gulp.task("build", gulp.series(clean, cache, build));
 gulp.task("dev", gulp.series(build, cache, serve));
 

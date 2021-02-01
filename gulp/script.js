@@ -15,12 +15,12 @@ module.exports = function script() {
       gulp
          .src(src)
          .pipe(concat("main.js"))
-         //.pipe(gulpif(isProd, eslint()))
-         //.pipe(gulpif(isProd, eslint.format()))
+         //.pipe(gulpif(process.env.NODE_ENV == "production", eslint()))
+         //.pipe(gulpif(process.env.NODE_ENV == "production", eslint.format()))
          .pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.init()))
          //.pipe(
          //   gulpif(
-         //      isProd,
+         //      process.env.NODE_ENV == "production",
          //      babel({
          //         presets: ["@babel/env"],
          //      })
@@ -28,7 +28,6 @@ module.exports = function script() {
          //)
          .pipe(gulpif(process.env.NODE_ENV == "production", terser()))
          .pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.write()))
-         //.pipe(rename({ suffix: ".min" }))
          .pipe(gulp.dest(config.out.js))
    );
 };

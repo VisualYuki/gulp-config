@@ -5,15 +5,13 @@ const newer = require("gulp-newer");
 let config = require("../config.js");
 
 module.exports = function min_jpg() {
-   let src = "src/img/**/*.{jpeg,jpg}";
-   let dist = config.out.baseDir + "/min-img";
    return (
       gulp
-         .src(src)
+         .src(config.src.jpg)
          //.pipe(newer(dist))
          .pipe(imagemin([imagemin.mozjpeg({ progressive: true })]))
          //.pipe(imagemin([imagemin.mozjpeg({ quality: 75, progressive: true })]))
-         .pipe(gulp.dest(dist))
+         .pipe(gulp.dest(config.out.minImg))
    );
 };
 

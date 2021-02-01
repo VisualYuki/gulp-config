@@ -1,5 +1,4 @@
 let gulp = require("gulp");
-
 let config = require("./config.js");
 
 module.exports = function favicons() {

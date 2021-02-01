@@ -10,5 +10,5 @@ let config = require("../config.js");
 
 module.exports = function imgWebp() {
 
-   return gulp.src(config.src.webp,{since: gulp.lastRun(imgWebp)}).pipe(newer(config.out.img)).pipe(gulpWebp()).pipe(gulp.dest(config.out.img));
+   return gulp.src(config.src.webp,{since: gulp.lastRun(imgWebp)}).pipe(newer(config.out.webpImg)).pipe(gulpWebp()).pipe(gulp.dest(config.out.webpImg));
 };

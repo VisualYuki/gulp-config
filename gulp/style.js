@@ -34,10 +34,10 @@ module.exports = function style() {
                ],
             })
          )
-         //.pipe(gulpif(config.isDev, sourcemaps.init()))
+         //.pipe(sourcemaps.init())
          .pipe(lessGlob())
          .pipe(less())
-         //.pipe(gulpif(config.isProd, autoprefixer()))
+         //.pipe(gulpif(process.env.NODE_ENV == "production", autoprefixer()))
          .pipe(autoprefixer())
          .pipe(gulpif(process.env.NODE_ENV == "production", shorthand()))
          .pipe(

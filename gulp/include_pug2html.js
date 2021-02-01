@@ -13,12 +13,11 @@ let config = require("./config.js");
 
 module.exports = function include_pug2html() {
    return gulp
-      .src("src/pug/pages/_index.pug")
+      .src(config.src.includePug)
       .pipe(plumber())
       //.pipe(pugLinter({ reporter: "default" }))
       .pipe(
          pug({
-            pretty: true,
          })
 		)
 		//.on("error", notify.onError())
