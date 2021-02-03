@@ -193,12 +193,7 @@ var defaults = {
 
       // This small close button will be appended to your html/inline/ajax content by default,
       // if "smallBtn" option is not set to false
-      smallBtn:
-         '<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}">' +
-         `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <path d="M19.9103 16L27.3853 8.525C27.7303 8.18 27.7303 7.615 27.3853 7.2675L24.7328 4.615C24.5655 4.44923 24.3395 4.35623 24.104 4.35623C23.8685 4.35623 23.6425 4.44923 23.4753 4.615L16.0003 12.09L8.52526 4.615C8.35799 4.44923 8.13201 4.35623 7.89651 4.35623C7.66101 4.35623 7.43504 4.44923 7.26776 4.615L4.61776 7.2675C4.53514 7.35004 4.4696 7.44805 4.42488 7.55594C4.38016 7.66382 4.35715 7.77946 4.35715 7.89625C4.35715 8.01303 4.38016 8.12868 4.42488 8.23656C4.4696 8.34445 4.53514 8.44246 4.61776 8.525L12.0903 16L4.61526 23.475C4.27026 23.82 4.27026 24.385 4.61526 24.7325L7.26776 27.385C7.43504 27.5508 7.66101 27.6438 7.89651 27.6438C8.13201 27.6438 8.35799 27.5508 8.52526 27.385L16.0003 19.9075L23.4753 27.385C23.6425 27.5508 23.8685 27.6438 24.104 27.6438C24.3395 27.6438 24.5655 27.5508 24.7328 27.385L27.3853 24.7325C27.7303 24.385 27.7303 23.82 27.3853 23.475L19.9103 16Z" fill="#0883D1"/>
-      </svg>` +
-         "</button>",
+      smallBtn: '<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}">' + "</button>"
    },
 
    // Container is injected into this element

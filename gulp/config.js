@@ -1,9 +1,10 @@
 const outDir = "dist";
+const currentPage = "src/pug/pages/_index.pug";
 
 module.exports =  {
    src: {
       pug: "src/pug/pages/**/*.pug",
-      includePug: "src/pug/pages/_index.pug",
+      includePug: currentPage,
       less: "src/less/main.less",
       //img: "src/img/**/*.*",
       //video: "src/video/**/*.*",
@@ -12,7 +13,7 @@ module.exports =  {
       fonts: "src/fonts/**/*.*",
       favicons: "src/favicons/**/*.*",
       svg: "src/svg/**/*.svg",
-      webp: "src/img/**/*.{pngsad,jpg,jpeg}",
+      webp: "src/img/**/*.{png,jpg,jpeg}",
       jpg: "src/img/**/*.{jpeg,jpg}",
       png: "src/img/**/*.png",
       includeScripts: "src/js/include-scripts/**/*.js"
@@ -32,7 +33,8 @@ module.exports =  {
       includeScripts: outDir + "/include-scripts"
    },
    watch: {
-      includePug: ["src/pug/include/**/*.pug", "src/pug/page-layout/**/*.pug", "src/pug/pages-layout/**/*.pug"],
+      less: "src/less/**/*.*",
+      includePug: ["src/pug/include/**/*.pug", "src/pug/page-layout/**/*.pug", "src/pug/page-template/**/*.pug",currentPage],
       includeLibs: ["src/less/include-libs/**/*.*", "src/js/include-libs/**/*.*"]
    },
 };

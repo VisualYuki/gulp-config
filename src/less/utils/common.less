@@ -92,12 +92,21 @@ span {
 p {
    line-height: 115%;
    white-space: normal;
+
+   .default-link {
+      display: inline;
+      white-space: normal;
+   }
 }
 
 p,
 a,
 span {
    .tran-fast;
+}
+
+.center {
+   margin: 0 auto;
 }
 
 // задать троеточие в конце строки, если не хватает места
@@ -125,5 +134,15 @@ body.unreg-user {
 
    .unreg-block {
       display: block;
+   }
+}
+
+// Не срабатывает событие закрытия окна, но этот вариант работает.
+.fancybox-close-small {
+   background: url("/svg/close.svg") no-repeat center !important;
+   background-size: 24px 24px !important;
+
+   &:hover {
+      background: url("/svg/red-close.svg") no-repeat center !important;
    }
 }

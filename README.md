@@ -14,7 +14,8 @@
 ## Библиотеки
    1. fancybox - модальные окна (http://fancyapps.com/fancybox/3/docs)
    2. slick-slider - слайдер (https://kenwheeler.github.io/slick/)
-   3. 
+   3. jQuery Masked Input Plugin - шаблон телефона (https://github.com/digitalBush/jquery.maskedinput)
+   4. 
    
 ## Особенности сайта
 1. 

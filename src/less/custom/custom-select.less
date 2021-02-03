@@ -1,27 +1,7 @@
-/* ---------- CUSTOM SELECT --------- */
-
 .custom-select {
    cursor: pointer;
    user-select: none;
    .z-index-1;
-   &.year {
-      width: 110px;
-   }
-
-   &.date {
-      width: 230px;
-
-      .date-icon {
-         margin-right: 6px;
-         width: 16px;
-         height: 16px;
-      }
-   }
-
-   &.counters {
-      width: 240px;
-      display: none;
-   }
 
    &.has-error &__error-text {
       display: block;
@@ -47,7 +27,7 @@
       padding: 11px 19px;
 
       background: white;
-      border: 1px solid @back-cc;
+      border: 1px solid gray;
       border-radius: 5px;
 
       cursor: pointer;
@@ -60,7 +40,7 @@
          transform: rotate(180deg);
       }
 
-      &.active ~ .custom-select__option-items{
+      &.active ~ .custom-select__option-items {
          .z-index-3;
       }
    }
@@ -73,7 +53,7 @@
 
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
-      border-top: 6px solid @but-65;
+      border-top: 6px solid blue;
 
       .tran-fast;
    }
@@ -97,7 +77,7 @@
          .z-index-2;
 
          background: white;
-         border: 1px solid @back-cc;
+         border: 1px solid gray;
          border-top: none;
          border-bottom-left-radius: 5px;
          border-bottom-right-radius: 5px;
@@ -111,13 +91,10 @@
          padding: 8px 19px;
 
          &:hover {
-            color: @but-65;
+            color: blue;
          }
       }
    }
-
-
-   
 }
 
 *.z-index-up {
