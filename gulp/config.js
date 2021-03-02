@@ -1,7 +1,7 @@
 const outDir = "dist";
-const currentPage = "src/pug/pages/_index.pug";
+const currentPage = ["src/pug/pages/_index.pug"];
 
-module.exports =  {
+module.exports = {
    src: {
       pug: "src/pug/pages/**/*.pug",
       includePug: currentPage,
@@ -16,7 +16,7 @@ module.exports =  {
       webp: "src/img/**/*.{png,jpg,jpeg}",
       jpg: "src/img/**/*.{jpeg,jpg}",
       png: "src/img/**/*.png",
-      includeScripts: "src/js/include-scripts/**/*.js"
+      includeScripts: "src/js/include-scripts/**/*.js",
    },
    out: {
       html: outDir + "/pages",
@@ -30,11 +30,11 @@ module.exports =  {
       favicons: outDir + "/favicons",
       baseDir: outDir,
       svg: outDir + "/svg/",
-      includeScripts: outDir + "/include-scripts"
+      includeScripts: outDir + "/include-scripts",
    },
    watch: {
       less: "src/less/**/*.*",
-      includePug: ["src/pug/include/**/*.pug", "src/pug/page-layout/**/*.pug", "src/pug/page-template/**/*.pug",currentPage],
-      includeLibs: ["src/less/include-libs/**/*.*", "src/js/include-libs/**/*.*"]
+      includePug: ["src/pug/include/**/*.pug", "src/pug/page-layout/**/*.pug", "src/pug/page-template/**/*.pug"].concat(currentPage),
+      includeLibs: ["src/less/include-libs/**/*.*", "src/js/include-libs/**/*.*"],
    },
 };

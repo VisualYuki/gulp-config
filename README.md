@@ -12,10 +12,14 @@
 ``npm run prod:build`` - тоже самое, что npm run prod:dev, только не запускается сервер
       
 ## Библиотеки
-   1. fancybox - модальные окна (http://fancyapps.com/fancybox/3/docs)
-   2. slick-slider - слайдер (https://kenwheeler.github.io/slick/)
-   3. jQuery Masked Input Plugin - шаблон телефона (https://github.com/digitalBush/jquery.maskedinput)
-   4. 
+   1. Модальные окна - fancybox (http://fancyapps.com/fancybox/3/docs)
+   2. Слайдер - slick-slider (https://kenwheeler.github.io/slick/)
+   3. Шаблон ввода в input - jQuery Masked Input Plugin (https://github.com/digitalBush/jquery.maskedinput)
+   4. Таймер - easytimer.js (https://github.com/albert-gonzalez/easytimer.js)
+   5. Выпадающий список - select2 (https://github.com/select2/select2)
+   6. 
+   7. 
+   8. 
    
 ## Особенности сайта
 1. 

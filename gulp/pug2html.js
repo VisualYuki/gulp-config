@@ -6,6 +6,7 @@ const plumber = require("gulp-plumber");
 const newer = require("gulp-newer");
 const pugLintStylish = require("puglint-stylish");
 const prettier = require("gulp-prettier");
+const gulpif = require("gulp-if");
 
 let config = require("./config.js");
 
@@ -20,7 +21,7 @@ module.exports = function pug2html() {
             pretty: true,
          })
       )
-      .pipe(prettier({}))
+      .pipe(gulpif(process.env.NODE_ENV == "production", prettier({})))
       .pipe(htmlValidator())
       .pipe(gulp.dest(config.out.html));
 };

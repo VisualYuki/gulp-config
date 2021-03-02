@@ -10,26 +10,20 @@
    }
 }
 
-.tablet_top(@rules) {
+.tablet(@rules) {
    @media (max-width: 991px) {
       @rules();
    }
 }
 
-.tablet_bottom(@rules) {
-   @media (max-width: 767px) {
-      @rules();
-   }
-}
-
 .mobile(@rules) {
-   @media (max-width: 575px) {
+   @media (max-width: 767px) {
       @rules();
    }
 }
 
 .site-mobile(@rules) {
-   @media (max-width: 767px) {
+   @media (max-width: 575px) {
       @rules();
    }
 }

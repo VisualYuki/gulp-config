@@ -107,12 +107,12 @@ $(document).ready(function () {
    //});
 
    // Проверка введеных паролей на совпадение
-   //$(`input.repeat-password[name="password"]`).on("focusout", function (e) {
-   //   let passwordInputItems = $(".default-input.password.repeat-password");
+   //$(`.default-input__input.repeat-password[name="password"]`).on("focusout", function (e) {
+   //   let passwordInputItems = $(".default-input.repeat-password");
    //   if ($(passwordInputItems).length > 1) {
    //      let firstPassword = $(this).val();
    //      let compareSuccess = true;
-   //      $(`input.repeat-password[name="password"]`).each(function (index, input) {
+   //      $(`.default-input__input.repeat-passwoggrd[name="password"]`).each(function (index, input) {
    //         if (firstPassword !== $(input).val() || $(input).val().length == 0) {
    //            setInputErrorClass(passwordInputItems);
    //            compareSuccess = false;
@@ -124,6 +124,18 @@ $(document).ready(function () {
    //      }
    //   } else {
    //      setInputSuccessClass(passwordInputItems);
+   //   }
+   //});
+
+   // Проверка ввода времени (время для звонка)
+   //$(".default-input__input[name='time']").mask("99:99", { autoclear: false });
+   //$(`.default-input__input[name='time']`).on("focusout", function (e) {
+   //   const reg = new RegExp("^([0-1][0-9]|2[0-4])[:]*([0-5]\\d$)", "ig");
+
+   //   if (reg.test(this.value)) {
+   //      setInputSuccessClass($(this).closest(".default-input"));
+   //   } else {
+   //      setInputErrorClass($(this).closest(".default-input"));
    //   }
    //});
 });

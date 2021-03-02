@@ -9,8 +9,8 @@ $(".test").slick({
    slidesToShow: 1,
    slidesToScroll: 1,
    pauseOnHover: true,
-   prevArrow: '<button type="button" class="index-banner__slider-prev-btn default-slider-btn prev-btn square"></button>',
-   nextArrow: '<button type="button" class="index-banner__slider-next-btn default-slider-btn next-btn square"></button>',
+   prevArrow: '<button type="button" class=""></button>',
+   nextArrow: '<button type="button" class=""></button>',
    arrows: false,
    fade: true,
    responsive: [

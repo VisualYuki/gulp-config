@@ -13,15 +13,17 @@ const cache = require("./gulp/clearCache");
 const favicons = require("./gulp/favicons");
 const svgSprite = require("./gulp/svgSprite");
 const includeLibs = require("./gulp/include-libs");
+const includeScripts = require("./gulp/include-scrips");
 
 //MAIN TASK
-const build = gulp.series(pug2html, style, script, font, svg, minPng, minJpg, favicons, webp, includeLibs);
+const build = gulp.series(pug2html, style, script, font, svg, minPng, minJpg, favicons, webp, includeLibs, includeScripts);
 gulp.task("build", gulp.series(clean, cache, build));
 gulp.task("dev", gulp.series(build, cache, serve));
 
 //SINGLE TASK
 gulp.task("script", script);
 gulp.task("style", style);
+
 gulp.task("minJpg", minJpg);
 gulp.task("minPng", minPng);
 gulp.task("serve", serve);

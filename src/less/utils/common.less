@@ -17,10 +17,6 @@
       max-width: 720px;
    });
 
-   .tablet_bottom({
-      max-width: 540px;
-   });
-
    .mobile({
       width: 100%;
       padding: 0 10px;
@@ -116,6 +112,20 @@ span {
    overflow: hidden;
 }
 
+.two-line-dots {
+   -webkit-line-clamp: 2;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+.three-line-dots {
+   -webkit-line-clamp: 3;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
 // менять отображение содержимого страницы в зависимости от авторизованности пользователя на странице
 body.reg-user {
    .reg-block {
@@ -146,3 +156,54 @@ body.unreg-user {
       background: url("/svg/red-close.svg") no-repeat center !important;
    }
 }
+
+//.slick-list  {
+//   margin: 0 -10px;
+//}
+
+//.slick-slide {
+//   margin: 0 10px;
+//}
+
+// показать справа часть слайда на мобилках
+//.slick-list {
+//   ._900({
+//      padding-right: 100px !important;
+//   });
+
+//   ._375({
+//      padding-right: 50px !important;
+//   });
+
+//   ._375({
+//      padding-right: 35px !important;
+//   });
+//}
+
+//если нужно, чтобы все слайды были одинаковые по высоте
+.slick-track {
+   //display: flex;
+}
+
+.slick-slide {
+   //height: auto;
+   //flex: 0 0 auto;
+}
+
+
+.slick-slider {
+   cursor: grab;
+}
+
+// задать высоту для загрузки файла.
+.uppy-Root {
+   height: 200px !important;
+   .site-mobile({
+      height: 150px;
+   });
+}
+
+//<link href="https://releases.transloadit.com/uppy/v1.24.0/uppy.min.css" rel="stylesheet">
+//<script src="https://releases.transloadit.com/uppy/v1.24.0/uppy.min.js"></script>
+//<script src="https://releases.transloadit.com/uppy/locales/v1.17.0/ru_RU.min.js"></script>
+//<script src="/include-scripts/fileupload.js"></script>
