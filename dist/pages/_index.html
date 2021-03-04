@@ -1,31 +1,300 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <title>Водоканал</title>
-    <!-- Мета тэги SEO-->
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!-- Open graph - социальные мета теги-->
-    <meta name="og:type" content="website" />
-    <meta name="og:url" content="https://instrument.ms" />
-    <meta name="og:image" content="ссылка на лого" />
-    <meta name="og:title" content="Инструмент" />
-    <meta
-      name="og:description"
-      content="Интернет-магазин Инструмент - instrument.ms - электроинструмент, бензоинструмент  и оборудование: климатическое, садовое, клининговое, автогаражное – купить с доставкой"
-    />
-  </head>
-  <body class="unreg-user">
-    <!-- добавляем класс unreg-user, если пользователь не зарегестрирован--><!-- добавляем класс reg-user, если пользователь зарегестрирован--><!-- далее блоки reg-block и unreg-block скрываются или показываются взависимости от класса на тэге body.-->
-    <div class="body-inner">
-      <header></header>
-      <main class="page-content">3333</main>
-      <footer class="footer"><div class="modals-wrap"></div></footer>
-      <script async="async" src="/js/main.js"></script>
-    </div>
-  </body>
+   <head> </head>
+   <body>
+      // страница в лк
+      <style>
+         .user-cart {
+            margin-bottom: 20px;
+         }
+         .user-cart__text-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-bottom: 24px;
+         }
+         @media (max-width: 767px) {
+            .user-cart__text-row {
+               -webkit-box-align: start;
+               -ms-flex-align: start;
+               align-items: flex-start;
+               -webkit-box-orient: vertical;
+               -webkit-box-direction: normal;
+               -ms-flex-direction: column;
+               flex-direction: column;
+            }
+            .user-cart__text-row > :first-child {
+               margin-bottom: 5px;
+            }
+         }
+         .user-cart__row-text {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: #676767;
+         }
+         .bonus-table {
+            margin-bottom: 20px;
+         }
+         @media (max-width: 767px) {
+            .bonus-table {
+               overflow: scroll;
+            }
+         }
+         @media (max-width: 767px) {
+            .bonus-table__content {
+               width: 600px;
+            }
+         }
+         .bonus-table__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+         }
+         .bonus-table__title-items {
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e2e2e2;
+         }
+         .bonus-table__title-item {
+            padding: 0 5px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: #000000;
+         }
+         .bonus-table__content-items {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 16px;
+            color: #000000;
+         }
+         .bonus-table__content-item {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+         }
+         .bonus-table__content-item.first {
+            padding-left: 12px;
+         }
+         .bonus-table__content-item .text {
+            margin-bottom: 8px;
+         }
+         .bonus-table__bottom-item {
+            padding: 16px 12px;
+            background: #f3f3f3;
+         }
+      </style>
+      <div class="user-cart panel">
+         <h2 class="user-cart__title">Карта клиента</h2>
+         <div class="user-cart__text-row">
+            <p class="user-cart__row-text">Данные о бонусных картах по номеру телефона +7 (990) 996-99-99</p>
+            <p class="user-cart__row-text">10.02.2021 12:23</p>
+         </div>
+         <div class="bonus-table">
+            <div class="bonus-table__content">
+               <ul class="bonus-table__title-items bonus-table__row">
+                  <li class="bonus-table__title-item">Бонусная карта</li>
+                  <li class="bonus-table__title-item">Остаток бонусов на текущую дату</li>
+                  <li class="bonus-table__title-item">Дата следующей активации бонусов</li>
+                  <li class="bonus-table__title-item">Бонусы, которые будут активированы</li>
+               </ul>
+               <ul class="bonus-table__content-items bonus-table__row">
+                  <li class="bonus-table__content-item first">
+                     <p class="text">Иванов Иван Иванович</p>
+                  </li>
+                  <li class="bonus-table__content-item"><p class="text">100</p></li>
+                  <li class="bonus-table__content-item">
+                     <p class="text">14.03.2021</p>
+                     <p class="text">28.03.2021</p>
+                     <p class="text">30.03.2021</p>
+                  </li>
+                  <li class="bonus-table__content-item">
+                     <p class="text">50</p>
+                     <p class="text">20</p>
+                     <p class="text">149</p>
+                  </li>
+               </ul>
+               <div class="bonus-table__bottom-item bonus-table__row">
+                  <div class="bonus-table__bottom-item-cell">Иванов Иван И</div>
+                  <div class="bonus-table__bottom-item-cell">0</div>
+                  <div class="bonus-table__bottom-item-cell">Нет бонусов к активации</div>
+                  <div class="bonus-table__bottom-item-cell"></div>
+               </div>
+            </div>
+         </div>
+         <div class="btn">ПРОВЕРИТЬ ДРУГОЙ НОМЕР</div>
+      </div>
+
+      // Стили для Сколько баллов осталось и Проверить бонусы
+      <style>
+         .bonus-program__title {
+            margin-bottom: 11px;
+            font-size: 24px;
+            line-height: 28px;
+            color: #000000;
+         }
+         .bonus-program__text {
+            font-size: 18px;
+            line-height: 21px;
+            color: #000000;
+         }
+         .bonus-program__text_small-font {
+            font-size: 14px;
+         }
+         .bonus-program__text_center {
+            text-align: center;
+         }
+         .bonus-program__img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            margin-bottom: 12px;
+         }
+
+         .bonus-table {
+            margin-bottom: 20px;
+         }
+         @media (max-width: 767px) {
+            .bonus-table {
+               overflow: scroll;
+            }
+         }
+         @media (max-width: 767px) {
+            .bonus-table__content {
+               width: 600px;
+            }
+         }
+         .bonus-table__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+         }
+         .bonus-table__title-items {
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e2e2e2;
+         }
+         .bonus-table__title-item {
+            padding: 0 5px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: #000000;
+         }
+         .bonus-table__content-items {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 16px;
+            color: #000000;
+         }
+         .bonus-table__content-item {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+         }
+         .bonus-table__content-item.first {
+            padding-left: 12px;
+         }
+         .bonus-table__content-item .text {
+            margin-bottom: 8px;
+         }
+         .bonus-table__bottom-item {
+            padding: 16px 12px;
+            background: #f3f3f3;
+         }
+      </style>
+      // Проверить бонусы
+      <div class="card-panel bonus-page">
+         <div class="bonus-page__narrow-content">
+            <h2 class="bonus-page__title">Проверить бонусные баллы</h2>
+            <div class="input-field bordered field-requestcallform-phone required">
+               <input type="text" id="requestcallform-phone" class="form-control" name="RequestCallForm[phone]" value="8(9127)34-99-25" placeholder="Номер телефона" required="" aria-required="true" />
+               <p class="help-block help-block-error"></p>
+            </div>
+            <div class="bonus-page__input-text">Введите телефон в формате +70000000000 для того, чтобы проверить свои бонусные баллы</div>
+            <div class="btn">ПРОВЕРИТЬ БОНУСНЫЕ БАЛЛЫ</div>
+         </div>
+         <div class="bonus-program">
+            <div class="bonus-program__title">Бонусная программа карты клиентов «Инструмент»</div>
+            <p class="bonus-program__text">Во всех розничных магазинах «Инструмент» совершайте покупки и получайте до 10% на Вашу карту клиента!</p>
+            <img class="bonus-program__img" src="/min-img/bonus-product-1.jpg" style="margin-bottom: 30px" alt="" />
+            <p class="bonus-program__text bonus-program__text_center">Преимущества карты клиента «Инструмент»</p>
+            <img class="bonus-program__img" src="/min-img/bonus-product-2.png" alt="" /><img class="bonus-program__img" src="/min-img/bonus-product-3.png" alt="" />
+            <p class="bonus-program__text bonus-program__text_small-font">
+               С полными условиями программы карты клиентов «Инструмент» вы можете ознакомиться в любом магазине «Инструмент» или по телефону 8-800-333-40-65.
+            </p>
+            <p class="bonus-program__text bonus-program__text_small-font">
+               Все цены в интернет-магазине «Инструмент» указаны с учетом всех скидок. Дополнительные скидки не предоставляются, бонусы на карту клиента не начисляются.
+            </p>
+         </div>
+      </div>
+      // Сколько баллов осталось
+      <div class="card-panel bonus-page">
+         <div class="bonus-table">
+            <div class="bonus-table__content">
+               <ul class="bonus-table__title-items bonus-table__row">
+                  <li class="bonus-table__title-item">Бонусная карта</li>
+                  <li class="bonus-table__title-item">Остаток бонусов на текущую дату</li>
+                  <li class="bonus-table__title-item">Дата следующей активации бонусов</li>
+                  <li class="bonus-table__title-item">Бонусы, которые будут активированы</li>
+               </ul>
+               <ul class="bonus-table__content-items bonus-table__row">
+                  <li class="bonus-table__content-item first">
+                     <p class="text">Иванов Иван Иванович</p>
+                  </li>
+                  <li class="bonus-table__content-item"><p class="text">100</p></li>
+                  <li class="bonus-table__content-item">
+                     <p class="text">14.03.2021</p>
+                     <p class="text">28.03.2021</p>
+                     <p class="text">30.03.2021</p>
+                  </li>
+                  <li class="bonus-table__content-item">
+                     <p class="text">50</p>
+                     <p class="text">20</p>
+                     <p class="text">149</p>
+                  </li>
+               </ul>
+               <div class="bonus-table__bottom-item bonus-table__row">
+                  <div class="bonus-table__bottom-item-cell">Иванов Иван И</div>
+                  <div class="bonus-table__bottom-item-cell">0</div>
+                  <div class="bonus-table__bottom-item-cell">Нет бонусов к активации</div>
+                  <div class="bonus-table__bottom-item-cell"></div>
+               </div>
+            </div>
+            <div class="btn">ПРОВЕРИТЬ ДРУГОЙ НОМЕР</div>
+         </div>
+         <div class="bonus-program">
+            <div class="bonus-program__title">Бонусная программа карты клиентов «Инструмент»</div>
+            <p class="bonus-program__text">Во всех розничных магазинах «Инструмент» совершайте покупки и получайте до 10% на Вашу карту клиента!</p>
+            <img class="bonus-program__img" src="/min-img/bonus-product-1.jpg" style="margin-bottom: 30px" alt="" />
+            <p class="bonus-program__text bonus-program__text_center">Преимущества карты клиента «Инструмент»</p>
+            <img class="bonus-program__img" src="/min-img/bonus-product-2.png" alt="" /><img class="bonus-program__img" src="/min-img/bonus-product-3.png" alt="" />
+            <p class="bonus-program__text bonus-program__text_small-font">
+               С полными условиями программы карты клиентов «Инструмент» вы можете ознакомиться в любом магазине «Инструмент» или по телефону 8-800-333-40-65.
+            </p>
+            <p class="bonus-program__text bonus-program__text_small-font">
+               Все цены в интернет-магазине «Инструмент» указаны с учетом всех скидок. Дополнительные скидки не предоставляются, бонусы на карту клиента не начисляются.
+            </p>
+         </div>
+      </div>
+   </body>
 </html>
