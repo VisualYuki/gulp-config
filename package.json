@@ -49,6 +49,7 @@
       "gulp-concat": "^2.6.1",
       "gulp-csso": "^4.0.1",
       "gulp-eslint": "^6.0.0",
+      "gulp-format-html": "^1.2.5",
       "gulp-group-css-media-queries": "^1.2.2",
       "gulp-html-validator": "0.0.5",
       "gulp-if": "^3.0.0",

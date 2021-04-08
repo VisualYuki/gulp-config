@@ -1,6 +1,7 @@
 .custom-radio {
-   @default: red;
-   @primary: red;
+   @default: gray;
+   @primary: black;
+
    position: relative;
 
    display: flex;
@@ -21,7 +22,7 @@
       height: 16px;
       margin-right: 8px;
 
-      border: 1px solid red;
+      border: 1px solid @default;
       border-radius: 100%;
 
       &:before,
@@ -37,25 +38,24 @@
       }
 
       &:before {
-         background-color: rgba(242, 242, 242, 0.9);
+         background: transparent;
          border-radius: 50%;
          height: 5px;
          width: 5px;
-         z-index: -1;
       }
 
       &:after {
-         background-color: red;
+         background-color: @primary;
          border-radius: 50%;
 
-         height: 0;
-         width: 0;
+         width: 8px;
+         height: 8px;
+         opacity: 0;
       }
    }
 
    &__input:checked + &__design::after {
-      width: 8px;
-      height: 8px;
+      opacity: 1;
    }
 
    &__input:checked + &__design::before {
@@ -63,7 +63,7 @@
    }
 
    &__input:checked + &__design {
-      border-color: red;
+      border-color: @primary;
    }
 
    &__input:checked + &__design::before {
@@ -72,14 +72,12 @@
       width: 13px;
    }
 
-   &__text {р
-  
+   &__text {
    }
-
 
    @keyframes customRadioPulse {
       0% {
-         box-shadow: 0 0 0 0px rgba(#0883d1, 1);
+         box-shadow: 0 0 0 0px rgba(black);
       }
       100% {
          box-shadow: 0 0 0 10px rgba(242, 242, 242, 0);

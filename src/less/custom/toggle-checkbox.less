@@ -1,7 +1,21 @@
 .toggle-checkbox {
    @primary: blue;
    @primary-light: green;
-   @gray: red;
+   gray: #ebebeb;
+
+   &_chosen {
+      .toggle-checkbox__toggle:before {
+         background: gray !important;
+      }
+
+      .toggle-checkbox__btn {
+         background: black !important;
+
+         &:before {
+            display: none;
+         }
+      }
+   }
 
    &__toggle {
       position: relative;
@@ -20,7 +34,7 @@
          width: 34px;
          height: 14px;
          display: block;
-         background: @gray;
+         background: gray;
          border-radius: 8px;
          transition: background 0.2s ease;
       }
@@ -33,7 +47,7 @@
       width: 20px;
       height: 20px;
       display: block;
-      background: white;
+      background: gray;
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(gray, 0.5);
       transition: all 0.2s ease;
@@ -76,3 +90,34 @@
       }
    }
 }
+
+.toggle-block {
+   .flex(flex-start,center);
+   font-size: 14px;
+   line-height: 16px;
+
+   &:not(.active) &__off-text {
+      font-weight: bold;
+   }
+
+   &.active &__on-text {
+      font-weight: bold;
+   }
+
+   &__off-text {
+   }
+
+   &__checkbox {
+      margin: 0 12px;
+   }
+
+   &__on-text {
+   }
+}
+
+//<div class="toggle-checkbox">
+//   <input type="checkbox" class="toggle-checkbox__input" id="cbx"/>
+//   <label for="cbx" class="toggle-checkbox__toggle">
+//      <span class="toggle-checkbox__btn"></span>
+//   </label>
+//</div>

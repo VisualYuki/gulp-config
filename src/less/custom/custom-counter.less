@@ -1,25 +1,30 @@
 .default-counter {
-   width: 100px;
+   .flex(flex-start,stretch);
+   width: 93px;
+   height: 25px;
+
+   border: 1px solid #7c7c7c;
+   border-radius: 2px;
+   overflow: hidden;
 
    &__arrow {
       user-select: none;
    }
 
-   &.transparent {
-   }
-
    &__left-arrow,
    &__right-arrow {
-      position: absolute;
-      top: 0;
-      z-index: 1;
-
       .flex(center,center);
       width: 30px;
       height: 100%;
 
-      cursor: pointer;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
       text-align: center;
+      color: #ffffff;
+
+      background: #7c7c7c;
+      cursor: pointer;
    }
 
    &__left-arrow {
@@ -31,13 +36,12 @@
    }
 
    &__input {
-      width: 100%;
+      width: 31px;
       height: 100%;
 
+      font-size: 12px;
+      line-height: 25px;
       text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-
-      text-align: center;
+      color: #000000;
    }
 }

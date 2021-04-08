@@ -18,7 +18,6 @@
       display: none !important;
 
       background: white;
-      .border;
       .tran-fast;
    }
 }
@@ -35,38 +34,6 @@
       .z-index-3;
    }
 
-   &_catalog {
-      &.dropdown-select_active .dropdown-select__trigger {
-         .dropdown-select__text {
-            color: red;
-         }
-      }
-
-      .dropdown-select {
-         &__trigger {
-            padding: 16px 19px;
-            .border;
-            border-radius: 2px;
-            background: white;
-            cursor: pointer;
-         }
-
-         &__icon {
-            margin-right: 22px;
-         }
-
-         &__text {
-            font-size: 14px;
-            line-height: 16px;
-            color: #000000;
-         }
-
-         &__triangle {
-            margin-left: auto;
-         }
-      }
-   }
-
    &__trigger {
       .flex(flex-start,center);
    }
@@ -76,7 +43,7 @@
       top: 100%;
       right: 0;
       .z-index--2;
-      
+
       width: 100%;
 
       background: white;
@@ -105,3 +72,14 @@
       }
    }
 }
+
+//.dropdown-select.dropdown-select_catalog.triangle-rotate_js-click
+//   .dropdown-select__trigger
+//      img.dropdown-select__icon(src="/dist/svg/time.svg" alt="")
+//      p.dropdown-select__trigger-text Измерительная техника
+//      img.dropdown-select__triangle.triangle-rotate__triangle(src="/dist/svg/small-down-arrow_red.svg" alt="")
+//   .dropdown-select__target
+//      ul.dropdown-select__items
+//         -for(let i = 0; i < 9; i++)
+//            li.dropdown-select__item
+//               a.dropdown-select__item-link(href="#") Комплектующие для измерителей

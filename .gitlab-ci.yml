@@ -1,18 +1,18 @@
 # This file is a template, and might need editing before it works on your project.
 # Full project: https://gitlab.com/pages/plain-html
-image: node:12
+#image: node:12
 
-pages:
-  stage: deploy
-  script:
-    - npm install
-    - npm run prod:build
-    - mv dist public
-  artifacts:
-    paths:
-      - public
-  only:
-    - front
+#pages:
+#  stage: deploy
+#  script:
+#    - npm install
+#    - npm run prod:build
+#    - mv dist public
+#  artifacts:
+#    paths:
+#      - public
+#  only:
+#    - front
 
 ## This file is a template, and might need editing before it works on your project.
 ## Full project: https://gitlab.com/pages/plain-html

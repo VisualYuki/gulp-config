@@ -32,7 +32,7 @@ module.exports = function script() {
 	};
 	
    return gulp
-      .src("src/js/main.js")
+      .src("src/js/site-main.js")
       .pipe(webpack(webConfig))
       .pipe(gulp.dest("dist/js"));
 };

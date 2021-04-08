@@ -10,14 +10,14 @@ const concat = require("gulp-concat");
 let config = require("./config.js");
 
 module.exports = function script() {
-   let src = ["src/js/00_libs/jquery.min.js", "src/js/00_libs/**/*.js", "src/js/01_scripts/**/*.js", "src/js/02_custom/**/*.js"];
+   let src = ["src/js/jquery.min.js","src/js/libs/**/*.js","src/js/custom-plugins/**/*.js", "src/js/common/**/*.js", "src/js/pages/**/*.js"];
    return (
       gulp
          .src(src)
-         .pipe(concat("main.js"))
+         .pipe(concat("site-main.js"))
          //.pipe(gulpif(process.env.NODE_ENV == "production", eslint()))
          //.pipe(gulpif(process.env.NODE_ENV == "production", eslint.format()))
-         .pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.init()))
+         //.pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.init()))
          //.pipe(
          //   gulpif(
          //      process.env.NODE_ENV == "production",
@@ -26,8 +26,8 @@ module.exports = function script() {
          //      })
          //   )
          //)
-         .pipe(gulpif(process.env.NODE_ENV == "production", terser()))
-         .pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.write()))
+         //.pipe(gulpif(process.env.NODE_ENV == "production", terser()))
+         //.pipe(gulpif(process.env.NODE_ENV == "production", sourcemaps.write()))
          .pipe(gulp.dest(config.out.js))
    );
 };

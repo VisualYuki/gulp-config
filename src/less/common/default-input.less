@@ -1,7 +1,33 @@
 //inputs
 .default-input {
-   font-size: 18px;
-   border-radius: 3px;
+   margin-bottom: 16px;
+
+   // Скрыть заполнитель при фокусу поля ввода
+   &_hide-focus-placeholder {
+      .default-input__input:focus ~ .default-input__placeholder,
+      .default-input__input:valid ~ .default-input__placeholder {
+         display: none;
+      }
+   }
+
+   // Переместить заполнитель над полем ввода.
+   &_title {
+      .default-input {
+         &__placeholder {
+            display: none;
+         }
+
+         &__input {
+            padding: 12px;
+         }
+
+         &__title {
+            margin-bottom: 4px;
+
+            font-size: 14px;
+         }
+      }
+   }
 
    .default-input__input {
       width: 100%;
@@ -117,14 +143,28 @@
             cursor: pointer;
             &:hover {
                svg * {
-                  fill: red;
+                  fill: @blue-text;
                }
             }
          }
 
          &__icon.active {
-            svg * {
-               fill: blue;
+            .eye-icon {
+               display: block;
+            }
+
+            .noeye-icon {
+               display: none;
+            }
+         }
+
+         &__icon:not(.active) {
+            .eye-icon {
+               display: none;
+            }
+
+            .noeye-icon {
+               display: block;
             }
          }
       }
