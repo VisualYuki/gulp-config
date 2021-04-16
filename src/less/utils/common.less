@@ -1,160 +1,170 @@
 .container {
-   max-width: 1280px;
+	max-width: 1280px;
 
-   padding: 0 10px;
-   margin: 0 auto;
-   //overflow: hidden;
+	padding: 0 10px;
+	margin: 0 auto;
+	//overflow: hidden;
 
-   .desk_top({
+	.desk_top({
       max-width: 1140px;
    });
 
-   .desk_bottom({
+	.desk_bottom({
       max-width: 800px;
    });
 
-   .tablet({
+	.tablet({
       max-width: 720px;
    });
 
-   .mobile({
+	.mobile({
       width: 100%;
       padding: 0 10px;
    });
 
-   &_full-width {
-      max-width: 1980px;
-      margin: 0 auto;
-      overflow: hidden;
-   }
+	&_full-width {
+		max-width: 1980px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
 }
 
 * {
-   position: relative;
+	position: relative;
 }
 
 //
 .page-wrap {
-   width: 100vw;
-   overflow-x: hidden;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 .page-content {
-   min-height: 100vh;
-   padding-bottom: 70px;
+	min-height: 100vh;
+	padding-bottom: 70px;
 }
 
 picture {
-   height: 100%;
+	height: 100%;
 }
 
 picture img {
-   object-fit: cover;
-   width: 100%;
-   height: 100%;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
 }
 
 body {
-   font-family: Roboto;
-   font-size: 16px;
-   letter-spacing: 0.03em;
+	font-family: Roboto;
+	font-size: 16px;
+	letter-spacing: 0.03em;
 
-   * {
-      //задать цвет скроллу монитора (только на хром подобных браузерах)
-      //&::-webkit-scrollbar {
-      //   height: 8px;
-      //}
+	// Заранее загрузить иконку, чтобы не было задержки при наведении на крестик в модальном окне.
+	&:before {
+		content: "";
+		.z-index--2;
+		width: 1px;
+		height: 1px;
 
-      //&::-webkit-scrollbar-track {
-      //   background: rgba(192, 192, 192, 0);
-      //}
+		background: url("/dist/svg/red-close.svg");
+	}
 
-      //&::-webkit-scrollbar-thumb {
-      //   background: rgba(56, 56, 56, 0.534);
-      //}
-   }
+	* {
+		//задать цвет скроллу монитора (только на хром подобных браузерах)
+		//&::-webkit-scrollbar {
+		//   height: 8px;
+		//}
+
+		//&::-webkit-scrollbar-track {
+		//   background: rgba(192, 192, 192, 0);
+		//}
+
+		//&::-webkit-scrollbar-thumb {
+		//   background: rgba(56, 56, 56, 0.534);
+		//}
+	}
 }
 
 a {
-   display: block;
-   .tran-fast;
-   white-space: nowrap;
+	display: block;
+	.tran-fast;
+	white-space: nowrap;
 }
 
 span {
-   white-space: nowrap;
+	white-space: nowrap;
 }
 
 p {
-   line-height: 115%;
-   white-space: normal;
+	line-height: 115%;
+	white-space: normal;
 
-   .default-link {
-      display: inline;
-      white-space: normal;
-   }
+	.default-link {
+		display: inline;
+		white-space: normal;
+	}
 }
 
 p,
 a,
 span {
-   .tran-fast;
+	.tran-fast;
 }
 
 .center {
-   margin: 0 auto;
+	margin: 0 auto;
 }
 
 // задать троеточие в конце строки, если не хватает места
 .one-line-dots {
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .two-line-dots {
-   -webkit-line-clamp: 2;
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .three-line-dots {
-   -webkit-line-clamp: 3;
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
+	-webkit-line-clamp: 3;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 // менять отображение содержимого страницы в зависимости от авторизованности пользователя на странице
 body.reg-user {
-   .reg-block {
-      display: block;
-   }
+	.reg-block {
+		display: block;
+	}
 
-   .unreg-block {
-      display: none;
-   }
+	.unreg-block {
+		display: none;
+	}
 }
 
 body.unreg-user {
-   .reg-block {
-      display: none;
-   }
+	.reg-block {
+		display: none;
+	}
 
-   .unreg-block {
-      display: block;
-   }
+	.unreg-block {
+		display: block;
+	}
 }
 
 // Не срабатывает событие закрытия окна, но этот вариант работает.
 .fancybox-close-small {
-   background: url("/dist/svg/close.svg") no-repeat center !important;
-   background-size: 24px 24px !important;
+	background: url("/dist/svg/close.svg") no-repeat center !important;
+	background-size: 24px 24px !important;
 
-   &:hover {
-      background: url("/dist/svg/red-close.svg") no-repeat center !important;
-   }
+	&:hover {
+		background: url("/dist/svg/red-close.svg") no-repeat center !important;
+	}
 }
 
 //.slick-list  {
@@ -182,23 +192,22 @@ body.unreg-user {
 
 //если нужно, чтобы все слайды были одинаковые по высоте
 .slick-track {
-   //display: flex;
+	//display: flex;
 }
 
 .slick-slide {
-   //height: auto;
-   //flex: 0 0 auto;
+	//height: auto;
+	//flex: 0 0 auto;
 }
 
-
 .slick-slider {
-   cursor: grab;
+	cursor: grab;
 }
 
 // задать высоту для загрузки файла.
 .uppy-Root {
-   height: 200px !important;
-   .site-mobile({
+	height: 200px !important;
+	.site-mobile({
       height: 150px;
    });
 }
