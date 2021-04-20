@@ -63,6 +63,13 @@ body {
   font-size: 16px;
   letter-spacing: 0.03em;
 }
+body:before {
+  content: "";
+  z-index: -10;
+  width: 1px;
+  height: 1px;
+  background: url("/dist/svg/red-close.svg");
+}
 a {
   display: block;
   transition: 0.2s;
@@ -117,11 +124,11 @@ body.unreg-user .unreg-block {
   display: block;
 }
 .fancybox-close-small {
-  background: url("/svg/close.svg") no-repeat center !important;
+  background: url("/dist/svg/close.svg") no-repeat center !important;
   background-size: 24px 24px !important;
 }
 .fancybox-close-small:hover {
-  background: url("/svg/red-close.svg") no-repeat center !important;
+  background: url("/dist/svg/red-close.svg") no-repeat center !important;
 }
 .slick-slider {
   cursor: grab;
@@ -1830,26 +1837,6 @@ body.compensate-for-scrollbar {
 .dropdown-select_active {
   z-index: 20;
 }
-.dropdown-select_catalog.dropdown-select_active .dropdown-select__trigger .dropdown-select__text {
-  color: red;
-}
-.dropdown-select_catalog .dropdown-select__trigger {
-  padding: 16px 19px;
-  border-radius: 2px;
-  background: white;
-  cursor: pointer;
-}
-.dropdown-select_catalog .dropdown-select__icon {
-  margin-right: 22px;
-}
-.dropdown-select_catalog .dropdown-select__text {
-  font-size: 14px;
-  line-height: 16px;
-  color: #000000;
-}
-.dropdown-select_catalog .dropdown-select__triangle {
-  margin-left: auto;
-}
 .dropdown-select__trigger {
   display: flex;
   justify-content: flex-start;
@@ -2050,8 +2037,21 @@ body.compensate-for-scrollbar {
   width: 100%;
 }
 .default-input {
-  font-size: 18px;
-  border-radius: 3px;
+  margin-bottom: 16px;
+}
+.default-input_hide-focus-placeholder .default-input__input:focus ~ .default-input__placeholder,
+.default-input_hide-focus-placeholder .default-input__input:valid ~ .default-input__placeholder {
+  display: none;
+}
+.default-input_title .default-input__placeholder {
+  display: none;
+}
+.default-input_title .default-input__input {
+  padding: 12px;
+}
+.default-input_title .default-input__title {
+  margin-bottom: 4px;
+  font-size: 14px;
 }
 .default-input .default-input__input {
   width: 100%;
@@ -2126,10 +2126,35 @@ body.compensate-for-scrollbar {
   cursor: pointer;
 }
 .default-input_password .default-input__icon:hover svg * {
-  fill: red;
-}
-.default-input_password .default-input__icon.active svg * {
   fill: blue;
+}
+.default-input_password .default-input__icon.active .eye-icon {
+  display: block;
+}
+.default-input_password .default-input__icon.active .noeye-icon {
+  display: none;
+}
+.default-input_password .default-input__icon:not(.active) .eye-icon {
+  display: none;
+}
+.default-input_password .default-input__icon:not(.active) .noeye-icon {
+  display: block;
+}
+.hover-link-trigger {
+  cursor: pointer;
+}
+.hover-link-trigger:hover .hover-link-target {
+  color: blue;
+}
+.hover-link-target:hover {
+  color: blue;
+}
+.fancybox-slide {
+  padding: 12px;
+}
+.default-modal {
+  display: none;
+  max-height: 100%;
 }
 .admin-text h1,
 .admin-text h2,

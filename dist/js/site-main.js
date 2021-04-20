@@ -66,6 +66,16 @@ $(document).ready(function () {
    });
 });
 
+//.default-tabs    
+//   ul.default-tabs__trigger-items        
+//      li.default-tabs__trigger-item(data-index="1") 1
+//      li.default-tabs__trigger-item(data-index="2") 2
+//      li.default-tabs__trigger-item(data-index="3") 3
+//   ul.default-tabs__target-items  
+//      li.default-tabs__target-item.default-tabs__target-item_active 1
+//      li.default-tabs__target-item 2
+//      li.default-tabs__target-item 3 
+
 // выбор числа от с помощью кнопок лево и право.
 $(".default-counter__right-arrow").on("click", function () {
    let value = $(this).parent(".default-counter").find("input").val();
@@ -286,7 +296,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
    let lastDropdownSelect = undefined;
-   // показать выпадающий список при клике
+
+   // Показать выпадающий список при клике
    $(".dropdown-select").on("click", function (e) {
       if (lastDropdownSelect !== this) {
          $(lastDropdownSelect).removeClass("dropdown-select_active");
@@ -297,7 +308,13 @@ $(document).ready(function () {
       e.stopPropagation();
    });
 
-   // заркыть последний выпадающий список при клике на документ
+   // Выбрать опцию
+   $(".dropdown-select__item").on("click", function () {
+      let itemText = $(this).find(".dropdown-select__item-link").text();
+      $(this).closest(".dropdown-select").find(".dropdown-select__text").html(itemText);
+   });
+
+   // Закрыть последний выпадающий список при клике на документ
    $(document).on("click", function () {
       $(lastDropdownSelect).removeClass("dropdown-select_active");
    });

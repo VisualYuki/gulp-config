@@ -17,18 +17,18 @@ const pug2html = require("./pug2html");
 let config = require("./config.js");
 
 module.exports = function serve() {
-   //server.init({
-   //   server: {
-   //      baseDir: config.out.baseDir,
-   //      directory: true,
-   //   },
-   //   open: false,
-   //   ghostMode: {
-   //      clicks: false,
-   //      forms: false,
-   //      scroll: false,
-   //   },
-   //});
+   server.init({
+      server: {
+         baseDir: config.out.baseDir,
+         directory: true,
+      },
+      open: false,
+      ghostMode: {
+         clicks: false,
+         forms: false,
+         scroll: false,
+      },
+   });
 
    gulp.watch(config.watch.less, style);
    gulp.watch(config.src.js, script);
@@ -45,5 +45,5 @@ module.exports = function serve() {
    gulp.watch(config.src.favicons, favicons);
    gulp.watch(config.src.fonts, gulp.series(fonts));
 
-   //gulp.watch(config.out.baseDir).on("change", server.reload);
+   gulp.watch(config.out.baseDir).on("change", server.reload);
 };
