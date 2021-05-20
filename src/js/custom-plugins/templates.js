@@ -1,6 +1,9 @@
 $(document).ready(function () {
-  
+
 });
+
+//if ($(".cart-page").length === 1 || $(".preorder-page").length === 1) {
+//}
 
 $(".test").slick({
    autoplay: true,

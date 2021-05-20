@@ -1,4 +1,5 @@
 include ../mixins/picture.pug
+include ../mixins/lazyPicture.pug
 include ../mixins/ratio-picture.pug
 
 <!DOCTYPE html>
@@ -7,14 +8,18 @@ html(lang="ru")
       meta(charset="UTF-8")
       meta(http-equiv="X-UA-Compatible" content="IE=edge")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
-      title Бора заголовок
+      title Fine Ingredients
 
       // favicon info
-      link(rel="icon" type="image/png" sizes="32x32" href="/dist/favicons/favicon-32x32.png")
-      link(rel="icon" type="image/png" sizes="16x16" href="/dist/favicons/favicon-16x16.png")
-      link(rel="manifest" href="/dist/favicons/site.webmanifest")
-      link(rel="mask-icon" href="/dist/favicons/safari-pinned-tab.svg" color="#5bbad5")
-      link(rel="apple-touch-icon" sizes="180x180" href="/dist/favicons/apple-touch-icon.png")
+      //-<link rel="apple-touch-icon" sizes="180x180" href="/dist/favicons/apple-touch-icon.png">
+      //-<link rel="icon" type="image/png" sizes="32x32" href="/dist/favicons/favicon-32x32.png">
+      //-<link rel="icon" type="image/png" sizes="16x16" href="/dist/favicons/favicon-16x16.png">
+      //-<link rel="manifest" href="/dist/favicons/site.webmanifest">
+      //-<link rel="mask-icon" href="/dist/favicons/safari-pinned-tab.svg" color="#5bbad5">
+      //-<link rel="shortcut icon" href="/dist/favicons/favicon.ico">
+      //-<meta name="msapplication-TileColor" content="#da532c">
+      //-<meta name="msapplication-config" content="/dist/favicons/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
 
       link(rel="stylesheet", href="/dist/css/site-main.css")
 
@@ -32,8 +37,6 @@ html(lang="ru")
    body.reg-user
       // unreg-user - если юзер не зарегистрирован
       // reg-user - если юзер зарегистрирован
-      
       block page-content
-      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
-      script(async src="/dist/js/site-main.js")
+
       

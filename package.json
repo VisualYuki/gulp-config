@@ -12,16 +12,15 @@
    "homepage": "https://github.com/VisualYuki/Gulp-config#readme",
    "scripts": {
       "start": "npm update --save && npm install && npm run getLibs && npm run dev",
-      "dev": "cross-env NODE_ENV=development gulp dev",
-      "dev:build": "cross-env NODE_ENV=development gulp build",
-      "prod:dev": "cross-env NODE_ENV=production gulp build",
+      "dev:build": "cross-env NODE_ENV=development gulp dev",
+		"dev:serve": "gulp serve",
       "prod:build": "cross-env NODE_ENV=production gulp build",
+		"prod:serve": "cross-env NODE_ENV=production gulp serve",
       "script": "gulp script",
       "pug2html": "gulp pug2html",
       "style": "gulp style",
       "minJpg": "gulp minJpg",
       "minPng": "gulp minPng",
-      "serve": "gulp serve",
       "webp": "gulp webp",
       "favicons": "gulp favicons",
       "cache": "gulp cache",
@@ -31,7 +30,8 @@
       "svg": "gulp svg",
       "getLibs": "gulp getLibs",
       "img": "gulp svg && gulp minJpg && gulp minPng && gulp webp",
-      "includeLibs": "gulp includeLibs"
+      "includeLibs": "gulp includeLibs",
+      "gifs": "gulp gifs"
    },
    "devDependencies": {
       "@babel/core": "^7.12.10",
@@ -86,6 +86,7 @@
    "dependencies": {
       "@fancyapps/fancybox": "^3.5.7",
       "jquery": "^3.5.1",
+      "lazysizes": "^5.3.2",
       "slick-carousel": "^1.8.1"
    },
    "extends": "pug-lint.json"

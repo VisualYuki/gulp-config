@@ -13,6 +13,7 @@ const favicons = require("./gulp/favicons");
 const svgSprite = require("./gulp/svgSprite");
 const includeLibs = require("./gulp/include-libs");
 const includeScripts = require("./gulp/include-scrips");
+const gifs = require("./gulp/gifs");
 
 //MAIN TASK
 const build = gulp.parallel(pug2html, style, script, font, svg, minPng, minJpg, favicons, webp, includeLibs, includeScripts);
@@ -25,6 +26,7 @@ gulp.task("style", style);
 
 gulp.task("minJpg", minJpg);
 gulp.task("minPng", minPng);
+gulp.task("gifs", gifs);
 gulp.task("serve", serve);
 gulp.task("pug2html", pug2html);
 gulp.task("webp", webp);
@@ -38,7 +40,7 @@ gulp.task("includeLibs", includeLibs);
 gulp.task("getLibs", gulp.series(getJsLibs, getCssLibs));
 
 function getJsLibs() {
-   let jsPath = ["node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js", "node_modules/jquery/dist/jquery.min.js", "node_modules/slick-carousel/slick/slick.min.js"];
+   let jsPath = ["node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js", "node_modules/jquery/dist/jquery.min.js", "node_modules/slick-carousel/slick/slick.min.js", "node_modules/lazysizes/lazysizes.min.js"];
    return gulp.src(jsPath).pipe(gulp.dest("src/js/libs"));
 }
 

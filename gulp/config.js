@@ -1,5 +1,5 @@
 const outDir = "dist";
-const currentPage = [ "src/pug/pages/search-result.pug"];
+const currentPage = [ "src/pug/pages/_index.pug"];
 
 module.exports =  {
    src: {
@@ -18,7 +18,8 @@ module.exports =  {
       webp: "src/img/**/*.{png,jpg,jpeg}",
       jpg: "src/img/**/*.{jpeg,jpg}",
       png: "src/img/**/*.png",
-      includeScripts: "src/js/include-scripts/**/*.js"
+      includeScripts: "src/js/include-scripts/**/*.js",
+		gifs: "src/img/gifs/**/*.*",
    },
    out: {
       html: outDir + "/pages",
@@ -31,7 +32,8 @@ module.exports =  {
       favicons: outDir + "/favicons",
       baseDir: outDir,
       svg: outDir + "/svg/",
-      includeScripts: outDir + "/include-scripts"
+      includeScripts: outDir + "/include-scripts",
+		gifs: outDir + "/gifs"
    },
    watch: {
       less: "src/less/**/*.*",

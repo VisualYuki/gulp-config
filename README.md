@@ -1,40 +1,42 @@
+# from Backend for FrontEnd Все что ниже нужно заполнить.
+
+1. Где лежит локально сервер и есть ли он.
+2. Структура папок и особенно где лежит весь html код сайта Пр. страницы, включаемый код html и т.д.
+3. Где подгружаеются скипты, стили в php
+4. Информацию для обратной связи.
+5. 
+ 
 # Front end
 
-## Начальная настройка
-`` npm run start `` -- обновить версии пакетов, скачать node_modules, запустить задачу npm run dev
+## FrontEnd начало работы
+- 
+- 
+- 
+
+## FrontEnd for Backend
+- 
+- 
+- 
 
 ## Gulp задачи
-### Production mode !!!ДЛЯ ВЕРСТАЛЬЩИКА!!!
-``npm run prod:serve`` - запуск сервера. Запускаем задачу и начинаем внедрение правок. Компилиться все кроме html.
+### Production mode (для внедрения правок, после сдачи верстки)
+``npm run prod:serve`` - запуск сервера (c минификации и т.д.).
+``npm run prod:build`` - компиляция всего проекта, с удалением выходной папки + запуск сервера.
 
 ### Development mode (не нужны после сдачи верстки)
-``npm run prod:dev`` - компиляция всего проекта, с удаления выходной папки + запуск сервера (уже с минификацией файлов и т.д.)
-``npm run prod:build`` - тоже самое, что npm run prod:dev, только не запускается сервер
-``npm run dev`` - компиляция всего проекта, с удалением выходной папки + запуск сервера (без минификации и т.д.)
-``npm run dev:build`` - тоже самое, что npm run dev, только не запускается сервер
-      
+``npm run dev:serve`` - запуск сервера (без минификации и т.д.)/
+``npm run dev:build`` - компиляция всего проекта, с удалением выходной папки + запуск сервера 
+
 ## Библиотеки
-   1. Модальные окна - fancybox (http://fancyapps.com/fancybox/3/docs)
-   2. Слайдер - slick-slider (https://kenwheeler.github.io/slick/)
-   3. Шаблон ввода в input - jQuery Masked Input Plugin (https://github.com/digitalBush/jquery.maskedinput)
-   4. Таймер - easytimer.js (https://github.com/albert-gonzalez/easytimer.js)
-   5. Выпадающий список - select2 (https://github.com/select2/select2)
-   6. 
-   7. 
-   8. 
+   - Модальные окна - fancybox (http://fancyapps.com/fancybox/3/docs)
+   - Слайдер - slick-slider (https://kenwheeler.github.io/slick/)
+   - Шаблон ввода в input - jQuery Masked Input Plugin (https://github.com/digitalBush/jquery.maskedinput)
+   - Выпадающий список - select2 (https://github.com/select2/select2)
+   - Ленивая загрузки изображений - lazysizes (https://github.com/aFarkas/lazysizes)
+   - Кастомный скролл - simplebar (https://github.com/Grsmto/simplebar)
+   - Таймер - easytimer.js (https://github.com/albert-gonzalez/easytimer.js)   
+	- Выпадающий список - select2 (https://github.com/select2/select2)
    
-## Особенности сайта
-1. 
-2.       
-      
-## Особенности конфига
-  1. Если нужно поменять папку, куда будут идти скомпилированные файлы, то в gulp/config.js есть переменная outDir = "dist";
-  2. Есть npm скрипты для выполнения отдельных задач gulp (см. файл package.json)
-  3. На гитлабе должен сработать npm run prod:build + задача должна быть успешной
-  4. Все файлы подключаются с папки dist, но не из scr.
-  5. Либы, которые нужно вставить в общий файл стилей кладется в src/less/libs, но обязательно файл должен быть .less (можно просто переименовать .css в .less)
-  6. 
-  
 ## Cтруктура проекта
 - dist - папка с выходными файлами, формируется только gulp'ом
     - css - общий файл стилей для сайта
@@ -88,15 +90,11 @@
     - style - собрать общий бандл стилей
     - svgSprite - собрать свг-спрайт
     - webpack-script - отвечает за js (пока не используется)
+
+## Особенности сайта
+1. 
+2.     
+
 ## Помощь
 Если совсем что-то непонятно, то можно мне написать vk - https://vk.com/moshkin_denis, или telegram - @denis_moshkin
-
-# from Backend for FrontEnd Все что ниже нужно заполнить.
-
-1. Где лежит локально сервер и есть ли он.
-2. Структура папок и особенно где лежит весь html код сайта Пр. страницы, включаемый код html и т.д.
-3. Где подгружаеются скипты, стили в php
-4. Информацию для обратной связи.
-5. 
- 
 

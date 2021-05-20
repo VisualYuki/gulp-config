@@ -33,31 +33,42 @@
 	position: relative;
 }
 
-//
-.page-wrap {
-	width: 100vw;
+.page-content {
+	.flex(flex-start,stretch,column);
 	overflow-x: hidden;
+	min-height: 100vh;
+	width: 100vw;
 }
 
-.page-content {
-	min-height: 100vh;
-	padding-bottom: 70px;
+.main-content {
+	flex-grow: 1;
+	overflow: hidden;
+}
+
+button {
+	display: block;
 }
 
 picture {
 	height: 100%;
-}
 
-picture img {
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+
+		&:not(.lazyloaded) {
+			width: 50px;
+			height: 50px;
+		}
+	}
 }
 
 body {
 	font-family: Roboto;
 	font-size: 16px;
 	letter-spacing: 0.03em;
+	background: black;
 
 	// Заранее загрузить иконку, чтобы не было задержки при наведении на крестик в модальном окне.
 	&:before {
@@ -210,6 +221,39 @@ body.unreg-user {
 	.site-mobile({
       height: 150px;
    });
+}
+
+.before-slider {
+	&_show-first {
+		&:not(.slick-slider) .before-slider__slider-item:not(:first-child) {
+			display: none;
+		}
+
+		&.slick-slider .before-slider__slider-item {
+			display: block;
+		}
+	}
+
+	&_show-cut {
+		&:not(.slick-slider) {
+			.flex(flex-start,stretch);
+
+			overflow: hidden;
+
+			.before-slider__slider-item {
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	&_show-count {
+		.flex(space-between,stretch);
+	}
+}
+
+.clearfix {
+	flex-basis: 100%;
+	height: 0;
 }
 
 //<link href="https://releases.transloadit.com/uppy/v1.24.0/uppy.min.css" rel="stylesheet">
