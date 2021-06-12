@@ -1,47 +1,48 @@
 .custon-counter {
-   .flex(flex-start,stretch);
-   width: 93px;
-   height: 25px;
+	.flex(flex-start,stretch);
+	width: 93px;
+	height: 25px;
 
-   border: 1px solid #7c7c7c;
-   border-radius: 2px;
-   overflow: hidden;
+	overflow: hidden;
 
-   &__arrow {
-      user-select: none;
-   }
+	border: 1px solid #7c7c7c;
+	border-radius: 2px;
 
-   &__left-arrow,
-   &__right-arrow {
-      .flex(center,center);
-      width: 30px;
-      height: 100%;
+	&__arrow {
+		user-select: none;
+	}
 
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 14px;
-      text-align: center;
-      color: #ffffff;
+	&__left-arrow,
+	&__right-arrow {
+		.flex(center,center);
+		width: 30px;
+		height: 100%;
 
-      background: #7c7c7c;
-      cursor: pointer;
-   }
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 14px;
+		text-align: center;
 
-   &__left-arrow {
-      left: 0;
-   }
+		background: #7c7c7c;
+		cursor: pointer;
+	}
 
-   &__right-arrow {
-      right: 0;
-   }
+	&__left-arrow {
+		left: 0;
+	}
 
-   &__input {
-      width: 31px;
-      height: 100%;
+	&__right-arrow {
+		right: 0;
+	}
 
-      font-size: 12px;
-      line-height: 25px;
-      text-align: center;
-      color: #000000;
-   }
+	&__input {
+		width: 31px;
+		height: 100%;
+
+		color: #000000;
+		font-size: 12px;
+		line-height: 25px;
+		text-align: center;
+	}
 }

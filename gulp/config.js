@@ -3,13 +3,10 @@ const currentPage = [ "src/pug/pages/_index.pug"];
 
 module.exports =  {
    src: {
-
       pug: "src/pug/pages/*.pug",
       //pug: "src/pug/pages/product.pug",
       includePug: currentPage,
       less: "src/less/site-main.less",
-      //img: "src/img/**/*.*",
-      //video: "src/video/**/*.*",
       js: "src/js/**/*.js",
       libs: "src/js/libs/**/*.js",
       fonts: "src/fonts/**/*.*",

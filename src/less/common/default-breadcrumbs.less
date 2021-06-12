@@ -1,48 +1,50 @@
 .default-breadcrumbs {
-   padding: 32px 0 24px;
+	padding: 32px 0 24px;
 
-   .site-mobile({ 
-      padding: 12px 0;
-   });
+	.site-mobile({
+		padding: 12px 0;
+	});
 
-   &__items {
-      .flex(flex-start, center);
-      flex-wrap: wrap;
+	&__items {
+		.flex(flex-start, center);
+		flex-wrap: wrap;
 
-      ._425({
-         padding: 10px 0;
-      });
-   }
+		._425({
+			padding: 10px 0;
+		});
+	}
 
-   &__item {
-      margin-bottom: 10px;
+	&__item {
+		margin-bottom: 10px;
 
-      white-space: nowrap;
-     
+		white-space: nowrap;
 
-      &:not(:last-child) {
-         margin-right: 23px;
-         color: black;
+		&:last-child {
+			color: black;
 
-         &:hover {
-            color: blue;
-         }
+			pointer-events: none;
+		}
 
-         &:after {
-            content: ">";
+		&:not(:last-child) {
+			margin-right: 23px;
 
-            position: absolute;
-            top: 50%;
-            right: -17px;
+			color: black;
 
-            color: black;
-            transform: translateY(-50%);
-         }
-      }
+			&:hover {
+				color: blue;
+			}
 
-      &:last-child {
-         pointer-events: none;
-         color: black;
-      }
-   }
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: -17px;
+
+				color: black;
+
+				transform: translateY(-50%);
+
+				content: ">";
+			}
+		}
+	}
 }

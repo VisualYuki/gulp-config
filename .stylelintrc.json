@@ -1,22 +1,31 @@
 {
-   "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+	"plugins": [
+		"stylelint-order",
+		"stylelint-config-rational-order/plugin"
+	 ],
+   "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recommended",
+      "stylelint-config-rational-order"
+   ],
    "rules": {
-      "indentation": 3,
+		"order/properties-order": [],
+		"plugin/rational-order": [true, {
+			"border-in-box-model": false,
+			"empty-line-between-groups": true
+		 }],
+      "indentation": "tab",
       "at-rule-no-vendor-prefix": true,
-      "at-rule-empty-line-before": "never",
-      "rule-empty-line-before": ["always-multi-line",{
-         "ignore": [
-            "first-nested"
-         ]
-      }],
-      "declaration-empty-line-before": ["always",{
-         "ignore": [
-            "after-declaration","inside-single-line-block","first-nested"
-         ]
-      }],
+      "at-rule-empty-line-before":["always", {
+			"ignore": ["after-comment", "inside-block", "blockless-after-same-name-blockless"]
+		}],
+		"value-list-comma-newline-after": null,
+
+
+      "declaration-empty-line-before": null ,
       "no-eol-whitespace": null,
       "font-family-no-missing-generic-family-keyword": null,
-      
+
       "block-closing-brace-newline-before": "always",
       "block-closing-brace-newline-after": "always",
       "at-rule-name-case": "lower",
@@ -28,6 +37,10 @@
       "selector-pseudo-element-colon-notation": "single",
       "no-missing-end-of-source-newline": null,
       "color-hex-case": null,
-      "color-hex-length": null
+      "color-hex-length": null,
+		"block-no-empty": null,
+		"no-descending-specificity": null,
+		"no-empty-source": null,
+		"declaration-colon-newline-after": null
    }
 }

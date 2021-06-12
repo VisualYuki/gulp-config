@@ -13,9 +13,9 @@
    "scripts": {
       "start": "npm update --save && npm install && npm run getLibs && npm run dev",
       "dev:build": "cross-env NODE_ENV=development gulp dev",
-		"dev:serve": "gulp serve",
+      "dev:serve": "cross-env NODE_ENV=development gulp serve",
       "prod:build": "cross-env NODE_ENV=production gulp build",
-		"prod:serve": "cross-env NODE_ENV=production gulp serve",
+      "prod:serve": "cross-env NODE_ENV=production gulp serve",
       "script": "gulp script",
       "pug2html": "gulp pug2html",
       "style": "gulp style",
@@ -31,7 +31,8 @@
       "getLibs": "gulp getLibs",
       "img": "gulp svg && gulp minJpg && gulp minPng && gulp webp",
       "includeLibs": "gulp includeLibs",
-      "gifs": "gulp gifs"
+      "gifs": "gulp gifs",
+      "includeScripts": "gulp includeLibs"
    },
    "devDependencies": {
       "@babel/core": "^7.12.10",
@@ -80,7 +81,9 @@
       "less-plugin-autoprefix": "^2.0.0",
       "puglint-stylish": "^1.1.0",
       "stylelint": "^13.9.0",
+      "stylelint-config-rational-order": "^0.1.2",
       "stylelint-config-recess-order": "^2.3.0",
+      "stylelint-config-recommended": "^3.0.0",
       "stylelint-config-standard": "^20.0.0"
    },
    "dependencies": {

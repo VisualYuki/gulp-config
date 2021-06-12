@@ -6,10 +6,10 @@
 
 		//&:not(&_row) {
 		//	.mobile({
-      //      flex-direction: column;
-      //      align-items: stretch;
-      //      margin-bottom: 5px;
-      //   });
+		//      flex-direction: column;
+		//      align-items: stretch;
+		//      margin-bottom: 5px;
+		//   });
 		//}
 
 		//&_row {
@@ -23,16 +23,16 @@
 		cursor: pointer;
 
 		.mobile({
-         margin-right: 0;
-      });
+			margin-right: 0;
+		});
 
 		&:not(&_active):hover {
 			color: yellow;
 		}
 
-
 		&_active {
 			font-weight: 600;
+
 			pointer-events: none;
 		}
 	}
@@ -43,14 +43,14 @@
 	&__target-item {
 		&:not(.default-tabs__target-item_active) {
 			position: absolute;
-			left: 0;
 			top: 0;
-			width: 100%;
-
+			left: 0;
 			.z-index--2;
-			opacity: 0;
 
 			display: block;
+			width: 100%;
+
+			opacity: 0;
 		}
 
 		&_active {

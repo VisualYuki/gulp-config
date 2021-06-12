@@ -36,6 +36,7 @@ gulp.task("font", font);
 gulp.task("clean", clean);
 gulp.task("svg", svg);
 gulp.task("includeLibs", includeLibs);
+gulp.task("includeScripts", includeScripts);
 
 gulp.task("getLibs", gulp.series(getJsLibs, getCssLibs));
 

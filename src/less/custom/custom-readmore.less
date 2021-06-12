@@ -1,51 +1,56 @@
 .custom-readmore {
-   &.active {
-      .custom-readmore {
-         &__content {
-            max-height: max-content;
-         }
+	&.active {
+		.custom-readmore {
+			&__content {
+				max-height: max-content;
+			}
 
-         &__btn {
-            .opened-text {
-               display: none;
-            }
+			&__btn {
+				.opened-text {
+					display: none;
+				}
 
-            .closed-text {
-               display: flex;
-            }
-         }
-      }
-   }
+				.closed-text {
+					display: flex;
+				}
+			}
+		}
+	}
 
-   &__btn {
-      cursor: pointer;
+	&__btn {
+		cursor: pointer;
 
-      .closed-text {
-         .flex(flex-start,center);
-         display: none;
-      }
+		.closed-text {
+			.flex(flex-start,center);
+			display: none;
+		}
 
-      .icon {
-         margin-top: 4px;
-      }
-   }
+		.icon {
+			margin-top: 4px;
+		}
+	}
 
-   &__content {
-      margin-bottom: 5px;
-      transition-duration: 1s;
+	&__content {
+		margin-bottom: 5px;
 
-      &:before {
-         content: "";
-         .z-index-1;
+		transition-duration: 1s;
 
-         position: absolute;
-         bottom: 0;
-         left: 0;
+		&:before {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			.z-index-1;
 
-         width: 100%;
-         height: 20px;
+			width: 100%;
+			height: 20px;
 
-         background: linear-gradient(0deg, rgba(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
-      }
-   }
+			background: linear-gradient(
+				0deg,
+				rgba(255, 255, 255) 0%,
+				rgba(255, 255, 255, 0) 100%
+			);
+
+			content: "";
+		}
+	}
 }

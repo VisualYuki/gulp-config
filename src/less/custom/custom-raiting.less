@@ -1,76 +1,76 @@
 .custom-raiting {
-   //★
-   @def: #c0c0c0;
-   @active: #ffd401;
+	//★
+	@def: #c0c0c0;
+	@active: #ffd401;
 
-   margin-top: -4px; 
+	margin-top: -4px;
 
-   &_no-event {
-      pointer-events: none;
-   }
+	&_no-event {
+		pointer-events: none;
+	}
 
-   &__items {
-      .flex(space-between,center);
-      flex-direction: row-reverse;
-      width: max-content;
-      // height: 12px;
+	&__items {
+		.flex(space-between,center);
+		flex-direction: row-reverse;
+		width: max-content;
+		// height: 12px;
 
-      &:hover .custom-raiting__item:before {
-         color: @def;
-      }
+		&:hover .custom-raiting__item:before {
+			color: @def;
+		}
 
-      &:before {
-         content: "★★★★★";
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
 
-         position: absolute;
-         left: 0;
-         top: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
 
-         display: block;
-         width: 100%;
-         height: 100%;
+			color: @def;
+			font-size: 20px;
 
-         font-size: 20px;
-         color: @def;
-      }
+			content: "★★★★★";
+		}
 
-      &:hover .custom-raiting__item.checked:before,
-      &:hover .custom-raiting__item.checked ~ .custom-raiting__item:before {
-         color: @def;
-      }
-   }
+		&:hover .custom-raiting__item.checked:before,
+		&:hover .custom-raiting__item.checked ~ .custom-raiting__item:before {
+			color: @def;
+		}
+	}
 
-   &__item {
-      width: 20%;
-      height: 100%;
+	&__item {
+		width: 20%;
+		height: 100%;
 
-      cursor: pointer;
+		cursor: pointer;
 
-      &:before {
-         content: "★";
+		&:before {
+			display: block;
 
-         display: block;
+			color: @def;
+			font-size: 20px;
 
-         font-size: 20px;
-         color: @def;
-      }
+			content: "★";
+		}
 
-      &:hover:before,
-      &:hover ~ &:before {
-         color: @active !important;
-      }
+		&:hover:before,
+		&:hover ~ &:before {
+			color: @active !important;
+		}
 
-      &.checked:before,
-      &.checked ~ .custom-raiting__item:before {
-         color: @active;
-      }
-   }
+		&.checked:before,
+		&.checked ~ .custom-raiting__item:before {
+			color: @active;
+		}
+	}
 }
 
 //.custom-raiting
 //.custom-raiting__items
 //   .custom-raiting__item
-//   .custom-raiting__item 
+//   .custom-raiting__item
 //   .custom-raiting__item.checked
-//   .custom-raiting__item 
-//   .custom-raiting__item 
+//   .custom-raiting__item
+//   .custom-raiting__item

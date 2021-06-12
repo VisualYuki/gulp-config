@@ -52,6 +52,12 @@
 	}
 }
 
+.print(@rules) {
+	@media print {
+		@rules();
+	}
+}
+
 ._2200(@rules) {
 	@media (max-width: 2200px) {
 		@rules();

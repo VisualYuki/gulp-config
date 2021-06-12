@@ -1,4 +1,4 @@
-// выбор числа от с помощью кнопок лево и право.
+// Выбор числа от с помощью кнопок лево и право.
 $(".custon-counter__right-arrow").on("click", function () {
    let value = $(this).parent(".custon-counter").find("input").val();
    $(this)
