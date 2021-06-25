@@ -20,12 +20,9 @@
 			"ignore": ["after-comment", "inside-block", "blockless-after-same-name-blockless"]
 		}],
 		"value-list-comma-newline-after": null,
-
-
       "declaration-empty-line-before": null ,
       "no-eol-whitespace": null,
       "font-family-no-missing-generic-family-keyword": null,
-
       "block-closing-brace-newline-before": "always",
       "block-closing-brace-newline-after": "always",
       "at-rule-name-case": "lower",
