@@ -1,4 +1,10 @@
-<p style="font-size: 30px;"> Оглавление </p>
+<style>
+	.header-title {
+		font-size: 30px;
+	}
+</style>
+
+<p class="header-title"> Оглавление </p>
 
 -  [Редактирование Readme.md (Frontend, Backend)](#редактирование-readmemd-frontend-backend)
 -  [Для BACKEND разработчика](#для-backend-разработчика)
