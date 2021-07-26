@@ -6,15 +6,4 @@ $(document).ready(function () {
 	//		lazySizes.loader.unveil(imgages[i]);
 	//	}
 	//});
-
-	// плавная прокрутка по якорю
-   $('a[href^="#"]').click(function () {
-      let anchor = $(this).attr("href");
-      $("html, body").animate(
-         {
-            scrollTop: $(anchor).offset().top - 200,
-         },
-         600
-      );
-   });
 });

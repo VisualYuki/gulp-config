@@ -1,25 +1,21 @@
-<style>
-	.header-title {
-		font-size: 30px;
-	}
-</style>
-
-<p class="header-title"> Оглавление </p>
-
--  [Редактирование Readme.md (Frontend, Backend)](#редактирование-readmemd-frontend-backend)
--  [Для BACKEND разработчика](#для-backend-разработчика)
-   -  [from Backend for FrontEnd (Нужно заполнить)](#from-backend-for-frontend-нужно-заполнить)
-   -  [Frontend for Backend (Нужно сделать)](#frontend-for-backend-нужно-сделать)
--  [Для FRONTEND разработчика](#для-frontend-разработчика)
-   -  [FrontEnd начало работы](#frontend-начало-работы)
-   -  [CSS сокращения](#css-сокращения)
-   -  [Gulp задачи](#gulp-задачи)
-      -  [Production mode (для внедрения правок, после сдачи верстки)](#production-mode-для-внедрения-правок-после-сдачи-верстки)
-      -  [Development mode (не нужны после сдачи верстки)](#development-mode-не-нужны-после-сдачи-верстки)
-   -  [Библиотеки](#библиотеки)
-   -  [Cтруктура проекта](#cтруктура-проекта)
-   -  [Особенности сайта](#особенности-сайта)
-   -  [Обратная связь с Fronend разработчиком](#обратная-связь-с-fronend-разработчиком)
+- [Редактирование Readme.md (Frontend, Backend)](#редактирование-readmemd-frontend-backend)
+- [Для BACKEND разработчика](#для-backend-разработчика)
+	- [from Backend for FrontEnd (Нужно заполнить)](#from-backend-for-frontend-нужно-заполнить)
+	- [Frontend for Backend (Нужно сделать)](#frontend-for-backend-нужно-сделать)
+- [Для FRONTEND разработчика](#для-frontend-разработчика)
+	- [FrontEnd начало работы](#frontend-начало-работы)
+	- [Линтеры](#линтеры)
+		- [Style lint](#style-lint)
+		- [Eslint](#eslint)
+		- [EditorConfig](#editorconfig)
+	- [CSS сокращения](#css-сокращения)
+	- [Gulp задачи](#gulp-задачи)
+		- [Production mode (для внедрения правок, после сдачи верстки)](#production-mode-для-внедрения-правок-после-сдачи-верстки)
+		- [Development mode (не нужны после сдачи верстки)](#development-mode-не-нужны-после-сдачи-верстки)
+	- [Библиотеки](#библиотеки)
+	- [Cтруктура проекта](#cтруктура-проекта)
+	- [Особенности сайта](#особенности-сайта)
+	- [Обратная связь с Fronend разработчиком](#обратная-связь-с-fronend-разработчиком)
 
 # Редактирование Readme.md (Frontend, Backend)
 
@@ -62,7 +58,22 @@
 
 -
 -
--
+
+## Линтеры
+
+-  Открыть проект в папке frontend-src
+
+### Style lint
+
+-  Если используете vs code(если нет, то соболезную), подключить плагин [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+
+### Eslint
+
+-  Если используете vs code, подключить плагин [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+### EditorConfig
+
+-  Если используете vs code, подключить плагин [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
 ## CSS сокращения
 
