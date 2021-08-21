@@ -12,20 +12,19 @@ const prettier = require("gulp-prettier");
 let config = require("./config.js");
 
 module.exports = function include_pug2html() {
-   return gulp
-      .src(config.src.includePug)
-      //.pipe(plumber())
-      //.pipe(pugLinter({ reporter: "default" }))
-      .pipe(
-         pug({
-         })
-		)
-		//.on("error", notify.onError())
-		//.on("error", function(err){
-		//	console.log(err.message);
-		//	this.end();
-      //})
-      //.pipe(prettier({}))
-      .pipe(htmlValidator())
-      .pipe(gulp.dest(config.out.html));
+	return (
+		gulp
+			.src(config.src.includePug)
+			//.pipe(plumber())
+			//.pipe(pugLinter({ reporter: "default" }))
+			.pipe(pug({}))
+			//.on("error", notify.onError())
+			//.on("error", function(err){
+			//	console.log(err.message);
+			//	this.end();
+			//})
+			//.pipe(prettier({}))
+			.pipe(htmlValidator())
+			.pipe(gulp.dest(config.out.html))
+	);
 };

@@ -5,14 +5,14 @@ const newer = require("gulp-newer");
 let config = require("../config.js");
 
 module.exports = function min_jpg() {
-   return (
-      gulp
-         .src(config.src.jpg)
-         //.pipe(newer(dist))
-         .pipe(imagemin([imagemin.mozjpeg({ progressive: true })]))
-         //.pipe(imagemin([imagemin.mozjpeg({ quality: 75, progressive: true })]))
-         .pipe(gulp.dest(config.out.minImg))
-   );
+	return (
+		gulp
+			.src(config.src.jpg)
+			//.pipe(newer(dist))
+			.pipe(imagemin([imagemin.mozjpeg({ progressive: true })]))
+			//.pipe(imagemin([imagemin.mozjpeg({ quality: 75, progressive: true })]))
+			.pipe(gulp.dest(config.out.minImg))
+	);
 };
 
 //const newer = require("gulp-newer");
