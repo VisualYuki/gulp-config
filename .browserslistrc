@@ -1,7 +1,9 @@
-# Browserslist config for autoprefixer
+last 2 years
+> 1%
+not dead
 
 # All browsers
-last 4 versions
+#last 3 versions
 
 # Desktop browsers
 #Explorer >= 10

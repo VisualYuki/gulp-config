@@ -2,7 +2,7 @@ node_modules
 package-lock.json
 dist
 other
-.vscode
+.vscode/tasks.json
 .idea
 src/fonts/unused-fonts/
 temp

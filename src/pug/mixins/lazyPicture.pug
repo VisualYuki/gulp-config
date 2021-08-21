@@ -1,4 +1,4 @@
 mixin setLazyPicture(className,folder,name,ext,alt)
-    picture(class=`${className}`) 
-        source(srcset="/dist/gifs/preloader.gif" data-srcset=`/dist/webp-img/${folder}/${name}.webp` class="lazyload" type="image/webp")
-        img(src="/dist/gifs/preloader.gif" data-src=`/dist/min-img/${folder}/${name}.${ext}` class="lazyload" alt=`${alt}`)
+	picture(class=`${className}`)
+		source(srcset="/dist/gifs/preloader.gif" data-srcset=`/dist/webp-img/${folder}/${name}.webp` class="lazyload" type="image/webp")
+		img(src="/dist/gifs/preloader.gif" data-src=`/dist/min-img/${folder}/${name}.${ext}` class="lazyload" alt=`${alt}`)

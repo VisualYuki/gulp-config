@@ -29,7 +29,7 @@
 		"img": "gulp img",
 		"includeLibs": "gulp includeLibs",
 		"includeScripts": "gulp includeLibs",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "pug-lint ./src/pug"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.0",
@@ -85,6 +85,8 @@
 		"imagemin-pngquant": "^8.0.0",
 		"imagemin-webp": "^5.1.0",
 		"less-plugin-autoprefix": "^2.0.0",
+		"pug-lint": "^2.6.0",
+		"pug-lint-config-clock": "^2.0.0",
 		"puglint-stylish": "^1.1.0",
 		"sass": "^1.38.0",
 		"stylelint": "^13.9.0",

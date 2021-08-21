@@ -4,10 +4,12 @@
 	- [Frontend for Backend (Нужно сделать)](#frontend-for-backend-нужно-сделать)
 - [Для FRONTEND разработчика](#для-frontend-разработчика)
 	- [FrontEnd начало работы](#frontend-начало-работы)
-	- [Линтеры](#линтеры)
+	- [Линтеры (Если используете VS Code)](#линтеры-если-используете-vs-code)
+		- [Pug lint](#pug-lint)
 		- [Style lint](#style-lint)
 		- [Eslint](#eslint)
 		- [EditorConfig](#editorconfig)
+		- [Prettier](#prettier)
 	- [CSS сокращения](#css-сокращения)
 	- [Gulp задачи](#gulp-задачи)
 		- [Production mode (для внедрения правок, после сдачи верстки)](#production-mode-для-внедрения-правок-после-сдачи-верстки)
@@ -59,21 +61,29 @@
 -
 -
 
-## Линтеры
+## Линтеры (Если используете VS Code)
 
 -  Открыть проект в папке frontend-src
 
+### Pug lint
+
+-  Подключить плагин [puglint](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-puglint)
+
 ### Style lint
 
--  Если используете vs code(если нет, то соболезную), подключить плагин [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+-  Подключить плагин [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
 ### Eslint
 
--  Если используете vs code, подключить плагин [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+-  Подключить плагин [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ### EditorConfig
 
--  Если используете vs code, подключить плагин [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+-  Подключить плагин [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
+### Prettier
+
+-  Подключить плагин [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ## CSS сокращения
 
