@@ -1,8 +1,7 @@
 node_modules
 package-lock.json
-dist
-other
-.vscode/tasks.json
+dist/*
 .idea
 src/fonts/unused-fonts/
-temp
+temp/*
+!temp/.gitkeep

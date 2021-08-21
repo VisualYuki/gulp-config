@@ -6,7 +6,7 @@ const rename = require("gulp-rename");
 const sourcemaps = require("gulp-sourcemaps");
 const gulpif = require("gulp-if");
 const concat = require("gulp-concat");
-const config = require("./config.js");
+const config = require("../config.js");
 
 module.exports = function script() {
 	const src = [

@@ -1,7 +1,4 @@
-//const plumber = require("gulp-plumber");
-//const shorthand = require("gulp-shorthand");
-
-const { src, dest } = require("gulp");
+const {src, dest} = require("gulp");
 const scss = require("gulp-sass")(require("sass"));
 const sassGlob = require("gulp-sass-glob");
 const sourcemaps = require("gulp-sourcemaps");
@@ -18,11 +15,6 @@ const config = require("./config.js");
 // TODO проверить плагины gulpStylelint, ccso, cleanCSS
 
 module.exports = function styles() {
-	//.pipe(lessGlob())
-	//.pipe(gulpif(config.isProd, autoprefixer()))
-	//.pipe(gulpif(config.isProd, shorthand()))
-	//.pipe(plumber())
-
 	return src(config.src.scss)
 		.pipe(
 			gulpStylelint({
@@ -58,3 +50,11 @@ module.exports = function styles() {
 		)
 		.pipe(dest(config.out.css));
 };
+
+//const plumber = require("gulp-plumber");
+//const shorthand = require("gulp-shorthand");
+
+//.pipe(lessGlob())
+//.pipe(gulpif(config.isProd, autoprefixer()))
+//.pipe(gulpif(config.isProd, shorthand()))
+//.pipe(plumber())

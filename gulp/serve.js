@@ -1,10 +1,9 @@
-const { watch, series, parallel } = require("gulp");
+const {watch, series, parallel} = require("gulp");
 const webp = require("./img/webp");
 const svg = require("./img/svg");
 const minPng = require("./img/png");
 const minJpg = require("./img/jpg");
 const style = require("./styles");
-//const script = require("./script");
 const server = require("browser-sync").create();
 const pug2html = require("./pug2html");
 const include_pug2html = require("./include_pug2html");

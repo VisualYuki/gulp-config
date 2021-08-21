@@ -1,3 +1,3 @@
 $(document).ready(function () {
-	console.log("hello from index");
+	console.log("hello to _index");
 });

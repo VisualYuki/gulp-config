@@ -1,6 +1,9 @@
 {
 	"name": "gulp-config",
 	"main": "index.js",
+	"private": true,
+	"author": "Moshkin Denis",
+	"license": "ISC",
 	"people fields": {
 		"name": "Moshkin Denis",
 		"url": "https://vk.com/moshkin_denis"
@@ -12,12 +15,13 @@
 	"homepage": "https://github.com/VisualYuki/Gulp-config#readme",
 	"scripts": {
 		"start": "npm update --save && npm install && npm run getLibs && npm run dev",
-		"dev:build": "cross-env NODE_ENV=development gulp build",
+		"dev:build": "cross-env NODE_ENV=development gulp build && webpack",
 		"dev:serve": "cross-env NODE_ENV=development gulp serve",
-		"prod:build": "cross-env NODE_ENV=production gulp build",
+		"prod:build": "cross-env NODE_ENV=production gulp build && webpack",
 		"prod:serve": "cross-env NODE_ENV=production gulp serve",
 		"script": "gulp script",
 		"pug2html": "gulp pug2html",
+		"include_pug2html": "gulp include_pug2html",
 		"styles": "gulp styles",
 		"minJpg": "gulp minJpg",
 		"minPng": "gulp minPng",
@@ -27,9 +31,8 @@
 		"svg": "gulp svg",
 		"getLibs": "gulp getLibs",
 		"img": "gulp img",
-		"includeLibs": "gulp includeLibs",
-		"includeScripts": "gulp includeLibs",
-		"test": "pug-lint ./src/pug"
+		"test": "pug-lint ./src/pug",
+		"js": "webpack"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.0",
@@ -85,6 +88,7 @@
 		"imagemin-pngquant": "^8.0.0",
 		"imagemin-webp": "^5.1.0",
 		"less-plugin-autoprefix": "^2.0.0",
+		"lint-staged": "^11.1.2",
 		"pug-lint": "^2.6.0",
 		"pug-lint-config-clock": "^2.0.0",
 		"puglint-stylish": "^1.1.0",
@@ -93,7 +97,9 @@
 		"stylelint-config-rational-order": "^0.1.2",
 		"stylelint-config-recess-order": "^2.3.0",
 		"stylelint-config-recommended": "^3.0.0",
-		"stylelint-config-standard": "^20.0.0"
+		"stylelint-config-standard": "^20.0.0",
+		"webpack": "^5.51.1",
+		"webpack-cli": "^4.8.0"
 	},
 	"dependencies": {
 		"@fancyapps/fancybox": "^3.5.7",
@@ -101,7 +107,6 @@
 		"lazysizes": "^5.3.2",
 		"slick-carousel": "^1.8.1"
 	},
-	"extends": "pug-lint.json",
 	"husky": {
 		"hooks": {
 			"pre-commit": "npm run test"

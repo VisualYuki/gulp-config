@@ -1,10 +1,11 @@
 //const script = require("./gulp/script");
 //const svgSprite = require("./gulp/unused/svgSprite");
 
-const { dest, src, series, task, parallel, gulp } = require("gulp");
+const {dest, src, series, task, parallel, gulp} = require("gulp");
 
 const serve = require("./gulp/serve");
 const pug2html = require("./gulp/pug2html");
+const include_pug2html = require("./gulp/include_pug2html");
 const styles = require("./gulp/styles");
 const copyToDist = require("./gulp/copyToDist");
 const webp = require("./gulp/img/webp");
@@ -31,6 +32,7 @@ exports.dev = series(build, serve);
 // SINGLE TASK
 exports.serve = serve;
 exports.pug2html = pug2html;
+exports.include_pug2html = include_pug2html;
 exports.styles = styles;
 exports.minJpg = minJpg;
 exports.minPng = minPng;
