@@ -1,25 +1,23 @@
-const gulp = require("gulp");
-var imagemin = require("gulp-imagemin");
+const { src, dest } = require("gulp");
+const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
-
-let config = require("../config.js");
+const config = require("../config.js");
 
 module.exports = function min_jpg() {
 	return (
-		gulp
-			.src(config.src.jpg)
-			//.pipe(newer(dist))
+		src(config.src.jpg)
+			.pipe(newer(config.out.minImg))
 			.pipe(imagemin([imagemin.mozjpeg({ progressive: true })]))
 			//.pipe(imagemin([imagemin.mozjpeg({ quality: 75, progressive: true })]))
-			.pipe(gulp.dest(config.out.minImg))
+			.pipe(dest(config.out.minImg))
 	);
 };
 
 //const newer = require("gulp-newer");
-//var imagemin = require("gulp-imagemin");
+//const imagemin = require("gulp-imagemin");
 //function min_jpg() {
-//   let src = "src/img/**/*.{jpeg,jpg}";
-//   let dist = "dist/min-img";
+//   const src = "src/img/**/*.{jpeg,jpg}";
+//   const dist = "dist/min-img";
 
 //   return gulp
 //      .src(src, { since: gulp.lastRun(min_jpg) })

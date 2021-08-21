@@ -7,34 +7,34 @@ const sourcemaps = require("gulp-sourcemaps");
 const gulpif = require("gulp-if");
 const newer = require("gulp-newer");
 
-let isDev = true;
-let isProd = !isDev;
+const isDev = true;
+const isProd = !isDev;
 
 const webpack = require("webpack-stream");
 
-let path = require("./config.js");
+const path = require("./config.js");
 
 module.exports = function script() {
-   let webConfig = {
-      output: {
-         filename: "main.min.js",
-      },
-      module: {
-         rules: [
-            {
-					test: /\.js$/,
-					loader: 'babel-loader',
-					exclude: "/node_modules/"
-            },
-         ],
+	const webConfig = {
+		output: {
+			filename: "main.min.js",
 		},
-		mode: isDev ? "development" : "production"
+		module: {
+			rules: [
+				{
+					test: /\.js$/,
+					loader: "babel-loader",
+					exclude: "/node_modules/",
+				},
+			],
+		},
+		mode: isDev ? "development" : "production",
 	};
-	
-   return gulp
-      .src("src/js/site-main.js")
-      .pipe(webpack(webConfig))
-      .pipe(gulp.dest("dist/js"));
+
+	return gulp
+		.src("src/js/site-main.js")
+		.pipe(webpack(webConfig))
+		.pipe(gulp.dest("dist/js"));
 };
 
 //.pipe(gulpif(isProd, eslint()))

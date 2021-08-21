@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const newer = require("gulp-newer");
 
-let config = require("./config.js");
+const config = require("../config.js");
 
 module.exports = function includeScripts() {
 	return gulp

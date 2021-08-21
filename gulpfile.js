@@ -1,22 +1,19 @@
-const { dest, src, series, task, parallel, gulp } = require("gulp");
-
-const pug2html = require("./gulp/pug2html");
-const clear = require("./gulp/clear");
-const styles = require("./gulp/styles");
-const webp = require("./gulp/img/webp");
-
-const minPng = require("./gulp/img/png");
-const minJpg = require("./gulp/img/jpg");
-
-const serve = require("./gulp/serve");
 //const script = require("./gulp/script");
 //const svgSprite = require("./gulp/unused/svgSprite");
-const includeLibs = require("./gulp/include-libs");
-const includeScripts = require("./gulp/include-scrips");
-const svg = require("./gulp/img/svg");
-const copyToDist = require("./gulp/copyToDist");
 
-//MAIN TASK
+const { dest, src, series, task, parallel, gulp } = require("gulp");
+
+const serve = require("./gulp/serve");
+const pug2html = require("./gulp/pug2html");
+const styles = require("./gulp/styles");
+const copyToDist = require("./gulp/copyToDist");
+const webp = require("./gulp/img/webp");
+const minPng = require("./gulp/img/png");
+const minJpg = require("./gulp/img/jpg");
+const svg = require("./gulp/img/svg");
+const clear = require("./gulp/clear");
+
+// BUILD TASK
 const build = parallel(
 	pug2html,
 	styles,
@@ -25,48 +22,28 @@ const build = parallel(
 	minPng,
 	minJpg,
 	copyToDist,
-	webp,
-	includeLibs,
-	includeScripts
+	webp
 );
 
 exports.build = series(clear, build);
 exports.dev = series(build, serve);
-//task("build", );
-//task("dev", );
 
-//SINGLE TASK
-exports.svg = svg;
-exports.copyToDist = copyToDist;
-exports.clear = clear;
+// SINGLE TASK
+exports.serve = serve;
 exports.pug2html = pug2html;
 exports.styles = styles;
 exports.minJpg = minJpg;
 exports.minPng = minPng;
 exports.webp = webp;
-//exports.getLibs = getLibs;
+exports.svg = svg;
 exports.img = series(svg, minJpg, minPng, webp);
-exports.serve = serve;
+exports.copyToDist = copyToDist;
+exports.clear = clear;
+
+//exports.getLibs = getLibs;
 //exports.clear = clear;
 //exports.clear = clear;
 //exports.clear = clear;
-//task("script", script);
-//task("style", style);
-//task("minJpg", minJpg);
-//task("minPng", minPng);
-
-//gulp.task("pug2html", pug2html);
-//gulp.task("webp", webp);
-
-//gulp.task("svgSprite", svgSprite);
-
-//gulp.task("clear", clear);
-
-//exports.copyToDist = copyToDist;
-//task("svg", series(svg));
-//task("copyToDist", series(copyToDist));
-//gulp.task("includeLibs", includeLibs);
-//gulp.task("includeScripts", includeScripts);
 
 //gulp.task("getLibs", gulp.series(getJsLibs, getCssLibs));
 

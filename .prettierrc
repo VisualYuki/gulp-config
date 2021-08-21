@@ -1,0 +1,9 @@
+{
+	"useEditorConfig": true,
+	"printWidth": 120,
+	"singleQuote": false,
+	"bracketSpacing": false,
+	"arrowParens": "always",
+	"semi": true,
+	"vueIndentScriptAndStyle": true
+}

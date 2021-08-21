@@ -2,14 +2,13 @@ const gulp = require("gulp");
 const rename = require("gulp-rename");
 const svgSprite = require("gulp-svg-sprite");
 const gulpif = require("gulp-if");
-
-let config = require("../config.js");
+const config = require("../config.js");
 
 module.exports = function svgsprite() {
-	let src = "src/svg/**/*.svg";
-	let dist = "dist/svg";
+	const src = "src/svg/**/*.svg";
+	const dist = "dist/svg";
 
-	let config = {
+	const config = {
 		//dest: "dest-folder/", не работает
 		log: null,
 		shape: {

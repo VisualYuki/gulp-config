@@ -6,11 +6,10 @@ const rename = require("gulp-rename");
 const sourcemaps = require("gulp-sourcemaps");
 const gulpif = require("gulp-if");
 const concat = require("gulp-concat");
-
-let config = require("./config.js");
+const config = require("./config.js");
 
 module.exports = function script() {
-	let src = [
+	const src = [
 		"src/js/jquery.min.js",
 		"src/js/libs/**/*.js",
 		"src/js/custom-plugins/**/*.js",
