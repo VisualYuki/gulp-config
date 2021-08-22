@@ -7,15 +7,16 @@ const newer = require("gulp-newer");
 const config = require("./config.js");
 const htmlValidator = require("gulp-w3c-html-validator");
 const formatHtml = require("gulp-format-html");
+const pugLinter = require("gulp-pug-linter");
 
 //const webpHTML = require("gulp-webp-html");
-//const pugLinter = require("gulp-pug-linter");
 
 module.exports = function pug2html() {
 	return (
 		src(config.src.pug)
-			//.pipe(pugLinter({ reporter: pugLintStylish })) - под вопросом
 			.pipe(newer(config.out.html))
+			.pipe(pugLinter({reporter: "default"}))
+
 			.pipe(pug({pretty: true}))
 			//.pipe(webpHTML()) - под вопросом
 			.pipe(
