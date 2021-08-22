@@ -1,3 +1,13 @@
 {
-	"puglint.enable": true
+	"puglint.enable": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"material-icon-theme.folders.associations": {
+		"frontend-dist": "dist",
+		"unused": "other",
+		"pug": "template",
+		"page-layout": "layout"
+	},
+	"material-icon-theme.files.associations": {},
+	"material-icon-theme.activeIconPack": "vue",
+	"editor.formatOnSave": true
 }

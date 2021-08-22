@@ -19,7 +19,7 @@
 		"dev:serve": "cross-env NODE_ENV=development gulp serve",
 		"prod:build": "cross-env NODE_ENV=production gulp build && webpack",
 		"prod:serve": "cross-env NODE_ENV=production gulp serve",
-		"script": "webpack",
+		"scripts": "webpack",
 		"pug2html": "gulp pug2html",
 		"include_pug2html": "gulp include_pug2html",
 		"styles": "gulp styles",

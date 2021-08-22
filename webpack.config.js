@@ -1,10 +1,8 @@
 const path = require("path");
-
-const isDev = process.env.NODE_ENV === "development";
-const isProd = !isDev;
+const config = require("./gulp/config");
 
 module.exports = {
-	devtool: isDev ? "eval-source-map" : false,
+	devtool: config.isDev ? "eval-source-map" : false,
 	context: path.resolve(__dirname, "src"),
 	target: "web",
 	entry: {
@@ -12,7 +10,7 @@ module.exports = {
 		pageTwo: "./js/pages/_index.js",
 	},
 	output: {
-		path: path.resolve(__dirname, "dist/js"),
+		path: path.resolve(__dirname, `${config.out.baseDir}/js`),
 	},
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"],
@@ -23,11 +21,11 @@ module.exports = {
 			"@src": path.resolve(__dirname, "src"),
 		},
 	},
-	mode: isDev ? "development" : "production",
+	mode: config.isDev ? "development" : "production",
 	optimization: {
 		minimize: false,
-		splitChunks: {
-			chunks: "all",
-		},
+		//splitChunks: {
+		//	chunks: "all",
+		//},
 	},
 };

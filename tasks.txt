@@ -2,3 +2,5 @@
 // TODO Добавить свой порядок в stylelint блоков стилей
 // TODO Почему не игнорируется dist
 // TODO Настроить husky + написать задачу в npm
+// TODO Плагины для javascript.
+// TODO Quokka - рассмотреть.

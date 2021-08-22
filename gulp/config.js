@@ -1,4 +1,4 @@
-const outDir = "dist";
+const outDir = "frontend-dist";
 const srcDir = "src";
 const currentPage = ["src/pug/pages/_index.pug"];
 
@@ -34,15 +34,10 @@ const config = {
 	},
 	watch: {
 		scss: "src/scss/**/*.*",
-		includePug: [
-			"src/pug/include/**/*.pug",
-			"src/pug/page-layout/**/*.pug",
-			"src/pug/page-template/**/*.pug",
-		].concat(currentPage),
-		includeLibs: [
-			"src/less/include-libs/**/*.*",
-			"src/js/include-libs/**/*.*",
-		],
+		includePug: ["src/pug/include/**/*.pug", "src/pug/page-layout/**/*.pug", "src/pug/page-template/**/*.pug"].concat(
+			currentPage
+		),
+		includeLibs: ["src/less/include-libs/**/*.*", "src/js/include-libs/**/*.*"],
 	},
 };
 
