@@ -10,6 +10,7 @@ const notify = require("gulp-notify");
 const gulpStylelint = require("gulp-stylelint");
 const gcmq = require("gulp-group-css-media-queries");
 const ccso = require("gulp-csso");
+const webpcss = require("gulp-webpcss");
 const config = require("./config.js");
 
 // TODO проверить плагины gulpStylelint, ccso, cleanCSS
@@ -30,9 +31,11 @@ module.exports = function styles() {
 		.pipe(gulpif(config.isDev, sourcemaps.init()))
 		.pipe(sassGlob())
 		.pipe(scss())
+
 		.pipe(gulpif(config.isDev, sourcemaps.write()))
 		.pipe(gulpif(config.isProd, gcmq()))
 		.pipe(gulpif(config.isProd, ccso()))
+		.pipe(webpcss({}))
 		.pipe(
 			gulpif(
 				config.isProd,
