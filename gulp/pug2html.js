@@ -1,6 +1,3 @@
-// TODO посмотреть pug-linter
-// TODO как соеденить две задачи в одну по pug
-
 const {src, dest} = require("gulp");
 const pug = require("gulp-pug");
 const newer = require("gulp-newer");
@@ -9,7 +6,7 @@ const htmlValidator = require("gulp-w3c-html-validator");
 const formatHtml = require("gulp-format-html");
 const pugLinter = require("gulp-pug-linter");
 
-//const webpHTML = require("gulp-webp-html");
+//const webpHTML = require("gulp-webp-html"); - под вопросом.
 
 module.exports = function pug2html() {
 	return (

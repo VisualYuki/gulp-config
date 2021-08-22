@@ -6,7 +6,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const rename = require("gulp-rename");
 const gulpif = require("gulp-if");
-const notify = require("gulp-notify");
+
 const gulpStylelint = require("gulp-stylelint");
 const gcmq = require("gulp-group-css-media-queries");
 const ccso = require("gulp-csso");
@@ -35,6 +35,7 @@ module.exports = function styles() {
 		.pipe(gulpif(config.isDev, sourcemaps.write()))
 		.pipe(gulpif(config.isProd, gcmq()))
 		.pipe(gulpif(config.isProd, ccso()))
+		.pipe(gulpif(config.isProd, autoprefixer()))
 		.pipe(webpcss({}))
 		.pipe(
 			gulpif(
@@ -53,11 +54,11 @@ module.exports = function styles() {
 		)
 		.pipe(dest(config.out.css));
 };
-
+//const notify = require("gulp-notify");
 //const plumber = require("gulp-plumber");
 //const shorthand = require("gulp-shorthand");
 
 //.pipe(lessGlob())
-//.pipe(gulpif(config.isProd, autoprefixer()))
+
 //.pipe(gulpif(config.isProd, shorthand()))
 //.pipe(plumber())
