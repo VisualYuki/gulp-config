@@ -1,6 +1,7 @@
-node_modules
-src/scss
-/src/less/libs/**/**
-/src/less/include-libs/**/**
-dist
-frontend-dist
+/*
+!/src
+
+/src/*
+
+!/src/less/
+!/src/scss/
