@@ -4,7 +4,7 @@
 	- [Frontend for Backend (Нужно сделать)](#frontend-for-backend-нужно-сделать)
 - [Для FRONTEND разработчика](#для-frontend-разработчика)
 	- [FrontEnd начало работы](#frontend-начало-работы)
-	- [Линтеры (Если используете VS Code)](#линтеры-если-используете-vs-code)
+	- [Плагины для VS Code](#плагины-для-vs-code)
 		- [Pug lint](#pug-lint)
 		- [Style lint](#style-lint)
 		- [Eslint](#eslint)
@@ -64,7 +64,7 @@ TODO добавить требования node + npm + gulp etc.
 -  Установить зависимости `npm i`
 -  Установить линтеры (раздел ниже для VS Code), либо установить плагины для вашей IDE.
 
-## Линтеры (Если используете VS Code)
+## Плагины для VS Code
 
 -  Открыть проект в папке, где находяться такие папки, как src, gulp, dist и т.д.
 
@@ -82,7 +82,7 @@ TODO добавить требования node + npm + gulp etc.
 
 ### EditorConfig
 
--  Подключить плагин [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+-  Подключить плагин [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
 ### Prettier
 
@@ -150,7 +150,7 @@ TODO добавить требования node + npm + gulp etc.
 
    -  copyToDist
       -  favicons - фавиконы, манифесты, сгенерируемые сайтом: https://realfavicongenerator.net/
-      -  fonts - шрифты сайта
+      -  fonts - шрифты сайта, сгенерируемые сайтом: https://transfonter.org/
       -  gifs - гифки
       -  include-libs - либы, которые не идут в общий бандл сайта, а подключаются на нужных страницах
    -  img - изображения png, jpg, jpeg
