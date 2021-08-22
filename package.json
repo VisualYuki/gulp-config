@@ -19,7 +19,7 @@
 		"dev:serve": "cross-env NODE_ENV=development gulp serve",
 		"prod:build": "cross-env NODE_ENV=production gulp build && webpack",
 		"prod:serve": "cross-env NODE_ENV=production gulp serve",
-		"script": "gulp script",
+		"script": "webpack",
 		"pug2html": "gulp pug2html",
 		"include_pug2html": "gulp include_pug2html",
 		"styles": "gulp styles",
@@ -31,8 +31,9 @@
 		"svg": "gulp svg",
 		"getLibs": "gulp getLibs",
 		"img": "gulp img",
-		"test": "pug-lint ./src/pug",
-		"js": "webpack"
+		"lint": "npm run lint:scss & npm run lint:pug",
+		"lint:scss": "stylelint ./src/less --fix",
+		"lint:pug": "pug-lint ./src/pug"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.0",
@@ -82,6 +83,7 @@
 		"gulp-w3c-html-validator": "^2.0.1",
 		"gulp-webp": "^4.0.1",
 		"gulp-webp-html": "^1.0.2",
+		"gulp-webpcss": "^1.1.1",
 		"husky": "^7.0.1",
 		"imagemin": "^7.0.1",
 		"imagemin-gifsicle": "^7.0.0",
@@ -98,6 +100,7 @@
 		"stylelint-config-recess-order": "^2.3.0",
 		"stylelint-config-recommended": "^3.0.0",
 		"stylelint-config-standard": "^20.0.0",
+		"webp-converter": "^2.2.3",
 		"webpack": "^5.51.1",
 		"webpack-cli": "^4.8.0"
 	},
@@ -105,11 +108,18 @@
 		"@fancyapps/fancybox": "^3.5.7",
 		"jquery": "^3.5.1",
 		"lazysizes": "^5.3.2",
-		"slick-carousel": "^1.8.1"
+		"slick-carousel": "^1.8.1",
+		"stylelint-scss": "^3.20.1"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run test"
+			"pre-commit": "lint-staged"
 		}
+	},
+	"lint-staged": {
+		"*": [
+			"npm run lint",
+			"git add"
+		]
 	}
 }
