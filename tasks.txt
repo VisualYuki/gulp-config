@@ -2,3 +2,8 @@
 // TODO Настроить husky + написать задачу в npm
 // TODO Плагины для javascript.
 // TODO Quokka - рассмотреть
+// TODO Изучить babel.
+// TODO В процессе настроить webpack + eslint.
+// TODO В процессе настроить gulp style task and stylelint.
+// TODO Шаблон pug из nineLines.
+// TODO

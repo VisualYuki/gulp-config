@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"outDir": "out",
+		"sourceMap": true,
+		"baseUrl": ".",
+		"paths": {
+			"@js/*": ["src/js/*"],
+			"@comp/*": ["src/components/*"],
+			"@assets/*": ["src/assets/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"typeAcquisition": {}
+}

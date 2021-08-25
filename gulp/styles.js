@@ -16,43 +16,45 @@ const config = require("./config.js");
 // TODO проверить плагины gulpStylelint, ccso, cleanCSS
 
 module.exports = function styles() {
-	return src(config.src.scss)
-		.pipe(
-			gulpStylelint({
-				failAfterError: false,
-				reporters: [
-					{
-						formatter: "string",
-						console: true,
-					},
-				],
-			})
-		)
-		.pipe(gulpif(config.isDev, sourcemaps.init()))
-		.pipe(sassGlob())
-		.pipe(scss())
+	return (
+		src(config.src.scss)
+			.pipe(
+				gulpStylelint({
+					failAfterError: false,
+					reporters: [
+						{
+							formatter: "string",
+							console: true,
+						},
+					],
+				})
+			)
+			//.pipe(gulpif(config.isDev, sourcemaps.init()))
+			.pipe(sassGlob())
+			.pipe(scss())
 
-		.pipe(gulpif(config.isDev, sourcemaps.write()))
-		.pipe(gulpif(config.isProd, gcmq()))
-		.pipe(gulpif(config.isProd, ccso()))
-		.pipe(gulpif(config.isProd, autoprefixer()))
-		.pipe(webpcss({}))
-		.pipe(
-			gulpif(
-				config.isProd,
-				cleanCSS(
-					{
-						level: 2,
-					}
-					//(details) => {
-					//	console.log(
-					//		`${details.name}: Original size:${details.stats.originalSize} - Minified size: ${details.stats.minifiedSize}`
-					//	);
-					//}
+			//.pipe(gulpif(config.isDev, sourcemaps.write()))
+			.pipe(gulpif(config.isProd, gcmq()))
+			.pipe(gulpif(config.isProd, ccso()))
+			.pipe(gulpif(config.isProd, autoprefixer()))
+			.pipe(webpcss({}))
+			.pipe(
+				gulpif(
+					config.isProd,
+					cleanCSS(
+						{
+							level: 2,
+						}
+						//(details) => {
+						//	console.log(
+						//		`${details.name}: Original size:${details.stats.originalSize} - Minified size: ${details.stats.minifiedSize}`
+						//	);
+						//}
+					)
 				)
 			)
-		)
-		.pipe(dest(config.out.css));
+			.pipe(dest(config.out.css))
+	);
 };
 //const notify = require("gulp-notify");
 //const plumber = require("gulp-plumber");
