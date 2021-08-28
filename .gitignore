@@ -6,4 +6,3 @@ frontend-dist
 src/fonts/unused-fonts/
 temp/*
 !temp/.gitkeep
-

@@ -3,7 +3,31 @@
 // TODO Плагины для javascript.
 // TODO Quokka - рассмотреть
 // TODO Изучить babel.
-// TODO В процессе настроить webpack + eslint.
+// TODO В процессе настроить webpack + eslint.(Parsing error: The keyword 'const' is reservedeslint)
 // TODO В процессе настроить gulp style task and stylelint.
 // TODO Шаблон pug из nineLines.
-// TODO
+// TODO Удалить ненужные пакеты в package.json
+// TODO Создать условие, при котором не будет webp изображений в конфиге.
+// TODO проверить все файлы на  crlf. "warning: LF will be replaced by CRLF in .pug-lintrc.json."
+// TODO перенести все файлы из less в scss
+// TODO указать относительные пути. (Как правильно?)
+// TODO как работает border-radius с px и %
+// как настроить webpack с плагинами + структура подключения общего файла и файла страницы.
+// цикл на pug
+// display: contents
+// Как эффектвно работать с клавиатурой. Практика.
+// убрать ошибки в консоли от slick slider.
+// примеры сайтов на больших экранах.
+// ctl + tab - выбор файла в окне.
+// как скопировать нессколько раз в буфер обемена и достать нужное значение.
+// отключить проверку табуляции в stylelintrc
+// добавить сниппеты для scss. .mobile и т.д.
+// подключить правила для pug + просмотреть все правила.
+// sylelint
+Ex.
+	@include mobile{
+		display: none;
+	};
+// сделать функцию адаптивности числа от 20 - 40 и заменить все функции.
+// сниппеты для sass настроить.
+

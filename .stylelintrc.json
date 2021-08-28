@@ -1,15 +1,7 @@
 {
-	"plugins": ["stylelint-order", "stylelint-config-rational-order/plugin", "stylelint-scss"],
-	"extends": ["stylelint-config-standard", "stylelint-config-recommended"],
+	"plugins": ["stylelint-scss"],
+	"extends": ["stylelint-config-standard", "stylelint-config-recommended", "stylelint-config-recommended-scss"],
 	"rules": {
-		"order/properties-order": [],
-		"plugin/rational-order": [
-			true,
-			{
-				"border-in-box-model": false,
-				"empty-line-between-groups": true
-			}
-		],
 		"indentation": "tab",
 		"at-rule-no-vendor-prefix": true,
 		"at-rule-empty-line-before": [
