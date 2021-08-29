@@ -115,7 +115,6 @@
 -  Ленивая загрузки изображений - lazysizes (https://github.com/aFarkas/lazysizes)
 -  Кастомный скролл - simplebar (https://github.com/Grsmto/simplebar)
 -  Таймер - easytimer.js (https://github.com/albert-gonzalez/easytimer.js)
--  Выпадающий список - select2 (https://github.com/select2/select2)
 -
 
 ## Cтруктура проекта

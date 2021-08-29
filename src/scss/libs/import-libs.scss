@@ -1,3 +1,9 @@
-@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
-@import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+@use "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css";
+@use "node_modules/slick-carousel/slick/slick.scss";
+//@use "node_modules/slick-carousel/slick/slick-theme.scss";
+
+//.slick-list {
+//	.slick-loading & {
+//		background: none;
+//	}
+//}

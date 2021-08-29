@@ -1,12 +1,7 @@
-@import "./bem-block/*.scss";
-
-//@import "../../node_modules/";
-//@import "../../node_modules/";
-
-.test {
-	background: url("./img.jpg");
-}
-
-.title {
-	//@include font-size(4rem);
-}
+@import "./utils/**/*.scss";
+@import "./libs/**/*.scss";
+@import "./fonts/**/*.scss";
+@import "./pages/**/*.scss";
+@import "./layout/**/*.scss";
+@import "./common/**/*.scss";
+@import "./bem-block/**/*.scss";

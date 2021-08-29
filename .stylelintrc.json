@@ -2,7 +2,6 @@
 	"plugins": ["stylelint-scss"],
 	"extends": ["stylelint-config-standard", "stylelint-config-recommended", "stylelint-config-recommended-scss"],
 	"rules": {
-		"indentation": "tab",
 		"at-rule-no-vendor-prefix": true,
 		"at-rule-empty-line-before": [
 			"always",
@@ -10,6 +9,7 @@
 				"ignore": ["after-comment", "inside-block", "blockless-after-same-name-blockless"]
 			}
 		],
+		"indentation": null,
 		"value-list-comma-newline-after": null,
 		"declaration-empty-line-before": null,
 		"no-eol-whitespace": null,
@@ -29,6 +29,7 @@
 		"block-no-empty": null,
 		"no-descending-specificity": null,
 		"no-empty-source": null,
-		"declaration-colon-newline-after": null
+		"declaration-colon-newline-after": null,
+		"function-name-case": null
 	}
 }

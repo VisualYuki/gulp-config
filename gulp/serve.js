@@ -8,6 +8,9 @@ const server = require("browser-sync").create();
 const pug2html = require("./pug2html");
 const include_pug2html = require("./include_pug2html");
 const config = require("./config.js");
+const copyToDist = require("./copyToDist");
+
+const script = require("./script");
 
 module.exports = function serve() {
 	server.init({
@@ -29,6 +32,7 @@ module.exports = function serve() {
 		watch(config.watch.includePug, include_pug2html);
 	}
 
+	watch(config.src.copyToDist, copyToDist);
 	watch(config.watch.scss, style);
 	watch(config.src.webp, webp);
 	watch(config.src.svg, svg);
@@ -36,5 +40,5 @@ module.exports = function serve() {
 	watch(config.src.jpg, minJpg);
 
 	watch(config.out.baseDir).on("change", server.reload);
-	//watch(config.src.js, script);
+	watch(config.src.js, script);
 };
