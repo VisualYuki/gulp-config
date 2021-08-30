@@ -32,7 +32,7 @@
 		"getLibs": "gulp getLibs",
 		"img": "gulp img",
 		"lint": "npm run lint:scss & npm run lint:pug",
-		"lint:scss": "stylelint ./src/less --fix",
+		"lint:scss": "stylelint ./src/scss",
 		"lint:pug": "pug-lint ./src/pug"
 	},
 	"devDependencies": {
