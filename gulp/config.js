@@ -3,15 +3,15 @@ const srcDir = "src";
 const currentPage = ["src/pug/pages/_index.pug"];
 
 const config = {
-	isProd: process.env.NODE_ENV == "production",
-	isDev: !this.isProd,
+	isProd: process.env.NODE_ENV === "production",
+	isDev: process.env.NODE_ENV === "development",
 	isServedOnlyPages: false,
 	src: {
 		baseDir: srcDir,
 		pug: srcDir + "/pug/pages/*.pug",
 		includePug: currentPage,
 		scss: srcDir + "/scss/site-main.scss",
-		js: srcDir + "/js/**/*.js",
+		js: srcDir + "/js/pages/index.js",
 		includeScripts: srcDir + "/js/include-scripts/**/*.js",
 		libs: srcDir + "/js/libs/**/*.js",
 		webp: srcDir + "/img/**/*.{png,jpg,jpeg}",
@@ -40,5 +40,7 @@ const config = {
 		includeLibs: ["src/less/include-libs/**/*.*", "src/js/include-libs/**/*.*"],
 	},
 };
+
+console.log(process.env.NODE_ENV);
 
 module.exports = config;

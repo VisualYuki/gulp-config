@@ -7,7 +7,6 @@
 STYLES
 // Заменить кастомные плагины на bootstrap плагины
 
-
 JS
 // Изучить babel.
 // В процессе настроить webpack + eslint.(Parsing error: The keyword 'const' is reservedeslint)
@@ -16,3 +15,4 @@ JS
 OTHER
 // Плагины для javascript.
 // Quokka - рассмотреть
+// Добавить докуменатцию для scripts таски и package.json.

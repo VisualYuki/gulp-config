@@ -1,9 +1,7 @@
 {
 	"name": "gulp-config",
-	"main": "index.js",
 	"private": true,
 	"author": "Moshkin Denis",
-	"license": "ISC",
 	"people fields": {
 		"name": "Moshkin Denis",
 		"url": "https://vk.com/moshkin_denis"
@@ -14,11 +12,16 @@
 	},
 	"homepage": "https://github.com/VisualYuki/Gulp-config#readme",
 	"scripts": {
-		"start": "npm update --save && npm install && npm run getLibs && npm run dev",
-		"dev:build": "cross-env NODE_ENV=development gulp build && webpack",
-		"dev:serve": "cross-env NODE_ENV=development gulp serve",
-		"prod:build": "cross-env NODE_ENV=production gulp build && webpack",
-		"prod:serve": "cross-env NODE_ENV=production gulp serve",
+		"dev:serve": "cross-env NODE_ENV=development npm-run-all --parallel webpack-watch gulp-serve",
+		"dev:build": " cross-env NODE_ENV=development gulp build && cross-env NODE_ENV=development webpack",
+		"prod:serve": "cross-env NODE_ENV=production npm-run-all --parallel webpack-watch gulp-serve",
+		"prod:build": "cross-env NODE_ENV=production gulp build  && cross-env NODE_ENV=production  webpack ",
+		"lint": "npm run lint:scss & npm run lint:pug",
+		"lint:scss": "stylelint ./src/scss",
+		"lint:pug": "pug-lint ./src/pug",
+		"gulp-serve": "gulp serve",
+		"webpack-watch": "webpack watch",
+		"start": "npm update --save && npm install && npm run dev:serve",
 		"scripts": "webpack",
 		"pug2html": "gulp pug2html",
 		"include_pug2html": "gulp include_pug2html",
@@ -30,14 +33,34 @@
 		"clear": "gulp clear",
 		"svg": "gulp svg",
 		"getLibs": "gulp getLibs",
-		"img": "gulp img",
-		"lint": "npm run lint:scss & npm run lint:pug",
-		"lint:scss": "stylelint ./src/scss",
-		"lint:pug": "pug-lint ./src/pug"
+		"img": "gulp img"
+	},
+	"dependencies": {
+		"-": "^0.0.1",
+		"@fancyapps/fancybox": "^3.5.7",
+		"bootstrap": "^5.1.0",
+		"jquery": "^3.5.1",
+		"lazysizes": "^5.3.2",
+		"select2": "^4.1.0-rc.0",
+		"simplebar": "^5.3.5",
+		"slick-carousel": "^1.8.1",
+		"webpack-dev-server": "^4.0.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*": [
+			"npm run lint",
+			"git add"
+		]
 	},
 	"devDependencies": {
 		"@types/gulp": "^4.0.9",
 		"browser-sync": "^2.26.14",
+		"clean-webpack-plugin": "^4.0.0-alpha.0",
 		"cross-env": "^7.0.3",
 		"del": "^5.1.0",
 		"eslint-config-airbnb-base": "^14.2.1",
@@ -77,6 +100,7 @@
 		"imagemin-pngquant": "^8.0.0",
 		"imagemin-webp": "^5.1.0",
 		"lint-staged": "^11.1.2",
+		"npm-run-all": "^4.1.5",
 		"pug-lint": "^2.6.0",
 		"pug-lint-config-clock": "^2.0.0",
 		"puglint-stylish": "^1.1.0",
@@ -90,26 +114,7 @@
 		"stylelint-scss": "^3.20.1",
 		"webp-converter": "^2.2.3",
 		"webpack": "^5.51.1",
-		"webpack-cli": "^4.8.0"
-	},
-	"dependencies": {
-		"@fancyapps/fancybox": "^3.5.7",
-		"bootstrap": "^5.1.0",
-		"jquery": "^3.5.1",
-		"lazysizes": "^5.3.2",
-		"select2": "^4.1.0-rc.0",
-		"simplebar": "^5.3.5",
-		"slick-carousel": "^1.8.1"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*": [
-			"npm run lint",
-			"git add"
-		]
+		"webpack-cli": "^4.8.0",
+		"webpack-stream": "^7.0.0"
 	}
 }

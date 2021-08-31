@@ -13,16 +13,7 @@ const clear = require("./gulp/clear");
 //const svgSprite = require("./gulp/unused/svgSprite");
 
 // BUILD TASK
-const build = parallel(
-	pug2html,
-	styles,
-	//script,
-	svg,
-	minPng,
-	minJpg,
-	copyToDist,
-	webp
-);
+const build = parallel(pug2html, styles, svg, minPng, minJpg, copyToDist, webp);
 
 exports.build = series(clear, build);
 exports.dev = series(build, serve);
