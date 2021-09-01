@@ -1,18 +1,18 @@
-.default-input {
+.b-input {
 	margin-bottom: 16px;
 
 	// Скрыть заполнитель при фокусу поля ввода
 	&_hide-focus-placeholder {
-		.default-input__input:focus ~ .default-input__placeholder,
-		.default-input__input:valid ~ .default-input__placeholder,
-		.default-input__input[value] ~ .default-input__placeholder {
+		.b-input__input:focus ~ .b-input__placeholder,
+		.b-input__input:valid ~ .b-input__placeholder,
+		.b-input__input[value] ~ .b-input__placeholder {
 			display: none;
 		}
 	}
 
 	// Переместить заполнитель над полем ввода.
 	&_title {
-		.default-input {
+		.b-input {
 			&__placeholder {
 				display: none;
 			}
@@ -29,7 +29,7 @@
 		}
 	}
 
-	.default-input__input {
+	.b-input__input {
 		width: 100%;
 		padding: 12px;
 
@@ -47,9 +47,9 @@
 			color: gray;
 		}
 
-		&:focus ~ .default-input__placeholder,
-		&:valid ~ .default-input__placeholder,
-		&[value] ~ .default-input__placeholder {
+		&:focus ~ .b-input__placeholder,
+		&:valid ~ .b-input__placeholder,
+		&[value] ~ .b-input__placeholder {
 			top: 0;
 			left: 10px;
 			z-index: 0;
@@ -84,7 +84,7 @@
 	}
 
 	&_textarea {
-		.default-input__placeholder {
+		.b-input__placeholder {
 			top: 26px;
 		}
 
@@ -118,7 +118,7 @@
 	}
 
 	&_has-error {
-		.default-input {
+		.b-input {
 			&__input {
 				border: 1px solid red;
 			}
@@ -130,7 +130,7 @@
 	}
 
 	&_has-success {
-		.default-input {
+		.b-input {
 			&__input {
 				border: 1px solid green;
 			}
@@ -138,7 +138,7 @@
 	}
 
 	&_password {
-		.default-input {
+		.b-input {
 			&__icon {
 				cursor: pointer;
 
@@ -172,8 +172,8 @@
 	}
 }
 
-//.default-input.must-input
-//   .default-input__input-wrap
-//      input.default-input__input(type="text" name="phone" id="input" required="")
-//      label.default-input__placeholder() Номер телефона
-//   p.default-input__error-text Ошибка ввода. Введите 11 цифр для телефона.
+//.b-input.must-input
+//   .b-input__input-wrap
+//      input.b-input__input(type="text" name="phone" id="input" required="")
+//      label.b-input__placeholder() Номер телефона
+//   p.b-input__error-text Ошибка ввода. Введите 11 цифр для телефона.

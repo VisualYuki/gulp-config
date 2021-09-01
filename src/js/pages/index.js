@@ -1,39 +1,16 @@
+import $ from "jQuery";
+//import {Fancybox} from "@fancyapps/ui/src/Fancybox/Fancybox.js";
+
 $(document).ready(function () {
-	console.log("hello from index");
-
-	$(".test").slick({
-		autoplay: true,
-		autoplaySpeed: 10000,
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		pauseOnHover: true,
-		prevArrow:
-			'<button type="button" class="index-banner__slider-prev-btn default-slider-btn prev-btn square"></button>',
-		nextArrow:
-			'<button type="button" class="index-banner__slider-next-btn default-slider-btn next-btn square"></button>',
-		arrows: false,
-		fade: true,
-		responsive: [
-			{
-				breakpoint: 1600,
-				settings: {
-					slidesToShow: 3,
-				},
-			},
-			{
-				breakpoint: 800,
-				settings: {
-					slidesToShow: 2,
-				},
-			},
-
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 1,
-				},
-			},
-		],
-	});
+	console.log("hello from index. new text");
 });
+
+// TODO как подгрузить плагины, сделать скрипты для каждоый страницы.
+
+//import "../../../node_modules/bootstrap/js/dist/collapse";
+//import "../../../node_modules/bootstrap/js/dist/tab";
+//import "../../../node_modules/bootstrap/js/dist/offcanvas";
+//import Modal from "../../../node_modules/bootstrap/js/dist/modal";
+//import Modal from "../../../node_modules/bootstrap/js/dist/modal";
+//var myModal = new Modal(document.getElementById("exampleModal"));
+//myModal.show();

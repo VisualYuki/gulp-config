@@ -5,13 +5,14 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 //console.log(config);
 
 module.exports = {
-	devtool: config.isDev ? "eval-source-map" : false,
+	// devtool: config.isDev ? "eval-source-map" : false,
+	devtool: false,
 	context: path.resolve(__dirname, "src"),
 	target: "web",
-
 	entry: {
-		pageOne: "./js/pages/index.js",
-		//pageTwo: "./js/pages/_index.js",
+		common: "./js/common/index.js",
+		index: "./js/pages/index.js",
+		about: "./js/pages/about.js",
 	},
 	output: {
 		path: path.resolve(__dirname, `${config.out.baseDir}/js`),

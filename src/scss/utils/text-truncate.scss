@@ -1,0 +1,23 @@
+// задать троеточие в конце строки, если не хватает места
+@mixin one-line-truncate {
+	overflow: hidden;
+
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin two-line-truncate {
+	display: -webkit-box;
+
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+@mixin three-line-truncate {
+	display: -webkit-box;
+
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
