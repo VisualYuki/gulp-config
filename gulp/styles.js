@@ -1,7 +1,7 @@
 const {src, dest} = require("gulp");
 const scss = require("gulp-sass")(require("sass"));
 const sassGlob = require("gulp-sass-glob");
-//const sourcemaps = require("gulp-sourcemaps");
+const sourcemaps = require("gulp-sourcemaps");
 const autoprefixer = require("gulp-autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const rename = require("gulp-rename");
@@ -13,37 +13,35 @@ const webpcss = require("gulp-webpcss");
 const config = require("./config.js");
 
 module.exports = function styles() {
-	return (
-		src(config.src.scss)
-			.pipe(
-				gulpStylelint({
-					failAfterError: false,
-					reporters: [
-						{
-							formatter: "string",
-							console: true,
-						},
-					],
+	return src(config.src.scss)
+		.pipe(
+			gulpStylelint({
+				failAfterError: false,
+				reporters: [
+					{
+						formatter: "string",
+						console: true,
+					},
+				],
+			})
+		)
+		.pipe(gulpif(config.isDev, sourcemaps.init()))
+		.pipe(sassGlob())
+		.pipe(scss())
+		.pipe(gulpif(config.isDev, sourcemaps.write()))
+		.pipe(gulpif(config.isProd, gcmq()))
+		.pipe(gulpif(config.isProd, ccso()))
+		.pipe(gulpif(config.isProd, autoprefixer()))
+		.pipe(webpcss({}))
+		.pipe(
+			gulpif(
+				config.isProd,
+				cleanCSS({
+					level: 2,
 				})
 			)
-			//.pipe(gulpif(config.isDev, sourcemaps.init()))
-			.pipe(sassGlob())
-			.pipe(scss())
-			//.pipe(gulpif(config.isDev, sourcemaps.write()))
-			.pipe(gulpif(config.isProd, gcmq()))
-			.pipe(gulpif(config.isProd, ccso()))
-			.pipe(gulpif(config.isProd, autoprefixer()))
-			.pipe(webpcss({}))
-			.pipe(
-				gulpif(
-					config.isProd,
-					cleanCSS({
-						level: 2,
-					})
-				)
-			)
-			.pipe(dest(config.out.css))
-	);
+		)
+		.pipe(dest(config.out.css));
 };
 //const notify = require("gulp-notify");
 //const plumber = require("gulp-plumber");
