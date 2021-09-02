@@ -2,4 +2,5 @@ extends ../page-template/index.pug
 
 block main-content
 	h1 about
-	script(src="../js/about.js")
+
+	+includeLibs(["jquery", "slick-slider", "maskedinput"], "index")

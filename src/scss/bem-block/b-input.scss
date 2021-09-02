@@ -4,7 +4,6 @@
 	// Скрыть заполнитель при фокусу поля ввода
 	&_hide-focus-placeholder {
 		.b-input__input:focus ~ .b-input__placeholder,
-		.b-input__input:valid ~ .b-input__placeholder,
 		.b-input__input[value] ~ .b-input__placeholder {
 			display: none;
 		}
@@ -29,7 +28,7 @@
 		}
 	}
 
-	.b-input__input {
+	&__input {
 		width: 100%;
 		padding: 12px;
 
@@ -48,8 +47,7 @@
 		}
 
 		&:focus ~ .b-input__placeholder,
-		&:valid ~ .b-input__placeholder,
-		&[value] ~ .b-input__placeholder {
+		&:valid ~ .b-input__placeholder {
 			top: 0;
 			left: 10px;
 			z-index: 0;
@@ -93,15 +91,16 @@
 		}
 	}
 
-	&.must-input {
-	}
-
 	&__icon {
 		position: absolute;
 		top: 50%;
 		right: 16px;
 
 		transform: translateY(-50%);
+
+		img {
+			width: 16px;
+		}
 	}
 
 	&__error-text {

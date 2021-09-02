@@ -1,5 +1,6 @@
 extends ../page-template/index.pug
+include ../mixins/includeLibs.pug
 
 block main-content
 
-	script(src="../js/index.js")
+	+includeLibs(["jquery", "slick-slider", "maskedinput"], "index")

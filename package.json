@@ -38,8 +38,11 @@
 	"dependencies": {
 		"-": "^0.0.1",
 		"@fancyapps/ui": "^4.0.0-beta.4",
+		"@popperjs/core": "^2.9.3",
 		"bootstrap": "^5.1.0",
 		"jquery": "^3.5.1",
+		"jquery-validation": "^1.19.3",
+		"jquery.maskedinput": "^1.4.1",
 		"lazysizes": "^5.3.2",
 		"select2": "^4.1.0-rc.0",
 		"simplebar": "^5.3.5",
@@ -114,6 +117,7 @@
 		"stylelint-scss": "^3.20.1",
 		"webp-converter": "^2.2.3",
 		"webpack": "^5.51.1",
+		"webpack-bundle-analyzer": "^4.4.2",
 		"webpack-cli": "^4.8.0",
 		"webpack-stream": "^7.0.0"
 	}

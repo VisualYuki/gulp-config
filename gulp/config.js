@@ -34,10 +34,7 @@ const config = {
 	},
 	watch: {
 		scss: "src/scss/**/*.*",
-		includePug: ["src/pug/include/**/*.pug", "src/pug/page-layout/**/*.pug", "src/pug/page-template/**/*.pug"].concat(
-			currentPage
-		),
-		includeLibs: ["src/less/include-libs/**/*.*", "src/js/include-libs/**/*.*"],
+		includePug: [srcDir + "/pug/**/*.pug", `!${srcDir}/pug/pages/*.pug`].concat(currentPage),
 	},
 };
 
