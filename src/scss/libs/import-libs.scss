@@ -2,6 +2,9 @@
 @use "node_modules/slick-carousel/slick/slick.scss";
 //@use "node_modules/slick-carousel/slick/slick-theme.scss";
 
+// animation.css import
+@use "node_modules/animate.css/source/_base.css";
+
 //.slick-list {
 //	.slick-loading & {
 //		background: none;

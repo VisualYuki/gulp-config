@@ -1,23 +1,23 @@
-- [Редактирование Readme.md (Frontend, Backend)](#редактирование-readmemd-frontend-backend)
-- [Для BACKEND разработчика](#для-backend-разработчика)
-	- [from Backend for FrontEnd (Нужно заполнить)](#from-backend-for-frontend-нужно-заполнить)
-	- [Frontend for Backend (Нужно сделать)](#frontend-for-backend-нужно-сделать)
-- [Для FRONTEND разработчика](#для-frontend-разработчика)
-	- [FrontEnd начало работы](#frontend-начало-работы)
-	- [Плагины для VS Code](#плагины-для-vs-code)
-		- [Pug lint](#pug-lint)
-		- [Style lint](#style-lint)
-		- [Eslint](#eslint)
-		- [EditorConfig](#editorconfig)
-		- [Prettier](#prettier)
-	- [CSS сокращения](#css-сокращения)
-	- [Gulp задачи](#gulp-задачи)
-		- [Production mode (для внедрения правок, после сдачи верстки)](#production-mode-для-внедрения-правок-после-сдачи-верстки)
-		- [Development mode (не нужны после сдачи верстки)](#development-mode-не-нужны-после-сдачи-верстки)
-	- [Библиотеки](#библиотеки)
-	- [Cтруктура проекта](#cтруктура-проекта)
-	- [Особенности сайта](#особенности-сайта)
-	- [Обратная связь с Frontend разработчиком](#обратная-связь-с-frontend-разработчиком)
+-  [Редактирование Readme.md (Frontend, Backend)](#редактирование-readmemd-frontend-backend)
+-  [Для BACKEND разработчика](#для-backend-разработчика)
+   -  [from Backend for FrontEnd (Нужно заполнить)](#from-backend-for-frontend-нужно-заполнить)
+   -  [Frontend (Нужно сделать)](#frontend-for-backend-нужно-сделать)
+-  [Для FRONTEND разработчика](#для-frontend-разработчика)
+   -  [FrontEnd начало работы](#frontend-начало-работы)
+   -  [Плагины для VS Code](#плагины-для-vs-code)
+      -  [Pug lint](#pug-lint)
+      -  [Style lint](#style-lint)
+      -  [Eslint](#eslint)
+      -  [EditorConfig](#editorconfig)
+      -  [Prettier](#prettier)
+   -  [CSS сокращения](#css-сокращения)
+   -  [Gulp задачи](#gulp-задачи)
+      -  [Production mode (с оптимизицией)](#production-mode-с-оптимизицией)
+      -  [Development mode (без оптимизиции + source-maps)](#development-mode-без-оптимизиции--source-maps)
+   -  [Библиотеки](#библиотеки)
+   -  [Cтруктура проекта](#cтруктура-проекта)
+   -  [Особенности сайта](#особенности-сайта)
+   -  [Обратная связь с Frontend разработчиком](#обратная-связь-с-frontend-разработчиком)
 
 # Редактирование Readme.md (Frontend, Backend)
 
@@ -96,20 +96,20 @@
 
 ## Gulp задачи
 
-### Production mode (для внедрения правок, после сдачи верстки)
+### Production mode (с оптимизицией)
 
 -  `npm run prod:serve` - запуск сервера (c минификацией и т.д.).
--  `npm run prod:build` - компиляция всего проекта, с удалением выходной папки + запуск сервера.
+-  `npm run prod:build` - компиляция всего проекта, с удалением выходной папки + запуск сервера
 
-### Development mode (не нужны после сдачи верстки)
+### Development mode (без оптимизиции + source-maps)
 
 -  `npm run dev:serve` - запуск сервера (без минификацией и т.д.).
 -  `npm run dev:build` - компиляция всего проекта, с удалением выходной папки + запуск сервера
 
 ## Библиотеки
 
--  Модальные окна - fancybox (http://fancyapps.com/fancybox/3/docs)
--  Слайдер - slick-slider (https://kenwheeler.github.io/slick/)
+-  Модальные окна - fancybox (http://fancyapps.com/fancybox/3/docs) или bootstrap modal
+-  Слайдер - slick-slider (https://kenwheeler.github.io/slick/) или boostrap slider
 -  Шаблон ввода в input - jQuery Masked Input Plugin (https://github.com/digitalBush/jquery.maskedinput)
 -  Выпадающий список - select2 (https://github.com/select2/select2)
 -  Ленивая загрузки изображений - lazysizes (https://github.com/aFarkas/lazysizes)
@@ -152,11 +152,15 @@
       -  include-libs - либы, которые не идут в общий бандл сайта, а подключаются на нужных страницах
    -  img - изображения png, jpg, jpeg
    -  js
-      -  00_libs - библиотеки, которые пойдут в общий бандл сайта
-      -  01_scripts - скрипты для текущего сайта
-      -  02_custom - шаблонные скрипты, которые часто используются на сайтах
-      -
-      -  include-scripts - аналогично выше, только скрипт для запуска либы
+      -  common - скрипты, которые подключаются на всех страницах
+      -  custom-plugins - кастомные скрипты (плагины)
+      -  pages - страницы, за которыми следит webpack и идут в выходной файл по отдельности.
+   -  pug
+      -  include - то, что будет подключатся через include (breadcrumbs, menu ...)
+      -  mixins - pug миксины
+      -  page-layout - блоки подключаемые на каждой странице странице (footer,header,aside)
+      -  pages - страницы, которые будут открываться в браузере
+      -  page-template - шаблоны для страниц
    -  scss
       -  common - заготовки для сайтов
       -  include - стили для включения на отдельных страницах
@@ -167,12 +171,6 @@
       -  utils - стили переходящие из проекта в проект
       -  site-main.scss - файл, который подключает все нужные файлы стилей и он же и компилируется gulp задачей.
       -  new-styles.scss - файл стилей для нового верстальщика проекта, если лень искать нужный файл стилей.
-   -  pug
-      -  include - то, что будет подключатся через include (breadcrumbs, menu ...)
-      -  mixins - pug миксины
-      -  page-layout - блоки подключаемые на каждой странице странице (footer,header,aside)
-      -  pages - страницы, которые будут открываться в браузере
-      -  page-template - шаблоны для страниц
    -  svg - svg иконки
 
 -  webpack-config.js - собрать бандл скриптов.
