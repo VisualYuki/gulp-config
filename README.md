@@ -85,6 +85,7 @@
 ### Prettier
 
 -  Подключить плагин [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+-  Установить опцию "prettier.useEditorConfig": true" в settings.json (для vs code)
 
 ## CSS сокращения
 
