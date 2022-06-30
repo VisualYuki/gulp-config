@@ -1,10 +1,11 @@
 {
 	"name": "gulp-config",
 	"private": true,
+	"version": "1.0.0",
 	"author": "Moshkin Denis",
 	"people fields": {
 		"name": "Moshkin Denis",
-		"url": "https://vk.com/moshkin_denis"
+		"url": "https://t.me/denis_moshkin"
 	},
 	"repository": {
 		"type": "git",
@@ -114,7 +115,7 @@
 		"pug-lint-config-clock": "^2.0.0",
 		"puglint-stylish": "^1.1.0",
 		"sass": "^1.38.0",
-		"stylelint": "^14.0.1",
+		"stylelint": "^13.0.1",
 		"stylelint-config-rational-order": "^0.1.2",
 		"stylelint-config-recess-order": "^2.3.0",
 		"stylelint-config-recommended": "^3.0.0",

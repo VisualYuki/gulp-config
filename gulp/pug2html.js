@@ -4,7 +4,6 @@ const newer = require("gulp-newer");
 const config = require("./config.js");
 const htmlValidator = require("gulp-w3c-html-validator");
 const formatHtml = require("gulp-format-html");
-const pugLinter = require("gulp-pug-linter");
 
 //const webpHTML = require("gulp-webp-html"); - под вопросом.
 
@@ -12,8 +11,6 @@ module.exports = function pug2html() {
 	return (
 		src(config.src.pug)
 			.pipe(newer(config.out.html))
-			.pipe(pugLinter({reporter: "default"}))
-
 			.pipe(pug({pretty: true}))
 			//.pipe(webpHTML()) - под вопросом
 			.pipe(
@@ -22,7 +19,6 @@ module.exports = function pug2html() {
 					indent_with_tabs: true,
 				})
 			)
-
 			.pipe(htmlValidator())
 			.pipe(dest(config.out.html))
 	);
