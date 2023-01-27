@@ -14,7 +14,7 @@ import {clearDist} from "./gulp/clear.js";
 import {copyToDist} from "./gulp/copyToDist.js";
 
 // BUILD TASK
-const build = gulp.parallel(pug2html, styles, minSvg, minPng, minJpg, copyToDist);
+const build = gulp.parallel(pug2html, styles, minSvg, minPng, minJpg, copyToDist, convWebp);
 
 gulp.task("build", gulp.series(clearDist, build));
 gulp.task("dev", gulp.series(build, serve));
