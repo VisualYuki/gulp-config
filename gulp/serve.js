@@ -7,13 +7,13 @@ import {config} from "./config.js";
 //import { minJpg } from "./img/jpg.js";
 import {styles} from "./styles.js";
 import pkg from "browser-sync";
-const {server} = pkg;
+const server = pkg.create();
 import {pug2html} from "./pug2html.js";
 import {include_pug2html} from "./include_pug2html.js";
 import {copyToDist} from "./copyToDist.js";
 
 export function serve() {
-	server.create().init({
+	server.init({
 		server: {
 			//baseDir: config.out.baseDir,
 			directory: true,
