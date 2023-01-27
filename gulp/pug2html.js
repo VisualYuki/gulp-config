@@ -1,29 +1,28 @@
-const {src, dest} = require("gulp");
-const pug = require("gulp-pug");
-const newer = require("gulp-newer");
-const config = require("./config.js");
-const htmlValidator = require("gulp-w3c-html-validator");
-const formatHtml = require("gulp-format-html");
+import gulp from "gulp";
+import {config} from "./config.js";
 
-//const webpHTML = require("gulp-webp-html"); - под вопросом.
+import pug from "gulp-pug";
+import newer from "gulp-newer";
+import formatHtml from "gulp-format-html";
+import {htmlValidator} from "gulp-w3c-html-validator";
 
-module.exports = function pug2html() {
-	return (
-		src(config.src.pug)
-			.pipe(newer(config.out.html))
-			.pipe(pug({pretty: true}))
-			//.pipe(webpHTML()) - под вопросом
-			.pipe(
-				formatHtml({
-					indent_size: 3,
-					indent_with_tabs: true,
-				})
-			)
-			.pipe(htmlValidator())
-			.pipe(dest(config.out.html))
-	);
-};
+export function pug2html() {
+	return gulp
+		.src(config.src.pug)
+		.pipe(newer(config.out.html))
+		.pipe(pug({pretty: true}))
 
+		.pipe(
+			formatHtml({
+				indent_size: 3,
+				indent_with_tabs: true,
+			})
+		)
+		.pipe(htmlValidator.analyzer())
+		.pipe(gulp.dest(config.out.html));
+}
+
+//const webpHTML = require("gulp-webp-html"); - под вопросом. //.pipe(webpHTML()) - под вопросом
 //.pipe(
 //	prettier({
 //		tabWidth: 3,
@@ -31,7 +30,6 @@ module.exports = function pug2html() {
 //		printWidth: 700,
 //	})
 //)
-
 //const prettier = require("gulp-prettier");
 //const plumber = require("gulp-plumber");
 //const notify = require("gulp-notify");

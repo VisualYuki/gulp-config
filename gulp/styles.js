@@ -1,19 +1,21 @@
-const {src, dest} = require("gulp");
-const scss = require("gulp-sass")(require("sass"));
-const sassGlob = require("gulp-sass-glob");
-const sourcemaps = require("gulp-sourcemaps");
-const autoprefixer = require("gulp-autoprefixer");
-const cleanCSS = require("gulp-clean-css");
-const rename = require("gulp-rename");
-const gulpif = require("gulp-if");
-const gulpStylelint = require("gulp-stylelint");
-const gcmq = require("gulp-group-css-media-queries");
-const ccso = require("gulp-csso");
-const webpcss = require("gulp-webpcss");
-const config = require("./config.js");
+import gulp from "gulp";
+import {config} from "./config.js";
 
-module.exports = function styles() {
-	return src(config.src.scss)
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+const scss = gulpSass(dartSass);
+import sassGlob from "gulp-sass-glob";
+import sourcemaps from "gulp-sourcemaps";
+import autoprefixer from "gulp-autoprefixer";
+import cleanCSS from "gulp-clean-css";
+import gulpif from "gulp-if";
+import gulpStylelint from "gulp-stylelint";
+import gcmq from "gulp-group-css-media-queries";
+import ccso from "gulp-csso";
+
+export function styles() {
+	return gulp
+		.src(config.src.scss)
 		.pipe(
 			gulpStylelint({
 				failAfterError: false,
@@ -32,7 +34,7 @@ module.exports = function styles() {
 		.pipe(gulpif(config.isProd, gcmq()))
 		.pipe(gulpif(config.isProd, ccso()))
 		.pipe(gulpif(config.isProd, autoprefixer()))
-		.pipe(webpcss({}))
+
 		.pipe(
 			gulpif(
 				config.isProd,
@@ -41,8 +43,11 @@ module.exports = function styles() {
 				})
 			)
 		)
-		.pipe(dest(config.out.css));
-};
+		.pipe(gulp.dest(config.out.css));
+}
+
+//import rename from "gulp-rename";
+//import webpcss from "gulp-webpcss"; 	//.pipe(webpcss({}))
 //const notify = require("gulp-notify");
 //const plumber = require("gulp-plumber");
 //const shorthand = require("gulp-shorthand");

@@ -1,6 +1,6 @@
-const del = require("del");
-const config = require("./config");
+import {deleteAsync} from "del";
+import {config} from "./config.js";
 
-module.exports = function clear() {
-	return del(config.out.baseDir, { force: true });
-};
+export function clearDist() {
+	return deleteAsync(config.out.baseDir, {force: true});
+}

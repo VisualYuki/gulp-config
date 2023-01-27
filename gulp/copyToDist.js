@@ -1,9 +1,8 @@
-const { dest, src } = require("gulp");
-const newer = require("gulp-newer");
-const config = require("./config.js");
+import gulp from "gulp";
+import {config} from "./config.js";
 
-module.exports = function copyToDist() {
-	return src(config.src.copyToDist)
-		.pipe(newer(config.out.copyToDist))
-		.pipe(dest(config.out.copyToDist));
-};
+import newer from "gulp-newer";
+
+export function copyToDist() {
+	return gulp.src(config.src.copyToDist).pipe(newer(config.out.copyToDist)).pipe(gulp.dest(config.out.copyToDist));
+}

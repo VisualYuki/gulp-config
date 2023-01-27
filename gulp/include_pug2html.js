@@ -1,11 +1,14 @@
-const { src, dest } = require("gulp");
-const htmlValidator = require("gulp-w3c-html-validator");
-const pug = require("gulp-pug");
-const config = require("./config.js");
+import gulp from "gulp";
+import {config} from "./config.js";
 
-module.exports = function include_pug2html() {
-	return src(config.src.includePug)
+import pug from "gulp-pug";
+
+export function include_pug2html() {
+	return gulp
+		.src(config.src.includePug)
 		.pipe(pug({}))
-		.pipe(htmlValidator())
-		.pipe(dest(config.out.html));
-};
+
+		.pipe(gulp.dest(config.out.html));
+}
+
+//import {htmlValidator} from "gulp-w3c-html-validator"; //.pipe(htmlValidator())

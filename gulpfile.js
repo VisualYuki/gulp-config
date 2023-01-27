@@ -1,32 +1,33 @@
-const {dest, src, series, task, parallel, gulp} = require("gulp");
-const serve = require("./gulp/serve");
-const pug2html = require("./gulp/pug2html");
-const include_pug2html = require("./gulp/include_pug2html");
-const styles = require("./gulp/styles");
-const copyToDist = require("./gulp/copyToDist");
-const webp = require("./gulp/img/webp");
-const minPng = require("./gulp/img/png");
-const minJpg = require("./gulp/img/jpg");
-const svg = require("./gulp/img/svg");
-const clear = require("./gulp/clear");
-//const script = require("./gulp/script");
-//const svgSprite = require("./gulp/unused/svgSprite");
+import gulp from "gulp";
+
+import {serve} from "./gulp/serve.js";
+import {styles} from "./gulp/styles.js";
+import {pug2html} from "./gulp/pug2html.js";
+import {include_pug2html} from "./gulp/include_pug2html.js";
+
+import {minPng} from "./gulp/img/png.js";
+import {minJpg} from "./gulp/img/jpg.js";
+import {convWebp} from "./gulp/img/webp.js";
+import {minSvg} from "./gulp/img/svg.js";
+
+import {clearDist} from "./gulp/clear.js";
+import {copyToDist} from "./gulp/copyToDist.js";
 
 // BUILD TASK
-const build = parallel(pug2html, styles, svg, minPng, minJpg, copyToDist, webp);
+const build = gulp.parallel(pug2html, styles, minSvg, minPng, minJpg, copyToDist);
 
-exports.build = series(clear, build);
-exports.dev = series(build, serve);
+gulp.task("build", gulp.series(clearDist, build));
+gulp.task("dev", gulp.series(build, serve));
 
 // SINGLE TASK
-exports.serve = serve;
-exports.pug2html = pug2html;
-exports.include_pug2html = include_pug2html;
-exports.styles = styles;
-exports.minJpg = minJpg;
-exports.minPng = minPng;
-exports.webp = webp;
-exports.svg = svg;
-exports.img = series(svg, minJpg, minPng, webp);
-exports.copyToDist = copyToDist;
-exports.clear = clear;
+gulp.task("serve", serve);
+gulp.task("pug2html", pug2html);
+gulp.task("include_pug2html", include_pug2html);
+gulp.task("styles", styles);
+gulp.task("minSvg", minSvg);
+gulp.task("minJpg", minJpg);
+gulp.task("minPng", minPng);
+gulp.task("convWebp", convWebp);
+gulp.task("allImg", gulp.series(minSvg, minJpg, minPng, convWebp));
+gulp.task("clearDist", clearDist);
+gulp.task("copyToDist", copyToDist);

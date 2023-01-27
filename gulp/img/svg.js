@@ -1,13 +1,15 @@
-const { dest, src } = require("gulp");
-const svgmin = require("gulp-svgmin");
-const config = require("../config.js");
-const newer = require("gulp-newer");
+import gulp from "gulp";
+import {config} from "../config.js";
 
-module.exports = function svg() {
-	return src(config.src.svg, {
-		silent: false,
-	})
+import svgmin from "gulp-svgmin";
+import newer from "gulp-newer";
+
+export function minSvg() {
+	return gulp
+		.src(config.src.svg, {
+			silent: false,
+		})
 		.pipe(newer(config.out.svg))
 		.pipe(svgmin())
-		.pipe(dest(config.out.svg));
-};
+		.pipe(gulp.dest(config.out.svg));
+}

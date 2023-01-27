@@ -2,7 +2,7 @@ const outDir = "frontend-dist";
 const srcDir = "src";
 const currentPage = ["src/pug/pages/_index.pug"];
 
-const config = {
+export const config = {
 	isProd: process.env.NODE_ENV === "production",
 	isDev: process.env.NODE_ENV === "development",
 	isServedOnlyPages: false,
@@ -37,5 +37,3 @@ const config = {
 		includePug: [srcDir + "/pug/**/*.pug", `!${srcDir}/pug/pages/*.pug`].concat(currentPage),
 	},
 };
-
-module.exports = config;

@@ -1,9 +1,13 @@
-const path = require("path");
-const config = require("./gulp/config");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+import path from "path";
+import {dirname} from "path";
+import {fileURLToPath} from "url";
+import {config} from "./gulp/config.js";
+import {CleanWebpackPlugin} from "clean-webpack-plugin";
 //const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-module.exports = {
+let __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default {
 	devtool: config.isDev ? "eval-source-map" : false,
 	context: path.resolve(__dirname, "src"),
 	target: "web",

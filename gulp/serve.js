@@ -1,18 +1,19 @@
-const {watch, series, parallel} = require("gulp");
-const webp = require("./img/webp");
-const svg = require("./img/svg");
-const minPng = require("./img/png");
-const minJpg = require("./img/jpg");
-const style = require("./styles");
-const server = require("browser-sync").create();
-const pug2html = require("./pug2html");
-const include_pug2html = require("./include_pug2html");
-const config = require("./config.js");
-const copyToDist = require("./copyToDist");
-//const script = require("./script");
+import gulp from "gulp";
+import {config} from "./config.js";
 
-module.exports = function serve() {
-	server.init({
+//import { webp } from "./img/webp.js";
+//import {minSvg} from "./img/svg.js";
+//import { minPng } from "./img/png.js";
+//import { minJpg } from "./img/jpg.js";
+import {styles} from "./styles.js";
+import pkg from "browser-sync";
+const {server} = pkg;
+import {pug2html} from "./pug2html.js";
+import {include_pug2html} from "./include_pug2html.js";
+import {copyToDist} from "./copyToDist.js";
+
+export function serve() {
+	server.create().init({
 		server: {
 			//baseDir: config.out.baseDir,
 			directory: true,
@@ -26,18 +27,17 @@ module.exports = function serve() {
 	});
 
 	if (config.isServedOnlyPages) {
-		watch(config.src.pug, pug2html);
+		gulp.watch(config.src.pug, pug2html);
 	} else {
-		watch(config.watch.includePug, include_pug2html);
+		gulp.watch(config.watch.includePug, include_pug2html);
 	}
 
-	watch(config.src.copyToDist, copyToDist);
-	watch(config.watch.scss, style);
-	watch(config.src.webp, webp);
-	watch(config.src.svg, svg);
-	watch(config.src.png, minPng);
-	watch(config.src.jpg, minJpg);
+	gulp.watch(config.src.copyToDist, copyToDist);
+	gulp.watch(config.watch.scss, styles);
+	//watch(config.src.webp, webp);
+	//gulp.watch(config.src.svg, minSvg);
+	//watch(config.src.png, minPng);
+	//watch(config.src.jpg, minJpg);
 
-	watch(config.out.baseDir).on("change", server.reload);
-	//watch(config.src.js, script);
-};
+	gulp.watch(config.out.baseDir).on("change", server.reload);
+}
