@@ -1,9 +1,10 @@
 // Компилируется в css только этот файл.
 @import "./utils/*.scss";
+@import "./common/*.scss";
 @import "./libs/*.scss";
 @import "./fonts/montserrat.scss";
 @import "./bootstrap/index.scss";
 @import "./pages/**/*.scss";
 @import "./layout/*.scss";
-@import "./common/*.scss";
 @import "./bem-block/*.scss";
+@import "./trash-styles.scss";

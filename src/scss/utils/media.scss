@@ -1,22 +1,22 @@
-@mixin desk_top {
+@mixin desk {
 	@media (max-width: 1500px) {
 		@content;
 	}
 }
 
-@mixin desk_top-up {
+@mixin desk_up {
 	@media (min-width: 1500px) {
 		@content;
 	}
 }
 
-@mixin desk_bottom {
+@mixin desk-small {
 	@media (max-width: 1199px) {
 		@content;
 	}
 }
 
-@mixin desk_bottom-up {
+@mixin desk-small_up {
 	@media (min-width: 1199px) {
 		@content;
 	}

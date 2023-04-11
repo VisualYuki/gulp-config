@@ -1,5 +1,12 @@
 @use "sass:math";
 
+@function strip-unit($num) {
+	@return math.div($num, $num * 0 + 1);
+}
+
+$MaxWidthWindow: 1920px;
+$MinWidthWindow: 320px;
+
 @mixin flex($justify-content: flex-start, $align-item: center, $flex-direction: row) {
 	display: flex;
 	flex-direction: $flex-direction;
@@ -7,38 +14,38 @@
 	justify-content: $justify-content;
 }
 
-$MaxWidthWindow: 1920;
-$MinWidthWindow: 320;
-
 @function adaptiveSize($NumMax, $NumMin, $WidthMax: $MaxWidthWindow, $WidthMin: $MinWidthWindow) {
+	$WidthMax: strip-unit($WidthMax);
+	$WidthMin: strip-unit($WidthMin);
+
 	$k: math.div(($NumMax - $NumMin), ($WidthMax - $WidthMin));
 	$b: ($NumMin - ($k * $WidthMin)) * 1px;
 
 	@return calc(#{$k} * 100vw + #{$b});
 }
 
-@mixin font-size($Fmax, $Fmin, $Vmax: $MaxWidthWindow, $Vmin: $MinWidthWindow) {
-	@media (min-width: $Vmax * 1px) {
+@mixin adapt-font-size($Fmax, $Fmin, $Vmin: $MinWidthWindow, $Vmax: $MaxWidthWindow) {
+	@media (min-width: $Vmax) {
 		font-size: $Fmax * 1px;
 	}
 
-	@media (min-width: $Vmin * 1px) and (max-width: $Vmax * 1px) {
+	@media (min-width: $Vmin) and (max-width: $Vmax) {
 		font-size: adaptiveSize($Fmax, $Fmin, $Vmax, $Vmin);
 	}
 }
 
-@mixin indent($rule, $Direction, $NumMax, $NumMin, $Vmax: 1920, $Vmin: 320) {
-	@media (min-width: $Vmax * 1px) {
+@mixin indent($rule, $Direction, $NumMax, $NumMin, $Vmax: $MaxWidthWindow, $Vmin: $MinWidthWindow) {
+	@media (min-width: $Vmax) {
 		#{$rule}-#{$Direction}: $NumMax * 1px;
 	}
 
-	@media (min-width: $Vmin * 1px) and (max-width: $Vmax * 1px) {
+	@media (min-width: $Vmin) and (max-width: $Vmax) {
 		#{$rule}-#{$Direction}: adaptiveSize($NumMax, $NumMin, $Vmax, $Vmin);
 	}
 }
 
-@mixin indent-2($rule, $NumMax1, $NumMin1, $NumMax2, $NumMin2, $Vmax: 1920, $Vmin: 320) {
-	@media (min-width: $Vmax * 1px) {
+@mixin indent-2($rule, $NumMax1, $NumMin1, $NumMax2, $NumMin2, $Vmax: $MaxWidthWindow, $Vmin: $MinWidthWindow) {
+	@media (min-width: $Vmax) {
 		#{$rule}-top: $NumMax1 * 1px;
 		#{$rule}-bottom: $NumMax1 * 1px;
 
@@ -46,7 +53,7 @@ $MinWidthWindow: 320;
 		#{$rule}-right: $NumMax2 * 1px;
 	}
 
-	@media (min-width: $Vmin * 1px) and (max-width: $Vmax * 1px) {
+	@media (min-width: $Vmin) and (max-width: $Vmax) {
 		$horizontalResult: adaptiveSize($NumMax1, $NumMin1, $Vmax, $Vmin);
 		#{$rule}-top: $horizontalResult;
 		#{$rule}-bottom: $horizontalResult;
@@ -62,16 +69,3 @@ $MinWidthWindow: 320;
 	grid-gap: $gap * 1px;
 	grid-template-columns: repeat($columnCount, minmax(0, auto));
 }
-
-//@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
-//	$k: math.div(($f-max - $f-min), ($v-max - $v-min));
-//	$b: $f-min - $k * $v-min;
-
-//	$b: $b * 1px;
-
-//	@return calc(#{$k} * 100vw + #{$b});
-//}
-
-//.fluid-font-size {
-//	font-size: calcFluidFontSize(20, 48, 480, 1280);
-//}

@@ -129,7 +129,9 @@ p {
 
 p,
 a,
-span {
+span,
+svg,
+svg * {
 	@extend .tran-fast;
 }
 

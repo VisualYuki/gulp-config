@@ -1,16 +1,25 @@
-//$container-max-widths: (
-//	sm: 540px,
-//	md: 720px,
-//	lg: 960px,
-//	xl: 1140px,
-//	xxl: 1320px,
-//) ;
+@use "sass:map";
+@use "sass:math";
 
-//$grid-breakpoints: (
-//  xs: 0,
-//  sm: 576px,
-//  md: 768px,
-//  lg: 992px,
-//  xl: 1200px,
-//  xxl: 1400px
-//);
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1400px,
+);
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+$sm: map.get($grid-breakpoints, "sm");
+$md: map.get($grid-breakpoints, "md");
+$lg: map.get($grid-breakpoints, "lg");
+$xl: map.get($grid-breakpoints, "xl");
+$xxl: map.get($grid-breakpoints, "xxl");

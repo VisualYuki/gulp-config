@@ -1,7 +1,16 @@
 .b-link {
+	&_inline {
+		display: inline;
+		white-space: break-spaces;
+	}
+
+	&_underline {
+		text-decoration: underline;
+		text-decoration-skip-ink: none;
+	}
 }
 
-.hover-link-trigger {
+.h-hover-link-trigger {
 	cursor: pointer;
 
 	&:hover {
@@ -11,7 +20,7 @@
 	}
 }
 
-.hover-link-target {
+.h-hover-link-target {
 	&:hover {
 		color: blue;
 	}

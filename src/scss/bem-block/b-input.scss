@@ -1,33 +1,6 @@
 .b-input {
 	margin-bottom: 16px;
 
-	// Скрыть заполнитель при фокусу поля ввода
-	&_hide-focus-placeholder {
-		.b-input__input:focus ~ .b-input__placeholder,
-		.b-input__input[value] ~ .b-input__placeholder {
-			display: none;
-		}
-	}
-
-	// Переместить заполнитель над полем ввода.
-	&_title {
-		.b-input {
-			&__placeholder {
-				display: none;
-			}
-
-			&__input {
-				padding: 12px;
-			}
-
-			&__title {
-				margin-bottom: 4px;
-
-				font-size: 14px;
-			}
-		}
-	}
-
 	&__input {
 		width: 100%;
 		padding: 12px;
@@ -42,43 +15,9 @@
 		}
 
 		&::placeholder {
-			//.font-size(18,14);
+			@include adapt-font-size(20, 16);
 			color: gray;
 		}
-
-		&:focus ~ .b-input__placeholder,
-		&:valid ~ .b-input__placeholder {
-			top: 0;
-			left: 10px;
-			z-index: 0;
-
-			height: max-content;
-			padding: 3px;
-
-			font-size: 11px;
-			line-height: normal;
-			text-indent: 0;
-
-			transform: none;
-		}
-	}
-
-	&__placeholder {
-		position: absolute;
-		top: 50%;
-		left: 15px;
-
-		//width: 100%;
-		//height: 100%;
-
-		color: gray;
-		font-size: 14px;
-		//line-height: 16px;
-
-		transform: translateY(-50%);
-
-		@extend .tran-fast;
-		pointer-events: none;
 	}
 
 	&_textarea {

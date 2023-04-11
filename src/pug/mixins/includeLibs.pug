@@ -1,11 +1,14 @@
 mixin includeLibs(libs, pageName)
 	if (libs.includes("jquery"))
 		<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-	if (libs.includes("slick-slider"))
-		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	if (libs.includes("maskedinput"))
-		<script type="text/javascript" src="../include-libs/jquery.maskedinput.js"></script>
-	if (libs.includes("fancybox"))
-		<script type="text/javascript" src="https://cdnjs.com/libraries/fancybox"></script>
+	if (libs.includes("noUiSlider"))
+		<script src="/node_modules/nouislider/dist/nouislider.min.js"></script>
+		<script src="/node_modules/nouislider/dist/nouislider.min.css"></script>
+	//-if (libs.includes("slick-slider"))
+	//-	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	//-if (libs.includes("maskedinput"))
+	//-	<script type="text/javascript" src="../include-libs/jquery.maskedinput.js"></script>
+	//-if (libs.includes("fancybox"))
+	//-	<script type="text/javascript" src="https://cdnjs.com/libraries/fancybox"></script>
 	//script(src="../js/common.js")
 	script(src=`../js/${pageName}-page.js`)

@@ -1,0 +1,22 @@
+{
+	"extends": "clock",
+	"disallowClassLiteralsBeforeIdLiterals": true,
+	"disallowDuplicateAttributes": true,
+	"disallowIdAttributeWithStaticValue": null,
+	"disallowLegacyMixinCall": true,
+	"disallowMultipleLineBreaks": true,
+	"disallowSpaceAfterCodeOperator": null,
+	"disallowStringConcatenation": true,
+	"requireClassLiteralsBeforeAttributes": true,
+	"requireLowerCaseAttributes": null,
+	"requireLowerCaseTags": null,
+	"requireStrictEqualityOperators": true,
+	"validateAttributeQuoteMarks": "\"",
+	"validateDivTags": true,
+	"validateLineBreaks": null,
+	"validateIndentation": "\t",
+	"requireLineFeedAtFileEnd": null,
+	"validateAttributeSeparator": null,
+	"disallowSpacesInsideAttributeBrackets": null,
+	"disallowIdLiterals": null
+}

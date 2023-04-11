@@ -155,6 +155,10 @@ select {
 	text-transform: none;
 }
 
+input[type="file"] {
+	display: none;
+}
+
 button,
 [type="button"],
 [type="reset"],
